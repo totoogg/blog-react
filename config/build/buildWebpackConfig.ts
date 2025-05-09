@@ -23,7 +23,7 @@ export default function buildWebpackConfig(
       clean: true,
     },
     module: {
-      rules: buildLoaders(),
+      rules: buildLoaders(options),
     },
     resolve: buildResolves(),
     plugins: buildPlugins(html),
