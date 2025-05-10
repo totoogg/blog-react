@@ -17,7 +17,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       {
         loader: "css-loader",
         options: {
-          module: {
+          modules: {
             auto: (resourcePath: string) =>
               resourcePath.endsWith(".module.scss"),
             localIdentName: options.isDev

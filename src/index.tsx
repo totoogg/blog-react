@@ -1,12 +1,12 @@
 import { createRoot } from "react-dom/client";
-import { App } from "./components/app";
-import { StrictMode } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { App } from "./App";
 import "./index.scss";
 
 const root = document.getElementById("root") as HTMLDivElement;
 
 createRoot(root).render(
-  <StrictMode>
+  <BrowserRouter>
     <App />
-  </StrictMode>
+  </BrowserRouter>
 );
