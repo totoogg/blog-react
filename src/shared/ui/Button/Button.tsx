@@ -7,7 +7,7 @@ export enum ButtonTheme {
 }
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  className: string;
+  className?: string;
   theme?: ButtonTheme;
 }
 
