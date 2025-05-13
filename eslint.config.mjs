@@ -3,6 +3,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import { defineConfig, globalIgnores } from "eslint/config";
+import i18next from "eslint-plugin-i18next";
 
 export default defineConfig([
   globalIgnores(["./node_modules/*", "./build/*"]),
@@ -17,6 +18,7 @@ export default defineConfig([
   },
   tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
+  i18next.configs["flat/recommended"],
   {
     settings: {
       react: {
@@ -28,6 +30,7 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     rules: {
       "react/react-in-jsx-scope": "off",
+      "i18next/no-literal-string": ["error", { markupOnly: true }],
     },
   },
 ]);
