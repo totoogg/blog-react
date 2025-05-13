@@ -1,4 +1,7 @@
 {
   "lang": "English",
+  "ErrorText": "An error occurred",
+  "UpdatePage": "Update Page",
+  "buttonError": "Throw Error",
   "notFound": "Page not found"
 }
