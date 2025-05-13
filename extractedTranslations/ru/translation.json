@@ -1,5 +1,6 @@
 {
   "about": "about",
   "lang": "lang",
-  "main": "main"
+  "main": "main",
+  "notFound": "notFound"
 }
