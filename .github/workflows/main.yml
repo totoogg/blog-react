@@ -12,13 +12,13 @@ jobs:
       matrix:
         node-version: [17.x]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: npm ci
+        run: npm install
       - name: Building
         run: npm run build:prod
       - name: Linting typescript
@@ -27,3 +27,7 @@ jobs:
         run: npm run lint:scss
       - name: Testing unit
         run: npm run test:unit
+      - name: Building storybook
+        run: npm run storybook:build
+      - name: Testing screenshot
+        run: npm run test:ui:ci
