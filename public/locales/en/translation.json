@@ -3,5 +3,8 @@
   "ErrorText": "An error occurred",
   "UpdatePage": "Update Page",
   "buttonError": "Throw Error",
+  "buttonToggle": "toggle",
+  "main": "main",
+  "about": "about",
   "notFound": "Page not found"
 }
