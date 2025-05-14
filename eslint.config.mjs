@@ -30,7 +30,10 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     rules: {
       "react/react-in-jsx-scope": "off",
-      "i18next/no-literal-string": ["error", { markupOnly: true }],
+      "i18next/no-literal-string": [
+        "error",
+        { markupOnly: true, ignoreAttribute: ["data-testid"] },
+      ],
     },
   },
 ]);
