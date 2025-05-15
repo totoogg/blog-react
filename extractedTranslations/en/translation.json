@@ -1,5 +1,8 @@
 {
+  "ErrorText": "ErrorText",
+  "UpdatePage": "UpdatePage",
   "about": "about",
+  "buttonError": "buttonError",
   "lang": "lang",
   "main": "main",
   "notFound": "notFound"

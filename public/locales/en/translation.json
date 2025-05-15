@@ -1,5 +1,6 @@
 {
   "lang": "English",
+  "langShort": "en",
   "ErrorText": "An error occurred",
   "UpdatePage": "Update Page",
   "buttonError": "Throw Error",
