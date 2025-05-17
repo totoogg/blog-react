@@ -23,6 +23,13 @@ const config: Config = {
   moduleNameMapper: {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    "^entities/(.*)$": "<rootDir>/src/entities/$1",
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
+  roots: ["<rootDir>/src"],
+  preset: "ts-jest",
+  globals: {
+    __IS_DEV__: true,
   },
 };
 
