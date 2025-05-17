@@ -61,7 +61,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
       </div>
       <div className={cls.switcher}>
         <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} short={true} />
+        <LangSwitcher className={cls.lang} short={!collapsed} />
       </div>
     </div>
   );

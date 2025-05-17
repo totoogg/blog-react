@@ -43,3 +43,5 @@ next-env.d.ts
 /.idea/
 *storybook.log
 /storybook-static
+.loki/report.html
+.loki/report.json

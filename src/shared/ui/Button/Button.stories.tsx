@@ -27,6 +27,13 @@ export const Clear: Story = {
   },
 };
 
+export const ClearInverted: Story = {
+  args: {
+    children: "Text",
+    theme: ButtonTheme.CLEAR_INVERTED,
+  },
+};
+
 export const Background: Story = {
   args: {
     children: "Text",
@@ -34,7 +41,7 @@ export const Background: Story = {
   },
 };
 
-export const backgroundInverted: Story = {
+export const BackgroundInverted: Story = {
   args: {
     children: "Text",
     theme: ButtonTheme.BACKGROUND_INVERTED,

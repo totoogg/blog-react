@@ -7,5 +7,7 @@
   "buttonToggle": "toggle",
   "main": "main",
   "about": "about",
+  "logIn": "LogIn",
+  "logOut": "LogOut",
   "notFound": "Page not found"
 }
