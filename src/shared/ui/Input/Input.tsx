@@ -71,6 +71,7 @@ export const Input: FC<InputProps> = memo((props) => {
           ref={ref}
           type={type}
           value={value}
+          className={cls.input}
           onChange={onChangeHandler}
           onFocus={onFocus}
           onBlur={onBlur}

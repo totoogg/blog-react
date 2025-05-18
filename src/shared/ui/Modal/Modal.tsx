@@ -23,6 +23,8 @@ export const Modal: FC<ModalProps> = (props) => {
   useEffect(() => {
     if (isOpen) {
       setIsMounted(true);
+    } else {
+      setIsMounted(false);
     }
   }, [isOpen]);
 

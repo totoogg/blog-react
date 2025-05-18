@@ -2,7 +2,7 @@ import { FC } from "react";
 import cls from "./LoginForm.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
-import { Button } from "shared/ui/Button/Button";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Input } from "shared/ui/Input/Input";
 
 interface LoginFormProps {
@@ -25,7 +25,7 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
         className={cls.input}
         placeholder={t("inputPassword")}
       />
-      <Button className={cls["loginBtn"]}>{t("logIn")}</Button>
+      <Button theme={ButtonTheme.OUTLINE} className={cls["loginBtn"]}>{t("logIn")}</Button>
     </div>
   );
 };

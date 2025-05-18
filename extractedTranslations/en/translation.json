@@ -3,6 +3,8 @@
   "UpdatePage": "UpdatePage",
   "about": "about",
   "buttonError": "buttonError",
+  "inputPassword": "inputPassword",
+  "inputUsername": "inputUsername",
   "lang": "lang",
   "logIn": "logIn",
   "main": "main",
