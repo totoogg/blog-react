@@ -9,5 +9,7 @@
   "about": "о сайте",
   "logIn": "Войти",
   "logOut": "Выйти",
+  "inputUsername": "имя пользователя",
+  "inputPassword": "пароль",
   "notFound": "Страница не найдена"
 }

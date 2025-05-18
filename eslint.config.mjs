@@ -32,6 +32,7 @@ export default defineConfig([
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     rules: {
       "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
       "i18next/no-literal-string": [
         "error",
         { markupOnly: true, ignoreAttribute: ["data-testid"] },

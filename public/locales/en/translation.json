@@ -9,5 +9,7 @@
   "about": "about",
   "logIn": "LogIn",
   "logOut": "LogOut",
+  "inputUsername": "username",
+  "inputPassword": "password",
   "notFound": "Page not found"
 }
