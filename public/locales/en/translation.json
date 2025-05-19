@@ -11,5 +11,7 @@
   "logOut": "LogOut",
   "inputUsername": "username",
   "inputPassword": "password",
+  "authForm": "Auth Form",
+  "errorLogin": "Wrong login or password",
   "notFound": "Page not found"
 }

@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import webpack, { DefinePlugin } from "webpack";
 import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
 import path from "path";
@@ -26,6 +26,22 @@ export default ({ config }: { config: webpack.Configuration }) => {
     }
   });
   config.module?.rules?.push(buildSvgLoader());
+
+  config.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: true,
+    })
+  );
+
+  if (config.resolve) {
+    config.resolve = {
+      extensions: [".tsx", ".ts", ".js"],
+      preferAbsolute: true,
+      modules: ["src", "node_modules"],
+      mainFiles: ["index"],
+      alias: {},
+    };
+  }
 
   return config;
 };

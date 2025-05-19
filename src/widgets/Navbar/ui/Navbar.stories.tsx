@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "./Navbar";
+import { StoreProvider } from "app/providers/StoryProvider";
 
 const meta = {
   title: "widgets/NavBar",
@@ -19,6 +20,24 @@ export const Dark: Story = {
       <div className="app dark">
         <Story />
       </div>
+    ),
+  ],
+};
+
+export const AuthNavbar: Story = {
+  decorators: [
+    (Story) => (
+      <StoreProvider
+        initialState={{
+          user: {
+            authData: {},
+          },
+        }}
+      >
+        <div className="app dark">
+          <Story />
+        </div>
+      </StoreProvider>
     ),
   ],
 };

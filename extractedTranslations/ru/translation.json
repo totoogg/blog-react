@@ -2,11 +2,13 @@
   "ErrorText": "ErrorText",
   "UpdatePage": "UpdatePage",
   "about": "about",
+  "authForm": "authForm",
   "buttonError": "buttonError",
   "inputPassword": "inputPassword",
   "inputUsername": "inputUsername",
   "lang": "lang",
   "logIn": "logIn",
+  "logOut": "logOut",
   "main": "main",
   "notFound": "notFound"
 }
