@@ -5,8 +5,12 @@ import { useDispatch } from "react-redux";
 import { counterReducer } from "entities/Counter";
 import { createReducerManager } from "./reducerManager";
 
-export const createReduxStore = (initialState?: StateSchema) => {
+export const createReduxStore = (
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+) => {
   const rootReducer: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
   };
@@ -19,6 +23,8 @@ export const createReduxStore = (initialState?: StateSchema) => {
     preloadedState: initialState,
   });
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   store.reducerManager = reducerManager;
 
   return store;
