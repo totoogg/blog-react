@@ -4,6 +4,7 @@ import { StateSchema, StoreProvider } from "app/providers/StoryProvider";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { fn } from "@storybook/test";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer,
@@ -12,6 +13,8 @@ const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
 const meta = {
   title: "features/LoginForm",
   component: LoginForm,
+
+  args: { onSuccess: fn() },
 
   tags: ["autodocs"],
 } satisfies Meta<typeof LoginForm>;
@@ -31,7 +34,7 @@ export const Primary: Story = {
           },
         }}
       >
-        <div className="app dark">
+        <div className="app">
           <Story />
         </div>
       </StoreProvider>
@@ -52,7 +55,7 @@ export const WithError: Story = {
           },
         }}
       >
-        <div className="app dark">
+        <div className="app">
           <Story />
         </div>
       </StoreProvider>
@@ -71,7 +74,7 @@ export const Loading: Story = {
           },
         }}
       >
-        <div className="app dark">
+        <div className="app">
           <Story />
         </div>
       </StoreProvider>

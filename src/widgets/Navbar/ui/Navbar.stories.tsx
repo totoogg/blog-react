@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "./Navbar";
 import { StoreProvider } from "app/providers/StoryProvider";
+import { useEffect } from "react";
 
 const meta = {
   title: "widgets/NavBar",
@@ -16,11 +17,20 @@ export const Light: Story = {};
 
 export const Dark: Story = {
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };
 
@@ -34,7 +44,7 @@ export const AuthNavbar: Story = {
           },
         }}
       >
-        <div className="app dark">
+        <div className="app">
           <Story />
         </div>
       </StoreProvider>

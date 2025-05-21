@@ -4,6 +4,7 @@
   "about": "about",
   "authForm": "authForm",
   "buttonError": "buttonError",
+  "errorLogin": "errorLogin",
   "inputPassword": "inputPassword",
   "inputUsername": "inputUsername",
   "lang": "lang",

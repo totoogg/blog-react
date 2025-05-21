@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { AppLink, AppLinkTheme } from "./AppLink";
+import React from "react";
 
 const meta = {
   title: "shared/AppLink",
@@ -31,10 +32,19 @@ export const SecondaryDark: Story = {
     theme: AppLinkTheme.SECONDARY,
   },
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };

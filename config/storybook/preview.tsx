@@ -43,7 +43,7 @@ const preview: Preview = {
           <Suspense fallback="">
             <StoreProvider initialState={{}}>
               <RouterDecorator>
-                <div className="app">
+                <div className="app app_light_theme">
                   <Story />
                 </div>
               </RouterDecorator>

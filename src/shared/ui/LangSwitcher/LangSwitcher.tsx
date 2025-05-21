@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { Button, ButtonTheme } from "../Button/Button";
@@ -8,20 +8,24 @@ interface LangSwitcherProps {
   short?: boolean;
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({ className, short }) => {
-  const { t, i18n } = useTranslation();
+export const LangSwitcher: FC<LangSwitcherProps> = memo(
+  ({ className, short }) => {
+    const { t, i18n } = useTranslation();
 
-  const toggle = () => {
-    i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
-  };
+    const toggle = () => {
+      i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+    };
 
-  return (
-    <Button
-      theme={ButtonTheme.CLEAR_INVERTED}
-      onClick={toggle}
-      className={classNames("", {}, [className])}
-    >
-      {t(short ? "langShort" : "lang")}
-    </Button>
-  );
-};
+    return (
+      <Button
+        theme={ButtonTheme.CLEAR_INVERTED}
+        onClick={toggle}
+        className={classNames("", {}, [className])}
+      >
+        {t(short ? "langShort" : "lang")}
+      </Button>
+    );
+  }
+);
+
+LangSwitcher.displayName = "LangSwitcher";

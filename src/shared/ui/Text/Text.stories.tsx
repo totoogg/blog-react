@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Text, TextTheme } from "./Text";
+import React from "react";
 
 const meta = {
   title: "shared/Text",
@@ -44,11 +45,20 @@ export const PrimaryDark: Story = {
     text: "Text",
   },
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };
 
@@ -57,11 +67,20 @@ export const OnlyTextDark: Story = {
     text: "Text",
   },
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };
 
@@ -70,10 +89,19 @@ export const OnlyTitleDark: Story = {
     title: "Title",
   },
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };

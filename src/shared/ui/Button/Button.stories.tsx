@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button, ButtonSize, ButtonTheme } from "./Button";
+import React from "react";
 
 const meta = {
   title: "shared/Button",
@@ -99,10 +100,19 @@ export const OutlineDark: Story = {
     theme: ButtonTheme.OUTLINE,
   },
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };

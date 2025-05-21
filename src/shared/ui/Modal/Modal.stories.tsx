@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Modal } from "./Modal";
 import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
+import React from "react";
 
 const meta = {
   title: "shared/Modal",
@@ -28,12 +29,21 @@ export const Dark: Story = {
     children: "Text",
   },
   decorators: [
-    (Story) => (
-      <ThemeProvider initialTheme={Theme.DARK}>
-        <div className="app dark">
-          <Story />
-        </div>
-      </ThemeProvider>
-    ),
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <ThemeProvider initialTheme={Theme.DARK}>
+          <div className="app app_dark_theme">
+            <Story />
+          </div>
+        </ThemeProvider>
+      );
+    },
   ],
 };

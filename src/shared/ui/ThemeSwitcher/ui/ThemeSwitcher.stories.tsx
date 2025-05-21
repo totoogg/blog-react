@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { useEffect } from "react";
 
 const meta = {
   title: "shared/ThemeSwitcher",
@@ -15,10 +16,19 @@ export const Normal: Story = {};
 
 export const Dark: Story = {
   decorators: [
-    (Story) => (
-      <div className="app dark">
-        <Story />
-      </div>
-    ),
+    (Story) => {
+      useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
+    },
   ],
 };
