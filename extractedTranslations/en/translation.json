@@ -4,12 +4,16 @@
   "about": "about",
   "authForm": "authForm",
   "buttonError": "buttonError",
+  "edit": "edit",
   "errorLogin": "errorLogin",
   "inputPassword": "inputPassword",
   "inputUsername": "inputUsername",
   "lang": "lang",
+  "lastname": "lastname",
   "logIn": "logIn",
   "logOut": "logOut",
   "main": "main",
-  "notFound": "notFound"
+  "name": "name",
+  "notFound": "notFound",
+  "profile": "profile"
 }

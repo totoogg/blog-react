@@ -9,9 +9,11 @@ import { initReactI18next } from "react-i18next";
 import enTranslations from "../../public/locales/en/translation.json";
 import enTranslationsAbout from "../../public/locales/en/about.json";
 import enTranslationsMain from "../../public/locales/en/main.json";
+import enTranslationsProfile from "../../public/locales/en/profile.json";
 import ruTranslations from "../../public/locales/ru/translation.json";
 import ruTranslationsAbout from "../../public/locales/ru/about.json";
 import ruTranslationsMain from "../../public/locales/ru/main.json";
+import ruTranslationsProfile from "../../public/locales/ru/profile.json";
 
 i18n.use(initReactI18next).init({
   lng: "en",
@@ -25,11 +27,13 @@ i18n.use(initReactI18next).init({
       translation: enTranslations,
       about: enTranslationsAbout,
       main: enTranslationsMain,
+      profile: enTranslationsProfile,
     },
     ru: {
       translation: ruTranslations,
       about: ruTranslationsAbout,
       main: ruTranslationsMain,
+      profile: ruTranslationsProfile,
     },
   },
 });
