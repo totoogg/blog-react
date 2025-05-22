@@ -3,14 +3,16 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 import webpack from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import { BuildOptions } from "./types/config";
 
-export function buildPlugins(
-  html: string,
-  isDev: boolean
-): webpack.WebpackPluginInstance[] {
+export function buildPlugins({
+  paths,
+  isDev,
+  apiUrl,
+}: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugins = [
     new HtmlWebpackPlugin({
-      template: html,
+      template: paths.html,
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
@@ -19,6 +21,7 @@ export function buildPlugins(
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
   ];
 

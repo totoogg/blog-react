@@ -10,13 +10,13 @@ import { StoreProvider } from "app/providers/StoryProvider";
 const root = document.getElementById("root") as HTMLDivElement;
 
 createRoot(root).render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>
+    </StoreProvider>
+  </BrowserRouter>
 );
