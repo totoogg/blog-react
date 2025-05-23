@@ -1,4 +1,4 @@
 import { AppDispatch } from "app/providers/StoryProvider";
 import { useDispatch } from "react-redux";
 
-export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppDispatch = () => useDispatch<AppDispatch>();

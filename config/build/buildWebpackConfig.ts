@@ -10,7 +10,7 @@ export default function buildWebpackConfig(
 ): webpack.Configuration {
   const {
     mode,
-    paths: { entry, build, html },
+    paths: { entry, build },
     isDev,
   } = options;
 
@@ -26,7 +26,7 @@ export default function buildWebpackConfig(
       rules: buildLoaders(options),
     },
     resolve: buildResolves(options),
-    plugins: buildPlugins(html, isDev),
+    plugins: buildPlugins(options),
     devtool: isDev ? "inline-source-map" : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };

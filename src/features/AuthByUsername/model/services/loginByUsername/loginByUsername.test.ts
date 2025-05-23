@@ -4,6 +4,8 @@ import { loginByUsername } from "./loginByUsername";
 import { StateSchema } from "app/providers/StoryProvider";
 import { userActions } from "entities/User";
 import { TestAsyncThunk } from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
+import { ThunkExtraArg } from "app/providers/StoryProvider/config/StateSchema";
+import { $api } from "shared/api/api";
 
 jest.mock("axios");
 
@@ -19,10 +21,17 @@ describe("loginByUsername", () => {
   });
 
   test("successes login", async () => {
+    const mockedAxios = jest.mocked($api);
+    mockedAxios.post.mockRejectedValue({ data: 403 });
+
+    const mockExtra: ThunkExtraArg = {
+      api: mockedAxios,
+      navigate: jest.fn(),
+    };
     const userValue = { id: "1", username: "123" };
     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
     const action = loginByUsername({ password: "123", username: "123" });
-    const result = await action(dispatch, getState, undefined);
+    const result = await action(dispatch, getState, mockExtra);
 
     expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
     expect(dispatch).toHaveBeenCalledTimes(3);
@@ -32,9 +41,17 @@ describe("loginByUsername", () => {
   });
 
   test("error login", async () => {
+    const mockedAxios = jest.mocked($api);
+    mockedAxios.post.mockRejectedValue({ data: 403 });
+
+    const mockExtra: ThunkExtraArg = {
+      api: mockedAxios,
+      navigate: jest.fn(),
+    };
+
     mockedAxios.post.mockReturnValue(Promise.reject({ data: 403 }));
     const action = loginByUsername({ password: "123", username: "123" });
-    const result = await action(dispatch, getState, undefined);
+    const result = await action(dispatch, getState, mockExtra);
 
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(dispatch).toHaveBeenCalledTimes(2);

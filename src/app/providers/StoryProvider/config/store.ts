@@ -1,5 +1,13 @@
-import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema } from "./StateSchema";
+import {
+  configureStore,
+  Middleware,
+  Reducer,
+  ReducersMapObject,
+  ThunkDispatch,
+  Tuple,
+  UnknownAction,
+} from "@reduxjs/toolkit";
+import { StateSchema, ThunkExtraArg } from "./StateSchema";
 import { userReducer } from "entities/User";
 import { counterReducer } from "entities/Counter";
 import { createReducerManager } from "./reducerManager";
@@ -19,23 +27,31 @@ export const createReduxStore = (
 
   const reducerManager = createReducerManager(rootReducer);
 
+  const extraArg: ThunkExtraArg = {
+    api: $api,
+    navigate,
+  };
+
   const store = configureStore<StateSchema>({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<StateSchema>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         thunk: {
-          extraArgument: { api: $api, navigate },
+          extraArgument: extraArg,
         },
-      }),
+      }) as Tuple<[Middleware]>,
   });
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
+  // @ts-expect-error-next-line
   store.reducerManager = reducerManager;
 
   return store;
 };
 
-export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];
+export type AppDispatch = ThunkDispatch<
+  StateSchema,
+  ThunkExtraArg,
+  UnknownAction
+>;

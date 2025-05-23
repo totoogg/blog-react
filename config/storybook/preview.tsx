@@ -45,13 +45,13 @@ const preview: Preview = {
       return (
         <I18nextProvider i18n={i18n}>
           <Suspense fallback="">
-            <StoreProvider initialState={{}}>
-              <RouterDecorator>
+            <RouterDecorator>
+              <StoreProvider initialState={{}}>
                 <div className="app app_light_theme">
                   <Story />
                 </div>
-              </RouterDecorator>
-            </StoreProvider>
+              </StoreProvider>
+            </RouterDecorator>
           </Suspense>
         </I18nextProvider>
       );

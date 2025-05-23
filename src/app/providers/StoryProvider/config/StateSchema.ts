@@ -1,5 +1,6 @@
 import {
   Action,
+  Dispatch,
   EnhancedStore,
   Reducer,
   ReducersMapObject,
@@ -20,7 +21,7 @@ export interface StateSchema {
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
-  reduce: (state: StateSchema, action: Action) => StateSchema;
+  reduce: (state: StateSchema | undefined, action: Action) => StateSchema;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
   remove: (key: StateSchemaKey) => void;
 }
@@ -33,11 +34,11 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
   api: AxiosInstance;
-  navigate: (to: To, options?: NavigateOptions) => void;
+  navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {
   rejectValue: T;
   extra: ThunkExtraArg;
+  dispatch: Dispatch;
 }
-
