@@ -2,10 +2,17 @@
   "ErrorText": "ErrorText",
   "UpdatePage": "UpdatePage",
   "about": "about",
+  "age": "age",
   "authForm": "authForm",
+  "avatar": "avatar",
   "buttonError": "buttonError",
+  "cancel": "cancel",
+  "city": "city",
+  "currency": "currency",
   "edit": "edit",
   "errorLogin": "errorLogin",
+  "errorTextProfile": "errorTextProfile",
+  "errorTitleProfile": "errorTitleProfile",
   "inputPassword": "inputPassword",
   "inputUsername": "inputUsername",
   "lang": "lang",
@@ -15,5 +22,7 @@
   "main": "main",
   "name": "name",
   "notFound": "notFound",
-  "profile": "profile"
+  "profile": "profile",
+  "save": "save",
+  "username": "username"
 }

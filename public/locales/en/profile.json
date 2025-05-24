@@ -2,5 +2,15 @@
   "profile": "Profile",
   "lastname": "Your last name",
   "name": "Your name",
+  "errorTitleProfile": "There was an error loading your profile.",
+  "errorTextProfile": "Try refreshing the page",
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Age",
+  "city": "City",
+  "username": "Username",
+  "avatar": "Avatar", 
+  "currency": "Currency", 
+  "country": "Country", 
   "edit": "Edit"
 }

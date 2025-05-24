@@ -2,6 +2,7 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import { buildCssLoader } from "./loaders/buildCssLoader";
 import { buildSvgLoader } from "./loaders/buildSvhLoader";
+import { buildFileLoader } from "./loaders/buildFileLoader";
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const svgLoader = buildSvgLoader();
@@ -26,14 +27,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     },
   };
 
-  const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-    use: [
-      {
-        loader: "file-loader",
-      },
-    ],
-  };
+  const fileLoader = buildFileLoader();
 
   const typescriptLoader = {
     test: /\.tsx?$/,
