@@ -9,8 +9,13 @@
   "age": "Age",
   "city": "City",
   "username": "Username",
-  "avatar": "Avatar", 
-  "currency": "Currency", 
-  "country": "Country", 
+  "avatar": "Avatar",
+  "currency": "Currency",
+  "country": "Country",
+  "errorFirstLastName": "First and last name are required",
+  "errorAge": "Incorrect age",
+  "errorCountry": "Incorrect country",
+  "errorData": "No data",
+  "errorServer": "Server error",
   "edit": "Edit"
 }

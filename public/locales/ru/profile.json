@@ -12,5 +12,10 @@
   "avatar": "Аватар",
   "currency": "Валюта",
   "country": "Страна",
+  "errorFirstLastName": "Имя и фамилия обязательны",
+  "errorAge": "Некорректный возраст",
+  "errorCountry": "Некорректная страна",
+  "errorData": "Данные не указаны",
+  "errorServer": "Ошибка сервера",
   "edit": "Редактировать"
 }
