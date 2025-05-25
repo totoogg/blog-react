@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ProfilePage from "./ProfilePage";
 import React from "react";
-import { StateSchema, StoreProvider } from "app/providers/StoryProvider";
+import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 import { profileReducer } from "entities/Profile";

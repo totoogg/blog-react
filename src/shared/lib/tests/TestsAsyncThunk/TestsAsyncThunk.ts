@@ -1,6 +1,6 @@
 import { AsyncThunkAction, Dispatch } from "@reduxjs/toolkit";
-import { StateSchema } from "app/providers/StoryProvider";
-import { ThunkExtraArg } from "app/providers/StoryProvider/config/StateSchema";
+import { StateSchema } from "app/providers/StoreProvider";
+import { ThunkExtraArg } from "app/providers/StoreProvider/config/StateSchema";
 import axios, { AxiosStatic } from "axios";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 

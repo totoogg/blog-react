@@ -1,7 +1,7 @@
 import { Preview } from "@storybook/react";
 import "../../src/app/styles/index.scss";
 import RouterDecorator from "../../src/shared/config/storybook/RouteDecorator/RouteDecorator";
-import { StoreProvider } from "../../src/app/providers/StoryProvider/ui/StoreProvider";
+import { StoreProvider } from "../../src/app/providers/StoreProvider/ui/StoreProvider";
 import { I18nextProvider } from "react-i18next";
 import { Suspense } from "react";
 import i18n from "i18next";
@@ -10,10 +10,12 @@ import enTranslations from "../../public/locales/en/translation.json";
 import enTranslationsAbout from "../../public/locales/en/about.json";
 import enTranslationsMain from "../../public/locales/en/main.json";
 import enTranslationsProfile from "../../public/locales/en/profile.json";
+import enTranslationsArticle from "../../public/locales/en/article.json";
 import ruTranslations from "../../public/locales/ru/translation.json";
 import ruTranslationsAbout from "../../public/locales/ru/about.json";
 import ruTranslationsMain from "../../public/locales/ru/main.json";
 import ruTranslationsProfile from "../../public/locales/ru/profile.json";
+import ruTranslationsArticle from "../../public/locales/ru/article.json";
 
 i18n.use(initReactI18next).init({
   lng: "en",
@@ -28,12 +30,14 @@ i18n.use(initReactI18next).init({
       about: enTranslationsAbout,
       main: enTranslationsMain,
       profile: enTranslationsProfile,
+      article: enTranslationsArticle,
     },
     ru: {
       translation: ruTranslations,
       about: ruTranslationsAbout,
       main: ruTranslationsMain,
       profile: ruTranslationsProfile,
+      article: ruTranslationsArticle,
     },
   },
 });

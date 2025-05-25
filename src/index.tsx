@@ -5,7 +5,7 @@ import { ThemeProvider } from "app/providers/ThemeProvider";
 import "shared/config/i18n/i18n";
 import { ErrorBoundary } from "app/providers/ErrorBoundary";
 import "app/styles/index.scss";
-import { StoreProvider } from "app/providers/StoryProvider";
+import { StoreProvider } from "app/providers/StoreProvider";
 
 const root = document.getElementById("root") as HTMLDivElement;
 
