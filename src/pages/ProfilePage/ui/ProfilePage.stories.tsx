@@ -1,6 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ProfilePage from "./ProfilePage";
 import React from "react";
+import { StateSchema, StoreProvider } from "app/providers/StoryProvider";
+import { ReducersMapObject } from "@reduxjs/toolkit";
+import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
+import { profileReducer } from "entities/Profile";
+import { Country } from "entities/Country";
+
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+  profile: profileReducer,
+};
 
 const meta = {
   title: "pages/ProfilePage",
@@ -12,7 +21,31 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {};
+export const Normal: Story = {
+  decorators: [
+    (Story) => (
+      <StoreProvider
+        asyncReducers={defaultAsyncReducers}
+        initialState={{
+          profile: {
+            form: {
+              username: "DmitrySmit",
+              age: 35,
+              country: Country.Russia,
+              lastname: "Smit",
+              first: "Dmitry",
+              city: "Tver",
+            },
+          },
+        }}
+      >
+        <div className="app">
+          <Story />
+        </div>
+      </StoreProvider>
+    ),
+  ],
+};
 
 export const Dark: Story = {
   decorators: [
@@ -25,9 +58,25 @@ export const Dark: Story = {
       }, []);
 
       return (
-        <div className="app app_dark_theme">
-          <Story />
-        </div>
+        <StoreProvider
+          asyncReducers={defaultAsyncReducers}
+          initialState={{
+            profile: {
+              form: {
+                username: "DmitrySmit",
+                age: 35,
+                country: Country.Russia,
+                lastname: "Smit",
+                first: "Dmitry",
+                city: "Tver",
+              },
+            },
+          }}
+        >
+          <div className="app app_dark_theme">
+            <Story />
+          </div>
+        </StoreProvider>
       );
     },
   ],

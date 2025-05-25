@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { CountrySelect } from "./CountrySelect";
 
 const meta = {
-  title: "entities/CurrencySelect",
+  title: "entities/CountrySelect",
   component: CountrySelect,
 
   tags: ["autodocs"],
@@ -12,12 +12,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {},
-};
+export const Primary: Story = {};
 
 export const Dark: Story = {
-  args: {},
   decorators: [
     (Story) => {
       useEffect(() => {

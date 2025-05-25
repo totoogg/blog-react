@@ -1,6 +1,5 @@
 import { FC, Suspense } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./LoginModal.module.scss";
 import { Modal } from "shared/ui/Modal/Modal";
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 import { Loader } from "shared/ui/Loader/Loader";
@@ -18,7 +17,7 @@ export const LoginModal: FC<LoginModalProps> = ({
 }) => {
   return (
     <Modal
-      className={classNames(cls.loginModal, {}, [className])}
+      className={classNames('', {}, [className])}
       isOpen={isOpen}
       onClose={onClose}
       lazy={true}

@@ -1,10 +1,20 @@
 import { AsyncThunkAction, Dispatch } from "@reduxjs/toolkit";
 import { StateSchema } from "app/providers/StoryProvider";
+import { ThunkExtraArg } from "app/providers/StoryProvider/config/StateSchema";
 import axios, { AxiosStatic } from "axios";
+import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 
-type ActionCreateType<Return, Arg, RejectValue> = (
+export type ActionCreateType<Return, Arg, RejectValue> = (
   arg: Arg
-) => AsyncThunkAction<Return, Arg, { rejectValue: RejectValue }>;
+) => AsyncThunkAction<
+  Return,
+  Arg,
+  {
+    rejectValue: RejectValue;
+    extra: ThunkExtraArg;
+    state: StateSchema;
+  }
+>;
 
 jest.mock("axios");
 
@@ -19,22 +29,23 @@ export class TestAsyncThunk<Return, Arg, RejectValue> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   navigate: jest.MockedFn<any>;
 
-  constructor(actionCreator: ActionCreateType<Return, Arg, RejectValue>) {
+  constructor(
+    actionCreator: ActionCreateType<Return, Arg, RejectValue>,
+    state?: DeepPartial<StateSchema>
+  ) {
     this.actionCreator = actionCreator;
     this.dispatch = jest.fn();
-    this.getState = jest.fn();
+    this.getState = jest.fn(() => (state || {}) as StateSchema);
 
     this.api = mockedAxios;
     this.navigate = jest.fn();
   }
 
-  async callThunk(arg: Arg) {
-    const action = this.actionCreator(arg);
-    const result = await action(this.dispatch, this.getState, {
+  async callThunk(arg?: Arg) {
+    const action = this.actionCreator(arg!);
+    return action(this.dispatch, this.getState, {
       api: this.api,
       navigate: this.navigate,
-    });
-
-    return result;
+    } as ThunkExtraArg);
   }
 }
