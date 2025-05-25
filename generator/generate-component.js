@@ -4,7 +4,7 @@ import process from "process";
 const componentName = process.argv[2];
 
 const templates = {
-  [`${componentName}.tsx`]: `import { FC } from "react";
+  [`${componentName}.tsx`]: `import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./${componentName}.module.scss";
 
@@ -12,11 +12,13 @@ interface ${componentName}Props {
   className?: string;
 }
 
-export const ${componentName}: FC<${componentName}Props> = ({ className }) => {
-  return <span className={classNames(cls.${
+export const ${componentName}: FC<${componentName}Props> = memo(({ className }) => {
+  return <div className={classNames(cls.${
     componentName[0].toLowerCase() + componentName.slice(1)
-  }, {}, [className])}></span>;
-};
+  }, {}, [className])}></div>;
+});
+
+${componentName}.displayName = '${componentName}'
 `,
   [`${componentName}.module.scss`]: `.${componentName.toLowerCase()} {  }`,
   [`${componentName}.stories.tsx`]: `import type { Meta, StoryObj } from "@storybook/react";

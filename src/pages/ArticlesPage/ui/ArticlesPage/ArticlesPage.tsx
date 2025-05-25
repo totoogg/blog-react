@@ -7,7 +7,7 @@ interface ArticlesPageProps {
 }
 
 const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
-  return <span className={classNames(cls.articlesPage, {}, [className])}></span>;
+  return <div className={classNames(cls.articlesPage, {}, [className])}></div>;
 };
 
 export default memo(ArticlesPage);

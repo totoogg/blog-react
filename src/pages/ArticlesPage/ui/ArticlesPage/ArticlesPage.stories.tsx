@@ -3,7 +3,7 @@ import  ArticlesPage from "./ArticlesPage";
 import React from "react";
 
 const meta = {
-  title: "ArticlesPage/ArticlesPage",
+  title: "pages/ArticlesPage",
   component: ArticlesPage,
 
   tags: ["autodocs"],
