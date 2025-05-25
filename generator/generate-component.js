@@ -13,7 +13,9 @@ interface ${componentName}Props {
 }
 
 export const ${componentName}: FC<${componentName}Props> = ({ className }) => {
-  return <span className={classNames(cls.${componentName.toLowerCase()}, {}, [className])}></span>;
+  return <span className={classNames(cls.${
+    componentName[0].toLowerCase() + componentName.slice(1)
+  }, {}, [className])}></span>;
 };
 `,
   [`${componentName}.module.scss`]: `.${componentName.toLowerCase()} {  }`,
