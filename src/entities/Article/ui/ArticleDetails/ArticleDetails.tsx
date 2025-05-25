@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from "react";
+import { FC, memo, useCallback, useEffect } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./ArticleDetails.module.scss";
 import {
@@ -14,9 +14,17 @@ import {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
 } from "../../model/selectors/articleDetails";
-import { Text, TextAlign } from "shared/ui/Text/Text";
+import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
+import { Avatar } from "shared/ui/Avatar/Avatar";
+import EyeIcon from "shared/assets/icons/eye-20-20.svg";
+import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
+import { Icon } from "shared/ui/Icon/Icon";
+import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
+import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
+import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
+import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -35,15 +43,48 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
     const data = useSelector(getArticleDetailsData);
     const { t } = useTranslation("article");
 
+    const renderBlock = useCallback((block: ArticleBlock) => {
+      switch (block.type) {
+        case ArticleBlockType.CODE:
+          return (
+            <ArticleCodeBlockComponent
+              key={block.id}
+              block={block}
+              className={cls.block}
+            />
+          );
+        case ArticleBlockType.IMAGE:
+          return (
+            <ArticleImageBlockComponent
+              key={block.id}
+              block={block}
+              className={cls.block}
+            />
+          );
+        case ArticleBlockType.TEXT:
+          return (
+            <ArticleTextBlockComponent
+              key={block.id}
+              className={cls.block}
+              block={block}
+            />
+          );
+        default:
+          return null;
+      }
+    }, []);
+
     useEffect(() => {
-      dispatch(fetchArticleById(id));
+      if (__PROJECT__ !== "storybook") {
+        dispatch(fetchArticleById(id));
+      }
     }, [dispatch, id]);
 
     let content;
 
     if (isLoading) {
       content = (
-        <div>
+        <>
           <Skeleton
             className={cls.avatar}
             width={200}
@@ -54,7 +95,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
           <Skeleton className={cls.skeleton} width={600} height={24} />
           <Skeleton className={cls.skeleton} width={"100%"} height={200} />
           <Skeleton className={cls.skeleton} width={"100%"} height={200} />
-        </div>
+        </>
       );
     } else if (error) {
       content = (
@@ -62,13 +103,26 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo(
       );
     } else {
       content = (
-        <div>
-          <h1>{data?.title}</h1>
-          <img src={data?.img} alt={data?.title} />
-          <div>{data?.subtitle}</div>
-          <div>{data?.views}</div>
-          <div>{data?.createdAt}</div>
-        </div>
+        <>
+          <div className={cls.avatarWrapper}>
+            <Avatar size={200} src={data?.img} className={cls.avatar} />
+          </div>
+          <Text
+            className={cls.title}
+            title={data?.title}
+            text={data?.subtitle}
+            size={TextSize.L}
+          />
+          <div className={cls.articleInfo}>
+            <Icon Svg={EyeIcon} className={cls.icon} />
+            <Text text={String(data?.views)} />
+          </div>
+          <div className={cls.articleInfo}>
+            <Icon Svg={CalendarIcon} className={cls.icon} />
+            <Text text={data?.createdAt} />
+          </div>
+          {data?.blocks.map(renderBlock)}
+        </>
       );
     }
 

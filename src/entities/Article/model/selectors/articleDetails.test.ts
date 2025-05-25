@@ -1,18 +1,11 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ArticleDetails } from "./ArticleDetails";
-import { useEffect } from "react";
-import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
+import { StateSchema } from "app/providers/StoreProvider";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
+import { ArticleBlockType, ArticleType } from "../types/article";
 import {
-  ArticleBlockType,
-  ArticleType,
-} from "entities/Article/model/types/article";
-
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
-  articleDetails: articleDetailsReducer,
-};
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+  getArticleDetailsData,
+} from "./articleDetails";
 
 const data = {
   id: "1",
@@ -47,109 +40,53 @@ const data = {
   ],
 };
 
-const meta = {
-  title: "entities/ArticleDetails",
-  component: ArticleDetails,
+describe("getArticleDetailsData", () => {
+  test("should return data", () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        data,
+      },
+    };
 
-  tags: ["autodocs"],
-} satisfies Meta<typeof ArticleDetails>;
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(data);
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined);
+  });
+});
 
-export const Dark: Story = {
-  args: {
-    id: "1",
-  },
-  decorators: [
-    (Story) => {
-      useEffect(() => {
-        document.body.classList.add("app_dark_theme");
-        return () => {
-          document.body.classList.remove("app_dark_theme");
-        };
-      }, []);
+describe("getArticleDetailsIsLoading", () => {
+  test("should return loading", () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        isLoading: true,
+      },
+    };
 
-      return (
-        <StoreProvider
-          asyncReducers={defaultAsyncReducers}
-          initialState={{
-            articleDetails: {
-              data,
-            },
-          }}
-        >
-          <div className="app app_dark_theme">
-            <Story />
-          </div>
-        </StoreProvider>
-      );
-    },
-  ],
-};
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
 
-export const Normal: Story = {
-  args: {
-    id: "1",
-  },
-  decorators: [
-    (Story) => (
-      <StoreProvider
-        asyncReducers={defaultAsyncReducers}
-        initialState={{
-          articleDetails: {
-            data,
-          },
-        }}
-      >
-        <div className="app">
-          <Story />
-        </div>
-      </StoreProvider>
-    ),
-  ],
-};
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(undefined);
+  });
+});
 
-export const Loading: Story = {
-  args: {
-    id: "1",
-  },
-  decorators: [
-    (Story) => (
-      <StoreProvider
-        asyncReducers={defaultAsyncReducers}
-        initialState={{
-          articleDetails: {
-            isLoading: true,
-          },
-        }}
-      >
-        <div className="app">
-          <Story />
-        </div>
-      </StoreProvider>
-    ),
-  ],
-};
+describe("getArticleDetailsError", () => {
+  test("should return error", () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        error: "error",
+      },
+    };
 
-export const Error: Story = {
-  args: {
-    id: "1",
-  },
-  decorators: [
-    (Story) => (
-      <StoreProvider
-        asyncReducers={defaultAsyncReducers}
-        initialState={{
-          articleDetails: {
-            error: "error",
-          },
-        }}
-      >
-        <div className="app">
-          <Story />
-        </div>
-      </StoreProvider>
-    ),
-  ],
-};
+    expect(getArticleDetailsError(state as StateSchema)).toEqual("error");
+  });
+  test("should work with empty state", () => {
+    const state: DeepPartial<StateSchema> = {};
+
+    expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
+  });
+});

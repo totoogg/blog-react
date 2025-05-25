@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text, TextTheme } from "./Text";
+import { Text, TextSize, TextTheme } from "./Text";
 import React from "react";
 
 const meta = {
@@ -104,4 +104,12 @@ export const OnlyTitleDark: Story = {
       );
     },
   ],
+};
+
+export const SizeL: Story = {
+  args: {
+    title: "Title",
+    text: "Text",
+    size: TextSize.L,
+  },
 };
