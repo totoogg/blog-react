@@ -13,6 +13,7 @@
   "inputUsername": "username",
   "inputPassword": "password",
   "authForm": "Auth Form",
+  "notComments": "There are no comments yet.",
   "errorLogin": "Wrong login or password",
   "notFound": "Page not found"
 }
