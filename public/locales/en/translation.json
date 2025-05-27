@@ -5,9 +5,10 @@
   "UpdatePage": "Update Page",
   "buttonError": "Throw Error",
   "buttonToggle": "toggle",
-  "main": "main",
-  "about": "about",
-  "profile": "profile",
+  "main": "Main",
+  "about": "About",
+  "profile": "Profile",
+  "articles": "Articles",
   "logIn": "LogIn",
   "logOut": "LogOut",
   "inputUsername": "username",
@@ -15,5 +16,7 @@
   "authForm": "Auth Form",
   "notComments": "There are no comments yet.",
   "errorLogin": "Wrong login or password",
+  "comment": "Enter your comment text",
+  "commentBtn": "Send",
   "notFound": "Page not found"
 }

@@ -7,6 +7,7 @@ import {
 } from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
 
 const data = {
+  id: "1",
   age: 10,
   lastname: "lastName",
   first: "name",

@@ -9,7 +9,7 @@ import {
   ProfileCard,
   profileReducer,
 } from "entities/Profile";
-import { FC, useCallback, useEffect } from "react";
+import { FC, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
@@ -23,6 +23,8 @@ import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -47,12 +49,13 @@ export const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     [ValidateProfileError.NO_DATA]: t("errorData"),
     [ValidateProfileError.SERVER_ERROR]: t("errorServer"),
   };
+  const { id } = useParams<{ id: string }>();
 
-  useEffect(() => {
-    if (__PROJECT__ !== "storybook") {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   const onChangeFirstname = useCallback(
     (value?: string) => {

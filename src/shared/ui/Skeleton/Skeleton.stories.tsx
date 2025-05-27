@@ -3,7 +3,7 @@ import { Skeleton } from "./Skeleton";
 import React from "react";
 
 const meta = {
-  title: "Skeleton/Skeleton",
+  title: "shared/Skeleton",
   component: Skeleton,
 
   tags: ["autodocs"],

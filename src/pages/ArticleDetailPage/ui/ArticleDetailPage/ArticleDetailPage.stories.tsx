@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ArticleDetailPage from "./ArticleDetailPage";
-import React from "react";
 import {
   ArticleType,
   ArticleBlockType,
