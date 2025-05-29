@@ -23,6 +23,7 @@ import { AddCommentForm } from "features/addCommentForm";
 import { addCommentForArticle } from "../../model/service/addCommentForArticle/addCommentForArticle";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { RouterPath } from "shared/config/routerConfig/routerConfig";
+import { Page } from "shared/ui/Page/Page";
 
 interface ArticleDetailPageProps {
   className?: string;
@@ -57,15 +58,15 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = ({ className }) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.articleDetailPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailPage, {}, [className])}>
         {t("articleError")}
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.articleDetailPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailPage, {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
           {t("back")}
         </Button>
@@ -73,7 +74,7 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = ({ className }) => {
         <Text className={cls.commentTitle} title={t("comment")} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };
