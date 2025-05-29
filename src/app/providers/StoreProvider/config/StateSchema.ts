@@ -13,6 +13,7 @@ import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { LoginSchema } from "features/AuthByUsername";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailPage";
+import { ArticlePageSchema } from "pages/ArticlesPage";
 import { NavigateOptions, To } from "react-router-dom";
 
 export interface StateSchema {
@@ -23,6 +24,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
+  articlePage?: ArticlePageSchema;
 }
 
 export interface ReducerManager {

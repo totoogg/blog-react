@@ -7,7 +7,7 @@ import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkele
 
 interface ArticleListProps {
   className?: string;
-  article: Article[];
+  articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
 }
@@ -20,7 +20,7 @@ const getSkeletons = (view: ArticleView) =>
     ));
 
 export const ArticleList: FC<ArticleListProps> = memo(
-  ({ className, article, isLoading, view = ArticleView.SMALL }) => {
+  ({ className, articles, isLoading, view = ArticleView.SMALL }) => {
     const renderArticle = (article: Article) => (
       <ArticleListItem
         view={view}
@@ -42,7 +42,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
 
     return (
       <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-        {article.length > 0 ? article.map(renderArticle) : null}
+        {articles.length > 0 ? articles.map(renderArticle) : null}
       </div>
     );
   }
