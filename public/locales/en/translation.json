@@ -18,5 +18,6 @@
   "errorLogin": "Wrong login or password",
   "comment": "Enter your comment text",
   "commentBtn": "Send",
+  "readMore": "Read More...",
   "notFound": "Page not found"
 }

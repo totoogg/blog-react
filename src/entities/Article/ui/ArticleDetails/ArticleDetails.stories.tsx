@@ -22,6 +22,10 @@ const data = {
   views: 1022,
   createdAt: "26.02.2024",
   type: [ArticleType.IT],
+  user: {
+    id: "1",
+    username: "XXXXX",
+  },
   blocks: [
     {
       id: "1",
@@ -48,7 +52,7 @@ const data = {
 };
 
 const meta = {
-  title: "entities/ArticleDetails",
+  title: "entities/Article/ArticleDetails",
   component: ArticleDetails,
 
   tags: ["autodocs"],

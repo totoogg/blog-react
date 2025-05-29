@@ -7,6 +7,7 @@
   "articleError": "articleError",
   "authForm": "authForm",
   "avatar": "avatar",
+  "back": "back",
   "buttonError": "buttonError",
   "cancel": "cancel",
   "city": "city",
@@ -34,6 +35,7 @@
   "notComments": "notComments",
   "notFound": "notFound",
   "profile": "profile",
+  "readMore": "readMore",
   "save": "save",
   "username": "username"
 }

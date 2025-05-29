@@ -19,7 +19,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -180,13 +183,13 @@
     },
     {
       "id": "2",
-      "first": "ффф",
+      "first": "asd",
       "lastname": "asf",
       "age": 465,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
-      "username": "ыыыы",
+      "username": "sssdd",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ]
