@@ -18,3 +18,8 @@ declare module "*.svg" {
 declare const __IS_DEV__: boolean;
 declare const __API__: string;
 declare const __PROJECT__: "storybook" | "frontend" | "jest";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type OptionalRecord<K extends keyof any, T> = {
+  [P in K]?: T;
+};

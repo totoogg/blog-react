@@ -33,7 +33,7 @@ export const IsLoadingBig: Story = {
   args: {
     isLoading: true,
     view: ArticleView.BIG,
-    article: [],
+    articles: [],
   },
 };
 
@@ -41,7 +41,7 @@ export const IsLoadingSmall: Story = {
   args: {
     isLoading: true,
     view: ArticleView.SMALL,
-    article: [],
+    articles: [],
   },
 };
 
@@ -49,7 +49,7 @@ export const IsLoadingDarkBig: Story = {
   args: {
     isLoading: true,
     view: ArticleView.BIG,
-    article: [],
+    articles: [],
   },
   decorators: [
     (Story) => {
@@ -73,7 +73,7 @@ export const IsLoadingDarkSmall: Story = {
   args: {
     isLoading: true,
     view: ArticleView.SMALL,
-    article: [],
+    articles: [],
   },
   decorators: [
     (Story) => {
@@ -97,7 +97,7 @@ export const ListBig: Story = {
   args: {
     isLoading: false,
     view: ArticleView.BIG,
-    article: [article, article],
+    articles: [article, article],
   },
 };
 
@@ -105,6 +105,6 @@ export const ListSmall: Story = {
   args: {
     isLoading: false,
     view: ArticleView.SMALL,
-    article: [article, article],
+    articles: [article, article],
   },
 };
