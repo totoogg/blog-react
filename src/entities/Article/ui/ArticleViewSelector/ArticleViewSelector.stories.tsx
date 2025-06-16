@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ArticleViewSelector } from "./ArticleViewSelector";
 import React from "react";
+import { ArticleView } from "entities/Article/model/types/article";
 
 const meta = {
-  title: "ArticleViewSelector/ArticleViewSelector",
+  title: "entities/Article/ArticleViewSelector",
   component: ArticleViewSelector,
 
   tags: ["autodocs"],
@@ -12,9 +13,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {};
+export const Normal: Story = {
+  args: {
+    view: ArticleView.BIG,
+  },
+};
 
 export const Dark: Story = {
+  args: {
+    view: ArticleView.BIG,
+  },
   decorators: [
     (Story) => {
       React.useEffect(() => {

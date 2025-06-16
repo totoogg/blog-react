@@ -19,5 +19,18 @@
   "comment": "Введите текст комментария",
   "commentBtn": "Отправить",
   "readMore": "Читать далее...",
+  "labelSort": "Сортировать по",
+  "labelAsc": "возростанию",
+  "labelDesc": "убыванию",
+  "Search": "Поиск",
+  "OrderBy": "по",
+  "sortDate": "дате создания",
+  "sortTitle": "названию",
+  "sortView": "просмотрам",
+  "IT": "Айти",
+  "ECONOMICS": "Экономика",
+  "SCIENCE": "Наука",
+  "ALL": "Все статьи",
+  "ArticleNotFound": "Статьи не найдены",
   "notFound": "Страница не найдена"
 }

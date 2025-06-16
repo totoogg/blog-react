@@ -18,6 +18,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({
   initialTheme,
 }) => {
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+  document.body.className = theme;
 
   const defaultProps = useMemo(
     () => ({

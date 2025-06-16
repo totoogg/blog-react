@@ -12,9 +12,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {};
+export const Normal: Story = {
+  args: {
+    children: "Text",
+  },
+};
 
 export const Dark: Story = {
+  args: {
+    children: "Text",
+  },
   decorators: [
     (Story) => {
       React.useEffect(() => {

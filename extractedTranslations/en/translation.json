@@ -1,5 +1,14 @@
 {
+  "ALL": "ALL",
+  "ArticleNotFound": "ArticleNotFound",
+  "Big": "Big",
+  "ECONOMICS": "ECONOMICS",
   "ErrorText": "ErrorText",
+  "IT": "IT",
+  "OrderBy": "OrderBy",
+  "SCIENCE": "SCIENCE",
+  "Search": "Search",
+  "Small": "Small",
   "UpdatePage": "UpdatePage",
   "about": "about",
   "age": "age",
@@ -26,6 +35,9 @@
   "errorTitleProfile": "errorTitleProfile",
   "inputPassword": "inputPassword",
   "inputUsername": "inputUsername",
+  "labelAsc": "labelAsc",
+  "labelDesc": "labelDesc",
+  "labelSort": "labelSort",
   "lang": "lang",
   "lastname": "lastname",
   "logIn": "logIn",
@@ -37,5 +49,8 @@
   "profile": "profile",
   "readMore": "readMore",
   "save": "save",
+  "sortDate": "sortDate",
+  "sortTitle": "sortTitle",
+  "sortView": "sortView",
   "username": "username"
 }

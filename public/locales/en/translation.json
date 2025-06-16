@@ -19,5 +19,18 @@
   "comment": "Enter your comment text",
   "commentBtn": "Send",
   "readMore": "Read More...",
+  "labelSort": "Sort by",
+  "labelAsc": "asc",
+  "labelDesc": "desc",
+  "OrderBy": "by",
+  "Search": "Search",
+  "sortDate": "create date",
+  "sortTitle": "title",
+  "sortView": "view",
+  "IT": "IT",
+  "ECONOMICS": "Economics",
+  "SCIENCE": "Science",
+  "ALL": "All articles",
+  "ArticleNotFound": "Articles didn't find",
   "notFound": "Page not found"
 }

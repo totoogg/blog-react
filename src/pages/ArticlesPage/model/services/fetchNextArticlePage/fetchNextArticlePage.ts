@@ -20,6 +20,6 @@ export const fetchNextArticlePage = createAsyncThunk<
 
   if (hasMore && !isLoading) {
     dispatch(articlePageAction.setPage(page + 1));
-    (dispatch as AppDispatch)(fetchArticlesList({ page: page + 1 }));
+    (dispatch as AppDispatch)(fetchArticlesList({}));
   }
 });

@@ -1,20 +1,34 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import  ArticlesPage from "./ArticlesPage";
+import { ArticleSortSelector } from "./ArticleSortSelector";
 import React from "react";
+import { ArticleSortField } from "entities/Article/model/types/article";
 
 const meta = {
-  title: "pages/Article/ArticlesPage",
-  component: ArticlesPage,
+  title: "entities/Article/ArticleSortSelector",
+  component: ArticleSortSelector,
 
   tags: ["autodocs"],
-} satisfies Meta<typeof ArticlesPage>;
+} satisfies Meta<typeof ArticleSortSelector>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {};
+export const Normal: Story = {
+  args: {
+    sort: ArticleSortField.CREATED,
+    order: "asc",
+    onChangeOrder: () => {},
+    onChangeSort: () => {},
+  },
+};
 
 export const Dark: Story = {
+  args: {
+    sort: ArticleSortField.CREATED,
+    order: "asc",
+    onChangeOrder: () => {},
+    onChangeSort: () => {},
+  },
   decorators: [
     (Story) => {
       React.useEffect(() => {
