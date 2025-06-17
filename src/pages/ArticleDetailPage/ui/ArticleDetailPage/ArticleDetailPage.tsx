@@ -3,7 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./ArticleDetailPage.module.scss";
 import { useTranslation } from "react-i18next";
 import { ArticleDetails, ArticleList } from "entities/Article";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
 import {
@@ -18,13 +18,12 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { AddCommentForm } from "features/addCommentForm";
 import { addCommentForArticle } from "../../model/service/addCommentForArticle/addCommentForArticle";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { RouterPath } from "shared/config/routerConfig/routerConfig";
 import { Page } from "widgets/Page/Page";
 import { getArticleRecommendations } from "../../model/slices/articleDetailsRecommendationSlice";
 import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
 import { fetchArticleRecommendations } from "../../model/service/fetchArticleRecommendations/fetchArticleRecommendations";
 import { articleDetailsPageReducer } from "../../model/slices";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailPageProps {
   className?: string;
@@ -44,11 +43,6 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = ({ className }) => {
     getArticleRecommendationsIsLoading
   );
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-
-  const onBackToList = useCallback(() => {
-    navigate(RouterPath.articles);
-  }, [navigate]);
 
   const onSendComment = useCallback(
     (value: string) => {
@@ -73,9 +67,7 @@ const ArticleDetailPage: FC<ArticleDetailPageProps> = ({ className }) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailPage, {}, [className])}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-          {t("back")}
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           size={TextSize.L}

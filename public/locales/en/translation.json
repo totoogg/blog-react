@@ -32,5 +32,10 @@
   "SCIENCE": "Science",
   "ALL": "All articles",
   "ArticleNotFound": "Articles didn't find",
+  "edit": "Edit",
+  "createArticle": "Create new article",
+  "editArticle": "Edit article with ID = ",
+  "name": "App",
+  "createArticleBtn": "Create Article",
   "notFound": "Page not found"
 }

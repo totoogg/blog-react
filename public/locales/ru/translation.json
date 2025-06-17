@@ -32,5 +32,10 @@
   "SCIENCE": "Наука",
   "ALL": "Все статьи",
   "ArticleNotFound": "Статьи не найдены",
+  "edit": "Редактировать",
+  "createArticle": "Создание новой статьи",
+  "editArticle": "Редактирование статьи с ID = ",
+  "name": "App",
+  "createArticleBtn": "Создать статью",
   "notFound": "Страница не найдена"
 }
