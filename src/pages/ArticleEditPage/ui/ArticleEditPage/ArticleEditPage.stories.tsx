@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ArticleEditPage } from "./ArticleEditPage";
+import ArticleEditPage from "./ArticleEditPage";
 import React from "react";
 
 const meta = {
