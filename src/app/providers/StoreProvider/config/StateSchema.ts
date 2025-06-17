@@ -13,7 +13,7 @@ import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { LoginSchema } from "features/AuthByUsername";
 import { UISchema } from "features/UI";
-import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailPage";
+import { ArticleDetailsPageSchema } from "pages/ArticleDetailPage";
 import { ArticlePageSchema } from "pages/ArticlesPage";
 
 export interface StateSchema {
@@ -23,9 +23,9 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema;
   articleDetails?: ArticleDetailsSchema;
-  articleDetailsComments?: ArticleDetailsCommentsSchema;
   addCommentForm?: AddCommentFormSchema;
   articlePage?: ArticlePageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;

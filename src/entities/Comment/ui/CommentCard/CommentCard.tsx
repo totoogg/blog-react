@@ -45,7 +45,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
           ) : null}
           <Text className={cls.username} title={comment.user.username} />
         </AppLink>
-        <Text className={cls.text} text={comment.user.username} />
+        <Text className={cls.text} text={comment.text} />
       </div>
     );
   }
