@@ -16,6 +16,8 @@ interface PageProps {
   onScrollEnd?: () => void;
 }
 
+export const PAGE_ID = "PAGE_ID";
+
 export const Page: FC<PageProps> = memo(
   ({ className, children, onScrollEnd }) => {
     const wrapperRef = useRef(null) as React.RefObject<HTMLDivElement | null>;
@@ -52,6 +54,7 @@ export const Page: FC<PageProps> = memo(
         ref={wrapperRef}
         className={classNames(cls.page, {}, [className])}
         onScroll={onScroll}
+        id={PAGE_ID}
       >
         {children}
         {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
