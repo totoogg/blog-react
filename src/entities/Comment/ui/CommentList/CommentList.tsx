@@ -1,9 +1,9 @@
 import { FC, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import cls from "./CommentList.module.scss";
 import { useTranslation } from "react-i18next";
 import { CommentCard } from "../CommentCard/CommentCard";
 import { Comment } from "../../model/types/comment";
+import { VStack } from "shared/ui/Stack";
 
 interface CommentListProps {
   className?: string;
@@ -17,20 +17,19 @@ export const CommentList: FC<CommentListProps> = memo(
 
     if (isLoading) {
       return (
-        <div className={classNames(cls.commentList, {}, [className])}>
+        <VStack gap="16" max className={classNames("", {}, [className])}>
           <CommentCard isLoading />
           <CommentCard isLoading />
           <CommentCard isLoading />
-        </div>
+        </VStack>
       );
     }
 
     return (
-      <div className={classNames(cls.commentList, {}, [className])}>
+      <VStack gap="16" max className={classNames("", {}, [className])}>
         {comments?.length ? (
           comments.map((comment) => (
             <CommentCard
-              className={cls.comment}
               comment={comment}
               key={comment.id}
               isLoading={isLoading}
@@ -39,7 +38,7 @@ export const CommentList: FC<CommentListProps> = memo(
         ) : (
           <div>{t("notComments")}</div>
         )}
-      </div>
+      </VStack>
     );
   }
 );
