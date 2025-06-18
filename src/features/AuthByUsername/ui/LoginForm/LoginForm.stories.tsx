@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 import { ReducersMapObject } from "@reduxjs/toolkit";
-import { loginReducer } from "features/AuthByUsername/model/slice/loginSlice";
+import { loginReducer } from "../../model/slice/loginSlice";
 import { fn } from "@storybook/test";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {

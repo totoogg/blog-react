@@ -10,7 +10,7 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
   return `?${searchParams.toString()}`;
 }
 
-/*
+/**
  * Функция добавления параметров строки запроса в URL
  * @param params
  */
