@@ -8,7 +8,7 @@ import i18next from "eslint-plugin-i18next";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig([
-  globalIgnores(["./node_modules/*", "./build/*"]),
+  globalIgnores(["./node_modules/*", "./build/*", "./scripts/*"]),
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     plugins: { js },
