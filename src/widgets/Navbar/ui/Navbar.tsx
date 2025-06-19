@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routerConfig/routerConfig";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
   className?: string;
@@ -41,16 +43,28 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           className={cls.appName}
           title={t("name")}
         />
-        <AppLink theme={AppLinkTheme.SECONDARY} to={RouterPath.article_create} className={cls.createBtn}>
+        <AppLink
+          theme={AppLinkTheme.SECONDARY}
+          to={RouterPath.article_create}
+          className={cls.createBtn}
+        >
           {t("createArticleBtn")}
         </AppLink>
-        <Button
-          theme={ButtonTheme.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogOut}
-        >
-          {t("logOut")}
-        </Button>
+        <Dropdown
+          direction="bottom left"
+          className={cls.dropdown}
+          items={[
+            {
+              content: t("logOut"),
+              onClick: onLogOut,
+            },
+            {
+              content: t("profile"),
+              href: RouterPath.profile + authData.id,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       </header>
     );

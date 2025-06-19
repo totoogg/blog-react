@@ -34,7 +34,7 @@ export const CountrySelect: FC<CountrySelectProps> = memo(
         items={options}
         onChange={onChangeHandler}
         readonly={readonly}
-        direction="top"
+        direction="top right"
         label={t("country")}
       />
     );
