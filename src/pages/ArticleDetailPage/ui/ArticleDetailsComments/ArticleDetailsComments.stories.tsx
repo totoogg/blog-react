@@ -1,20 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import  ArticlesPage from "./ArticlesPage";
+import { ArticleDetailsComments } from "./ArticleDetailsComments";
 import React from "react";
 
 const meta = {
-  title: "pages/ArticlesPage/ArticlesPage",
-  component: ArticlesPage,
+  title: "pages/ArticleDetailPage/ArticleDetailsComments",
+  component: ArticleDetailsComments,
 
   tags: ["autodocs"],
-} satisfies Meta<typeof ArticlesPage>;
+} satisfies Meta<typeof ArticleDetailsComments>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {};
+export const Normal: Story = {
+  args: {
+    id: "1",
+  },
+};
 
 export const Dark: Story = {
+  args: {
+    id: "1",
+  },
   decorators: [
     (Story) => {
       React.useEffect(() => {

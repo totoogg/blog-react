@@ -1,19 +1,37 @@
-module.exports = (layer, componentName) => `import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+module.exports = (
+  layer,
+  componentName
+) => `import type { Meta, StoryObj } from "@storybook/react";
+import { ${componentName} } from "./${componentName}";
+import React from "react";
 
-import { ${componentName} } from './${componentName}';
+const meta = {
+  title: "${layer}/${componentName}",
+  component: ${componentName},
 
-export default {
-    title: '${layer}/${componentName}',
-    component: ${componentName},
-    argTypes: {
-        backgroundColor: { control: 'color' },
+  tags: ["autodocs"],
+} satisfies Meta<typeof ${componentName}>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Normal: Story = {};
+
+export const Dark: Story = {
+  decorators: [
+    (Story) => {
+      React.useEffect(() => {
+        document.body.classList.add("app_dark_theme");
+        return () => {
+          document.body.classList.remove("app_dark_theme");
+        };
+      }, []);
+
+      return (
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      );
     },
-} as ComponentMeta<typeof ${componentName}>;
-
-const Template: ComponentStory<typeof ${componentName}> = (args) => <${componentName} {...args} />;
-
-export const Normal = Template.bind({});
-Normal.args = {
-   
+  ],
 };`;

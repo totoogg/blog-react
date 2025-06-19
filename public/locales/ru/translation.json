@@ -37,5 +37,6 @@
   "editArticle": "Редактирование статьи с ID = ",
   "name": "App",
   "createArticleBtn": "Создать статью",
+  "errorArticle": "Ошибка при загрузки статьи",
   "notFound": "Страница не найдена"
 }

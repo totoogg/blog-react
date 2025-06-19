@@ -1,7 +1,7 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 import { getProfileValidateErrors } from "./getProfileValidateErrors";
-import { ValidateProfileError } from "../../types/profile";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 describe("getProfileValidateErrors", () => {
   test("should return validate errors", () => {

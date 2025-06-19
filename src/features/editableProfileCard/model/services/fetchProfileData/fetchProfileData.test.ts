@@ -1,4 +1,4 @@
-import { Profile } from "../../types/profile";
+import { Profile } from "entities/Profile";
 import { fetchProfileData } from "./fetchProfileData";
 import {
   ActionCreateType,

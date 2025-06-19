@@ -1,8 +1,11 @@
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
 import { profileActions, profileReducer } from "./profileSlice";
-import { ProfileSchema, ValidateProfileError } from "../types/profile";
 import { Country } from "entities/Country";
 import { updateProfileData } from "../services/updateProfileData/updateProfileData";
+import {
+  ProfileSchema,
+  ValidateProfileError,
+} from "../types/editableProfileCardSchema";
 
 const data = {
   age: 10,

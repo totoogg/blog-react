@@ -1,10 +1,11 @@
 import { Country } from "entities/Country";
-import { Profile, ValidateProfileError } from "../../types/profile";
 import { updateProfileData } from "./updateProfileData";
 import {
   ActionCreateType,
   TestAsyncThunk,
 } from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
+import { Profile } from "entities/Profile";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 const data = {
   id: "1",

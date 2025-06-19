@@ -16,6 +16,7 @@
   "errorAge": "Incorrect age",
   "errorCountry": "Incorrect country",
   "errorData": "No data",
+  "errorProfile": "Profile not found",
   "errorServer": "Server error",
   "edit": "Edit"
 }

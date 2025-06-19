@@ -37,5 +37,6 @@
   "editArticle": "Edit article with ID = ",
   "name": "App",
   "createArticleBtn": "Create Article",
+  "errorArticle": "Error loading article",
   "notFound": "Page not found"
 }

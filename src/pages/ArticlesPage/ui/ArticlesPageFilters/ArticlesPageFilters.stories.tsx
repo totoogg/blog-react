@@ -3,7 +3,7 @@ import { ArticlesPageFilters } from "./ArticlesPageFilters";
 import React from "react";
 
 const meta = {
-  title: "pages/Article/ArticlesPageFilters",
+  title: "pages/ArticlesPage/ArticlesPageFilters",
   component: ArticlesPageFilters,
 
   tags: ["autodocs"],

@@ -3,7 +3,7 @@ import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader";
 import React from "react";
 
 const meta = {
-  title: "ArticleDetailsPageHeader/ArticleDetailsPageHeader",
+  title: "pages/ArticleDetailPage/ArticleDetailsPageHeader",
   component: ArticleDetailsPageHeader,
 
   tags: ["autodocs"],

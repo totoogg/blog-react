@@ -3,7 +3,7 @@ import ArticleEditPage from "./ArticleEditPage";
 import React from "react";
 
 const meta = {
-  title: "ArticleEditPage/ArticleEditPage",
+  title: "pages/ArticleEditPage/ArticleEditPage",
   component: ArticleEditPage,
 
   tags: ["autodocs"],

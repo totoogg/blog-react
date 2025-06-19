@@ -4,8 +4,8 @@ import React from "react";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
-import { profileReducer } from "entities/Profile";
 import { Country } from "entities/Country";
+import { profileReducer } from "features/editableProfileCard";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   profile: profileReducer,

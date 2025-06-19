@@ -1,6 +1,6 @@
 import { Country } from "entities/Country";
-import { ValidateProfileError } from "../../types/profile";
 import { validateProfileData } from "./validateProfileData";
+import { ValidateProfileError } from "../../types/editableProfileCardSchema";
 
 const data = {
   age: 10,

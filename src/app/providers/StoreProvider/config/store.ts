@@ -13,6 +13,7 @@ import { counterReducer } from "entities/Counter";
 import { createReducerManager } from "./reducerManager";
 import { $api } from "shared/api/api";
 import { uiReducer } from "features/UI";
+import { rtkApi } from "shared/api/rtkApi";
 
 export const createReduxStore = (
   initialState?: StateSchema,
@@ -23,6 +24,7 @@ export const createReduxStore = (
     counter: counterReducer,
     user: userReducer,
     ui: uiReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -35,12 +37,18 @@ export const createReduxStore = (
     reducer: reducerManager.reduce as Reducer<StateSchema>,
     devTools: __IS_DEV__,
     preloadedState: initialState,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware({
+    middleware: (getDefaultMiddleware) => {
+      const defaultMiddleware = getDefaultMiddleware({
         thunk: {
           extraArgument: extraArg,
         },
-      }) as Tuple<[Middleware]>,
+      });
+
+      return new Tuple(
+        ...defaultMiddleware,
+        rtkApi.middleware as Middleware<object, StateSchema>
+      ) as Tuple<[Middleware]>;
+    },
   });
 
   // @ts-expect-error-next-line
