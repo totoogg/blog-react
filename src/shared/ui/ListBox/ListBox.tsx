@@ -7,7 +7,6 @@ import {
 import { Fragment } from "react";
 import cls from "./ListBox.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button } from "../Button/Button";
 import { HStack } from "../Stack";
 import { DropdownDirection } from "shared/types/ui";
 
@@ -60,7 +59,7 @@ export function ListBox(props: ListBoxProps) {
         onChange={onChange}
       >
         <ListboxButton disabled={readonly} className={cls.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          {value ?? defaultValue}
         </ListboxButton>
         <ListboxOptions
           className={classNames(cls.options, {}, optionsClasses)}
