@@ -38,5 +38,7 @@
   "name": "App",
   "createArticleBtn": "Create Article",
   "errorArticle": "Error loading article",
+  "admin": "Admin Panel",
+  "forbiddenPage": "You do not have access to this page.",
   "notFound": "Page not found"
 }
