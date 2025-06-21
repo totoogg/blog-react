@@ -6,10 +6,12 @@ import {
 } from "@headlessui/react";
 import { Fragment } from "react";
 import cls from "./ListBox.module.scss";
+import popupCls from "../../styles/popup.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Button } from "../Button/Button";
-import { HStack } from "../Stack";
+import { Button } from "../../../Button/Button";
+import { HStack } from "../../../Stack";
 import { DropdownDirection } from "shared/types/ui";
+import { mapDirectionClass } from "../../styles/consts";
 
 export interface ListBoxItem {
   value: string;
@@ -27,13 +29,6 @@ interface ListBoxProps {
   direction?: DropdownDirection;
   label?: string;
 }
-
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  "bottom left": cls.optionsBottomLeft,
-  "bottom right": cls.optionsBottomRight,
-  "top left": cls.optionsTopLeft,
-  "top right": cls.optionsTopRight,
-};
 
 export function ListBox(props: ListBoxProps) {
   const {
@@ -55,7 +50,7 @@ export function ListBox(props: ListBoxProps) {
       <HListbox
         disabled={readonly}
         as={"div"}
-        className={classNames(cls.listBox, {}, [className])}
+        className={classNames(cls.listBox, {}, [className, popupCls.popup])}
         value={value}
         onChange={onChange}
       >
@@ -76,8 +71,8 @@ export function ListBox(props: ListBoxProps) {
               {({ focus, selected }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.focus]: focus,
-                    [cls.disabled]: item.disabled,
+                    [popupCls.focus]: focus,
+                    [popupCls.disabled]: item.disabled,
                   })}
                 >
                   {selected && "!!!"}

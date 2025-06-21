@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
 import React from "react";
-import { Button } from "../Button/Button";
+import { Button } from "../../../Button/Button";
 
 const meta = {
   title: "Dropdown/Dropdown",
