@@ -5,10 +5,8 @@ import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
-import {
-  ArticleBlockType,
-  ArticleType,
-} from "../../model/types/article";
+import { ArticleType } from "entities/Article/model/consts/consts";
+import { ArticleBlockType } from "entities/Article/model/consts/consts";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   articleDetails: articleDetailsReducer,

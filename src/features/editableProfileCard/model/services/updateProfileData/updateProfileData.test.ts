@@ -5,7 +5,7 @@ import {
   TestAsyncThunk,
 } from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
 import { Profile } from "entities/Profile";
-import { ValidateProfileError } from "../../types/editableProfileCardSchema";
+import { ValidateProfileError } from "../../consts/consts";
 
 const data = {
   id: "1",

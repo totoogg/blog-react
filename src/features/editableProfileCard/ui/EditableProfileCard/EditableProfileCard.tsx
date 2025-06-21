@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { memo, useCallback } from "react";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
-import { ValidateProfileError } from "../../model/types/editableProfileCardSchema";
+import { ValidateProfileError } from "../../model/consts/consts";
 import { ProfileCard } from "entities/Profile";
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";

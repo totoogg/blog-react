@@ -14,7 +14,8 @@
     "paths": {
       "*": ["./src/*"],
       "entities/*": ["src/entities/*"]
-    }
+    },
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {

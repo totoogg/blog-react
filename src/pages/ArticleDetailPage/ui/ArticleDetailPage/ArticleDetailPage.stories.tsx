@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ArticleDetailPage from "./ArticleDetailPage";
-import {
-  ArticleType,
-  ArticleBlockType,
-} from "entities/Article/model/types/article";
+import { ArticleType } from "entities/Article/model/consts/consts";
+import { ArticleBlockType } from "entities/Article/model/consts/consts";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";

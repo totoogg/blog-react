@@ -1,6 +1,7 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
-import { ArticleBlockType, ArticleType } from "../types/article";
+import { ArticleType } from "../consts/consts";
+import { ArticleBlockType } from "../consts/consts";
 import {
   getArticleDetailsError,
   getArticleDetailsIsLoading,

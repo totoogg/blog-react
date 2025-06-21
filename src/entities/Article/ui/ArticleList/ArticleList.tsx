@@ -1,7 +1,8 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./ArticleList.module.scss";
-import { Article, ArticleView } from "../../model/types/article";
+import { Article } from "../../model/types/article";
+import { ArticleView } from "../../model/consts/consts";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import { Text, TextSize } from "shared/ui/Text/Text";
