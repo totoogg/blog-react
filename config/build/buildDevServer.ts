@@ -7,5 +7,19 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     open: true,
     historyApiFallback: true,
     hot: true,
+    client: {
+      overlay: {
+        runtimeErrors: (error) => {
+          if (
+            error?.message ===
+            "ResizeObserver loop completed with undelivered notifications."
+          ) {
+            console.error(error);
+            return false;
+          }
+          return true;
+        },
+      },
+    },
   };
 }

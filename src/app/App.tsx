@@ -8,6 +8,10 @@ import { useDispatch } from "react-redux";
 import { getUserInited, userActions } from "entities/User";
 import { useSelector } from "react-redux";
 
+window.addEventListener("error", (e) => {
+  if (e.message.includes("ResizeObserver")) e.preventDefault();
+});
+
 export const App = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();

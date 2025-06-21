@@ -4,7 +4,8 @@
 @use "themes/normal";
 @use "themes/orange";
 
-body {
+body,
+.app_drawer {
   font: var(--font-m);
   color: var(--primary-color);
 }

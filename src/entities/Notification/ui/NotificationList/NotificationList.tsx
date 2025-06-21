@@ -17,15 +17,17 @@ export const NotificationList: FC<NotificationListProps> = memo(
     });
 
     if (isLoading) {
-      <VStack
-        max
-        gap="16"
-        className={classNames(cls.notificationList, {}, [className])}
-      >
-        <Skeleton width="100%" border="8px" height="80px" />
-        <Skeleton width="100%" border="8px" height="80px" />
-        <Skeleton width="100%" border="8px" height="80px" />
-      </VStack>;
+      return (
+        <VStack
+          max
+          gap="16"
+          className={classNames(cls.notificationList, {}, [className])}
+        >
+          <Skeleton width="100px" border="8px" height="80px" />
+          <Skeleton width="100px" border="8px" height="80px" />
+          <Skeleton width="100px" border="8px" height="80px" />
+        </VStack>
+      );
     }
 
     return (
