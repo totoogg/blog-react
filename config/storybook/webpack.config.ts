@@ -2,21 +2,48 @@ import webpack, { DefinePlugin } from "webpack";
 import { BuildPaths } from "../build/types/config";
 import { buildCssLoader } from "../build/loaders/buildCssLoader";
 import path from "path";
-import { buildSvgLoader } from "../build/loaders/buildSvhLoader";
+import { buildSvgLoader } from "../build/loaders/buildSvgLoader";
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     build: "",
     html: "",
     entry: "",
-    src: path.resolve(__dirname, "..", "..", "src"),
     buildLocales: "",
     locales: "",
+    src: path.resolve(__dirname, "..", "..", "src"),
   };
-  config.resolve?.modules?.push(paths.src);
-  config.resolve?.extensions?.push(".ts", ".tsx", ".js");
-  config.module?.rules?.push(buildCssLoader(true));
-  config.module?.rules?.map((rule) => {
+
+  const rootPath = path.resolve(__dirname, "..", "..");
+
+  config.resolve = config.resolve || {};
+  config.resolve.modules = [
+    ...(config.resolve.modules || []),
+    paths.src,
+    "node_modules",
+  ];
+
+  config.resolve.extensions = [
+    ...(config.resolve.extensions || []),
+    ".ts",
+    ".tsx",
+    ".js",
+  ];
+
+  config.resolve.alias = {
+    ...(config.resolve.alias || {}),
+    react: path.resolve(rootPath, "node_modules", "react"),
+    "react-dom": path.resolve(rootPath, "node_modules", "react-dom"),
+    "@reduxjs/toolkit": path.resolve(
+      rootPath,
+      "node_modules",
+      "@reduxjs/toolkit"
+    ),
+    entities: path.resolve(paths.src, "entities"),
+  };
+
+  config.module = config.module || { rules: [] };
+  config.module.rules = config.module.rules?.map((rule) => {
     if (
       rule &&
       typeof rule === "object" &&
@@ -24,28 +51,22 @@ export default ({ config }: { config: webpack.Configuration }) => {
       rule.test instanceof RegExp &&
       rule.test.toString().includes("svg")
     ) {
-      rule.exclude = /\.svg$/i;
+      return { ...rule, exclude: /\.svg$/i };
     }
+    return rule;
   });
-  config.module?.rules?.push(buildSvgLoader());
 
-  config.plugins?.push(
+  config.module.rules?.push(buildCssLoader(true));
+  config.module.rules?.push(buildSvgLoader());
+
+  config.plugins = config.plugins || [];
+  config.plugins.push(
     new DefinePlugin({
       __IS_DEV__: true,
-      __API__: JSON.stringify(""),
+      __API__: JSON.stringify("https://testapi.com"),
       __PROJECT__: JSON.stringify("storybook"),
     })
   );
-
-  if (config.resolve) {
-    config.resolve = {
-      extensions: [".tsx", ".ts", ".js"],
-      preferAbsolute: true,
-      modules: ["src", "node_modules"],
-      mainFiles: ["index"],
-      alias: {},
-    };
-  }
 
   return config;
 };

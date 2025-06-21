@@ -17,6 +17,6 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     placeholder: "placeholder",
-    value: "value",
+    defaultValue: "value",
   },
 };

@@ -16,6 +16,9 @@ import ruTranslationsAbout from "../../public/locales/ru/about.json";
 import ruTranslationsMain from "../../public/locales/ru/main.json";
 import ruTranslationsProfile from "../../public/locales/ru/profile.json";
 import ruTranslationsArticle from "../../public/locales/ru/article.json";
+import { initialize, mswLoader } from "msw-storybook-addon";
+
+initialize();
 
 i18n.use(initReactI18next).init({
   lng: "en",
@@ -75,6 +78,7 @@ const preview: Preview = {
       },
     },
   },
+  loaders: [mswLoader],
 };
 
 export default preview;

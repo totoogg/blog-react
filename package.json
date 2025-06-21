@@ -92,6 +92,8 @@
     "json-server": "^0.17.4",
     "loki": "^0.35.1",
     "mini-css-extract-plugin": "^2.9.2",
+    "msw": "^2.10.2",
+    "msw-storybook-addon": "^2.0.5",
     "react-refresh": "^0.17.0",
     "react-test-renderer": "^19.1.0",
     "reg-cli": "^0.18.10",
@@ -137,10 +139,6 @@
       "react": "^17.0.2"
     }
   },
-  "peerDependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
-  },
   "loki": {
     "configurations": {
       "chrome.laptop": {
@@ -155,5 +153,17 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "resolutions": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "@reduxjs/toolkit": "2.2.0",
+    "react/jsx-runtime": "19.1.0",
+    "react/jsx-dev-runtime": "19.1.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "./config/storybook/mock"
+    ]
   }
 }
