@@ -3,10 +3,10 @@ import { ArticleDetails } from "./ArticleDetails";
 import { useEffect } from "react";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
-import { ArticleType } from "entities/Article/model/consts/consts";
-import { ArticleBlockType } from "entities/Article/model/consts/consts";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
+import { ArticleBlockType } from "@/entities/Article/model/consts/consts";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   articleDetails: articleDetailsReducer,

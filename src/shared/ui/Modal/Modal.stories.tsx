@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Modal } from "./Modal";
-import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
+import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
 import React from "react";
 
 const meta = {

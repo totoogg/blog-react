@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Navbar } from "./Navbar";
-import { StoreProvider } from "app/providers/StoreProvider";
+import { StoreProvider } from "@/app/providers/StoreProvider";
 import { useEffect } from "react";
 
 const meta = {

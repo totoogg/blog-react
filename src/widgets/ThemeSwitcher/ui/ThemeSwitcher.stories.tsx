@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useEffect } from "react";
-import { Theme, ThemeProvider } from "app/providers/ThemeProvider";
+import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
 
 const meta = {
   title: "shared/ThemeSwitcher",

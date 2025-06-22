@@ -1,9 +1,9 @@
 import { render, RenderResult } from "@testing-library/react";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 import { ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
 import { MemoryRouter } from "react-router-dom";
-import i18ForTests from "shared/config/i18n/i18ForTests";
+import i18ForTests from "@/shared/config/i18n/i18ForTests";
 import { DeepPartial } from "../../../lib/deepPartial/deepPartial";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 

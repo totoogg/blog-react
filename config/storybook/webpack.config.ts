@@ -39,7 +39,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
       "node_modules",
       "@reduxjs/toolkit"
     ),
-    entities: path.resolve(paths.src, "entities"),
+    "@/app": path.resolve(paths.src, "app"),
+    "@/features": path.resolve(paths.src, "features"),
+    "@/entities": path.resolve(paths.src, "entities"),
+    "@/widgets": path.resolve(paths.src, "widgets"),
+    "@/pages": path.resolve(paths.src, "pages"),
+    "@/shared": path.resolve(paths.src, "shared"),
   };
 
   config.module = config.module || { rules: [] };

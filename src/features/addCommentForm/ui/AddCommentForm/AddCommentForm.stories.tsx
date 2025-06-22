@@ -3,9 +3,9 @@ import AddCommentForm from "./AddCommentForm";
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 import { addCommentFormReducer } from "../../model/slice/addCommentFormSlice";
-import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
+import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   addCommentForm: addCommentFormReducer,

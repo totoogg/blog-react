@@ -1,9 +1,9 @@
-import { Profile } from "entities/Profile";
+import { Profile } from "@/entities/Profile";
 import { fetchProfileData } from "./fetchProfileData";
 import {
   ActionCreateType,
   TestAsyncThunk,
-} from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
+} from "@/shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
 
 const data = {
   age: 10,

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Sidebar } from "./Sidebar";
 import { useEffect } from "react";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { userReducer } from "entities/User";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
+import { userReducer } from "@/entities/User";
 import { ReducersMapObject } from "@reduxjs/toolkit";
-import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
+import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   user: userReducer,

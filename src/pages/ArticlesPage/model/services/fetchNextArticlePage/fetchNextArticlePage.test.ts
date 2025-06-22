@@ -3,7 +3,7 @@ import { fetchNextArticlePage } from "./fetchNextArticlePage";
 import {
   ActionCreateType,
   TestAsyncThunk,
-} from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
+} from "@/shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
 
 jest.mock("../fetchArticlesList/fetchArticlesList");
 

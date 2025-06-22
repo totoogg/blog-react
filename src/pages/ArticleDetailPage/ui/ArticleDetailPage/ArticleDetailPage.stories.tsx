@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ArticleDetailPage from "./ArticleDetailPage";
-import { ArticleType } from "entities/Article/model/consts/consts";
-import { ArticleBlockType } from "entities/Article/model/consts/consts";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
+import { ArticleBlockType } from "@/entities/Article/model/consts/consts";
 import { ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { articleDetailsReducer } from "entities/Article/model/slice/articleDetailsSlice";
-import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
+import { articleDetailsReducer } from "@/entities/Article/model/slice/articleDetailsSlice";
+import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   articleDetails: articleDetailsReducer,

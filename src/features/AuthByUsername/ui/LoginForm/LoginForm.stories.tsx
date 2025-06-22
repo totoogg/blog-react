@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import LoginForm from "./LoginForm";
-import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
-import { DeepPartial } from "shared/lib/deepPartial/deepPartial";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { loginReducer } from "../../model/slice/loginSlice";
 import { fn } from "@storybook/test";

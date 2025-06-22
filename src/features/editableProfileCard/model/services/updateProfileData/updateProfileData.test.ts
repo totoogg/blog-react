@@ -1,10 +1,10 @@
-import { Country } from "entities/Country";
+import { Country } from "@/entities/Country";
 import { updateProfileData } from "./updateProfileData";
 import {
   ActionCreateType,
   TestAsyncThunk,
-} from "shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
-import { Profile } from "entities/Profile";
+} from "@/shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
+import { Profile } from "@/entities/Profile";
 import { ValidateProfileError } from "../../consts/consts";
 
 const data = {

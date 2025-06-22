@@ -49,6 +49,7 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       i18n.changeLanguage(context.globals.locale);
+
       return (
         <I18nextProvider i18n={i18n}>
           <Suspense fallback="">

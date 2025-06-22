@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ArticleRecommendationsList } from "./ArticleRecommendationsList";
 import { http, HttpResponse } from "msw";
-import { Article } from "entities/Article";
-import { ArticleType } from "entities/Article/model/consts/consts";
+import { Article } from "@/entities/Article";
+import { ArticleType } from "@/entities/Article/model/consts/consts";
 import { StrictMode } from "react";
 
 const meta = {
