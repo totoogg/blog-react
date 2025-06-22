@@ -40,5 +40,8 @@
   "errorArticle": "Error loading article",
   "admin": "Admin Panel",
   "forbiddenPage": "You do not have access to this page.",
+  "review": "You review",
+  "closeBtn": "Close",
+  "sendBtn": "Send",
   "notFound": "Page not found"
 }
