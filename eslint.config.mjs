@@ -24,7 +24,12 @@ export default defineConfig([
     },
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     rules: {
-      "blog2Plugin/path-checker": "error",
+      "blog2Plugin/path-checker": [
+        "error",
+        {
+          alias: "@",
+        },
+      ],
     },
   },
   tseslint.configs.recommended,
