@@ -43,5 +43,8 @@
   "review": "You review",
   "closeBtn": "Close",
   "sendBtn": "Send",
+  "rateArticle": "Rate this article",
+  "commitArticle": "Leave your feedback on the article, it will help improve the quality",
+  "thanksForRate": "Thank you for your rating",
   "notFound": "Page not found"
 }
