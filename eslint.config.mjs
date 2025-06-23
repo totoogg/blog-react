@@ -6,6 +6,7 @@ import pluginReact from "eslint-plugin-react";
 import { defineConfig, globalIgnores } from "eslint/config";
 import i18next from "eslint-plugin-i18next";
 import reactHooks from "eslint-plugin-react-hooks";
+import unusedImports from "eslint-plugin-unused-imports";
 
 export default defineConfig([
   globalIgnores(["./node_modules/*", "./build/*", "./scripts/*"]),
@@ -60,6 +61,15 @@ export default defineConfig([
       react: {
         version: "detect",
       },
+    },
+  },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    plugins: {
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      "unused-imports/no-unused-imports": "error",
     },
   },
   {
