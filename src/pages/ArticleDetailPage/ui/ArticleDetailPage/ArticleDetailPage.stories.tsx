@@ -4,7 +4,7 @@ import { ArticleType } from "@/entities/Article";
 import { ArticleBlockType } from "@/entities/Article";
 import { ReducersMapObject } from "@reduxjs/toolkit";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { articleDetailsReducer } from "@/entities/Article";
+import { articleDetailsReducer } from "@/entities/Article/testing";
 import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {

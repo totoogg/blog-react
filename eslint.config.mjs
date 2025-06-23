@@ -34,6 +34,7 @@ export default defineConfig([
         "error",
         {
           alias: "@",
+          testFilesPatterns: ["**/*.test.*", "**/*.stories.*", "**/StoreDecorator.tsx"],
         },
       ],
     },
