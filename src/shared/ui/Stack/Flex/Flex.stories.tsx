@@ -3,7 +3,7 @@ import { Flex } from "./Flex";
 import React from "react";
 
 const meta = {
-  title: "Flex/Flex",
+  title: "shared/Flex",
   component: Flex,
 
   tags: ["autodocs"],

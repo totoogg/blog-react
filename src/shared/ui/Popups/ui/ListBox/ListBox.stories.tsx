@@ -3,7 +3,7 @@ import { ListBox } from "./ListBox";
 import React from "react";
 
 const meta = {
-  title: "ListBox/ListBox",
+  title: "shared/Popups/ListBox",
   component: ListBox,
 
   tags: ["autodocs"],

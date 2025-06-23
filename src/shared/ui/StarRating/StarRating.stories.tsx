@@ -3,7 +3,7 @@ import { StarRating } from "./StarRating";
 import React from "react";
 
 const meta = {
-  title: "StarRating/StarRating",
+  title: "shared/StarRating",
   component: StarRating,
 
   tags: ["autodocs"],

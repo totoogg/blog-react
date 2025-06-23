@@ -3,11 +3,11 @@
   cursor: pointer;
 }
 
-.normal {
+svg.normal {
   fill: none;
 }
 
-.hovered {
+svg.hovered {
   fill: var(--primary-color);
 }
 

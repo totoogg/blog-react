@@ -3,7 +3,7 @@ import { AvatarDropdown } from "./AvatarDropdown";
 import React from "react";
 
 const meta = {
-  title: "AvatarDropdown/AvatarDropdown",
+  title: "features/AvatarDropdown",
   component: AvatarDropdown,
 
   tags: ["autodocs"],

@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import React from "react";
 
 const meta = {
-  title: "Tabs/Tabs",
+  title: "shared/Tabs",
   component: Tabs,
 
   tags: ["autodocs"],

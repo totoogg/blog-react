@@ -3,7 +3,7 @@ import { Popover } from "./Popover";
 import React from "react";
 
 const meta = {
-  title: "Popover/Popover",
+  title: "shared/Popups/Popover",
   component: Popover,
 
   tags: ["autodocs"],

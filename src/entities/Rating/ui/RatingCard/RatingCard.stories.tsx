@@ -3,7 +3,7 @@ import { RatingCard } from "./RatingCard";
 import React from "react";
 
 const meta = {
-  title: "RatingCard/RatingCard",
+  title: "entities/RatingCard",
   component: RatingCard,
 
   tags: ["autodocs"],

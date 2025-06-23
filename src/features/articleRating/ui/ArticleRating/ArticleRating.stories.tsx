@@ -1,9 +1,17 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import ArticleRating from "./ArticleRating";
-import React from "react";
+import { http, HttpResponse } from "msw";
+import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
+import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
+import { ReducersMapObject } from "@reduxjs/toolkit";
+import { userReducer } from "@/entities/User";
+
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+  user: userReducer,
+};
 
 const meta = {
-  title: "ArticleRating/ArticleRating",
+  title: "features/ArticleRating",
   component: ArticleRating,
 
   tags: ["autodocs"],
@@ -12,30 +20,64 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Normal: Story = {
+export const Rate: Story = {
   args: {
     articleId: "1",
   },
-};
-
-export const Dark: Story = {
-  args: {
-    articleId: "1",
+  parameters: {
+    msw: {
+      handlers: [
+        http.get(__API__ + "/article-ratings?userId=1&articleId=1", () => {
+          return HttpResponse.json([{ rate: 3 }]);
+        }),
+      ],
+    },
   },
   decorators: [
-    (Story) => {
-      React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
-        return () => {
-          document.body.classList.remove("app_dark_theme");
-        };
-      }, []);
-
-      return (
+    (Story) => (
+      <StoreProvider
+        asyncReducers={defaultAsyncReducers}
+        initialState={{
+          user: {
+            authData: { id: "1" },
+          },
+        }}
+      >
         <div className="app app_dark_theme">
           <Story />
         </div>
-      );
+      </StoreProvider>
+    ),
+  ],
+};
+
+export const WithoutRate: Story = {
+  args: {
+    articleId: "1",
+  },
+  parameters: {
+    msw: {
+      handlers: [
+        http.get(__API__ + "/article-ratings?userId=1&articleId=1", () => {
+          return HttpResponse.json([]);
+        }),
+      ],
     },
+  },
+  decorators: [
+    (Story) => (
+      <StoreProvider
+        asyncReducers={defaultAsyncReducers}
+        initialState={{
+          user: {
+            authData: { id: "1" },
+          },
+        }}
+      >
+        <div className="app app_dark_theme">
+          <Story />
+        </div>
+      </StoreProvider>
+    ),
   ],
 };

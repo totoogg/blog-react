@@ -3,7 +3,7 @@ import { NotificationItem } from "./NotificationItem";
 import React from "react";
 
 const meta = {
-  title: "NotificationItem/NotificationItem",
+  title: "entities/Notification/NotificationItem",
   component: NotificationItem,
 
   tags: ["autodocs"],
