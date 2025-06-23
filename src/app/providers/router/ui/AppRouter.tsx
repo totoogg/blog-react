@@ -5,7 +5,7 @@ import {
   routerConfig,
 } from "@/shared/config/routerConfig/routerConfig";
 import { RequireAuth } from "./RequireAuth";
-import { PageLoader } from "@/widgets/PageLoader/PageLoader";
+import { PageLoader } from "@/widgets/PageLoader";
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRouterProps) => {

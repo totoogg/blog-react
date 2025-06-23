@@ -30,6 +30,12 @@ export default defineConfig([
           alias: "@",
         },
       ],
+      "blog2Plugin/public-api-imports": [
+        "error",
+        {
+          alias: "@",
+        },
+      ],
     },
   },
   tseslint.configs.recommended,
