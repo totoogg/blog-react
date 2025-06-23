@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Modal } from "./Modal";
-import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
+// eslint-disable-next-line blog2Plugin/layer-imports
+import { ThemeProvider } from "@/app/providers/ThemeProvider";
 import React from "react";
+import { Theme } from "@/shared/const/theme";
 
 const meta = {
   title: "shared/Modal",

@@ -1,3 +1,4 @@
+// eslint-disable-next-line blog2Plugin/layer-imports
 import { UserRole } from "@/entities/User";
 import { RouteProps } from "react-router-dom";
 

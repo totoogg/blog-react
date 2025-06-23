@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useEffect } from "react";
-import { Theme, ThemeProvider } from "@/app/providers/ThemeProvider";
+// eslint-disable-next-line blog2Plugin/layer-imports
+import { ThemeProvider } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/const/theme";
 
 const meta = {
   title: "shared/ThemeSwitcher",

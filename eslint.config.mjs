@@ -41,6 +41,14 @@ export default defineConfig([
           ],
         },
       ],
+
+      "blog2Plugin/layer-imports": [
+        "error",
+        {
+          alias: "@",
+          ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+        },
+      ],
     },
   },
   tseslint.configs.recommended,
