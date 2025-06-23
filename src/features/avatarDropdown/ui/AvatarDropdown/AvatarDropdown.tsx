@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Dropdown } from "@/shared/ui/Popups";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 import { useTranslation } from "react-i18next";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -43,7 +43,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo(({ className }) => {
           ? [
               {
                 content: t("admin"),
-                href: RouterPath.admin_panel,
+                href: getRouteAdmin(),
               },
             ]
           : []),
@@ -53,7 +53,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo(({ className }) => {
         },
         {
           content: t("profile"),
-          href: RouterPath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
       ]}
       trigger={<Avatar size={30} src={authData.avatar} />}

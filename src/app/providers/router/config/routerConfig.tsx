@@ -8,50 +8,60 @@ import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { MainPage } from "@/pages/MainPage";
 import { NotFoundPage } from "@/pages/NotFoundPage";
 import { ProfilePage } from "@/pages/ProfilePage";
-import { RouterPath } from "@/shared/const/router";
+import {
+  getRouteAbout,
+  getRouteAdmin,
+  getRouteArticleCreate,
+  getRouteArticleDetails,
+  getRouteArticleEdit,
+  getRouteArticles,
+  getRouteForbidden,
+  getRouteMain,
+  getRouteProfile,
+} from "@/shared/const/router";
 import { AppRouter } from "@/shared/const/router";
 import { AppRouterProps } from "@/shared/types/router";
 
 export const routerConfig: Record<AppRouter, AppRouterProps> = {
-  [AppRouter.MAIN]: { path: RouterPath.main, element: <MainPage /> },
-  [AppRouter.ABOUT]: { path: RouterPath.about, element: <AboutPage /> },
+  [AppRouter.MAIN]: { path: getRouteMain(), element: <MainPage /> },
+  [AppRouter.ABOUT]: { path: getRouteAbout(), element: <AboutPage /> },
   [AppRouter.FORBIDDEN]: {
-    path: RouterPath.forbidden,
+    path: getRouteProfile(":id"),
     element: <ForbiddenPage />,
   },
   [AppRouter.PROFILE]: {
-    path: RouterPath.profile + ":id",
+    path: getRouteArticles(),
     element: <ProfilePage />,
     authOnly: true,
   },
   [AppRouter.ARTICLES]: {
-    path: RouterPath.articles,
+    path: getRouteArticleDetails(":id"),
     element: <ArticlesPage />,
     authOnly: true,
   },
   [AppRouter.ARTICLE_DETAILS]: {
-    path: RouterPath.article_details + ":id",
+    path: getRouteArticleCreate(),
     element: <ArticleDetailPage />,
     authOnly: true,
   },
   [AppRouter.ARTICLE_CREATE]: {
-    path: RouterPath.article_create,
+    path: getRouteArticleEdit(":id"),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRouter.ARTICLE_EDIT]: {
-    path: RouterPath.article_edit,
+    path: getRouteAdmin(),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRouter.ADMIN_PANEL]: {
-    path: RouterPath.admin_panel,
+    path: getRouteForbidden(),
     element: <AdminPanelPage />,
     authOnly: true,
     roles: [UserRole.ADMIN, UserRole.MANAGER],
   },
   [AppRouter.NOT_FOUND]: {
-    path: RouterPath.not_found,
+    path: "*",
     element: <NotFoundPage />,
   },
 };

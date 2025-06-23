@@ -11,7 +11,7 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useTranslation } from "react-i18next";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
@@ -61,10 +61,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
               />
             )}
             <div className={cls.footer}>
-              <AppLink
-                to={RouterPath.article_details + article.id}
-                target={target}
-              >
+              <AppLink to={getRouteArticleDetails(article.id)} target={target}>
                 <Button theme={ButtonTheme.OUTLINE}>{t("readMore")}</Button>
               </AppLink>
               {views}
@@ -76,7 +73,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
 
     return (
       <AppLink
-        to={RouterPath.article_details + article.id}
+        to={getRouteArticleDetails(article.id)}
         target={target}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       >
