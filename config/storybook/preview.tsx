@@ -17,6 +17,7 @@ import ruTranslationsMain from "../../public/locales/ru/main.json";
 import ruTranslationsProfile from "../../public/locales/ru/profile.json";
 import ruTranslationsArticle from "../../public/locales/ru/article.json";
 import { initialize, mswLoader } from "msw-storybook-addon";
+import { Theme } from "../../src/shared/const/theme";
 
 initialize();
 
@@ -90,6 +91,14 @@ const preview: Preview = {
     layout: "fullscreen",
     msw: {
       handlers: [],
+    },
+    themes: {
+      default: "light",
+      list: [
+        { name: "light", class: Theme.LIGHT, color: "#ffffff" },
+        { name: "dark", class: Theme.DARK, color: "#000000" },
+        { name: "orange", class: Theme.ORANGE, color: "#ffb005" },
+      ],
     },
   },
   loaders: [mswLoader],
