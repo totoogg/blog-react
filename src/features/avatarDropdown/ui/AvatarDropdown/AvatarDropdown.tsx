@@ -1,7 +1,7 @@
 import { FC, memo, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Dropdown } from "@/shared/ui/Popups";
-import { RouterPath } from "@/shared/config/routerConfig/routerConfig";
+import { RouterPath } from "@/shared/const/router";
 import { useTranslation } from "react-i18next";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
