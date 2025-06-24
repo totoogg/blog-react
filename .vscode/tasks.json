@@ -4,7 +4,7 @@
     {
       "label": "Generate Component",
       "type": "shell",
-      "command": "node generator/generate-component.js ${input:componentName}",
+      "command": "node scripts/generator/generate-component.js ${input:componentName}",
       "problemMatcher": []
     }
   ],
@@ -12,7 +12,7 @@
     {
       "id": "componentName",
       "type": "promptString",
-      "description": "Введите имя компонента:"
+      "description": "Enter the name of the component:"
     }
   ]
 }
