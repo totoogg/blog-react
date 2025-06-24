@@ -10,14 +10,7 @@ import {
   getArticlePageType,
   getArticlePageView,
 } from "../../model/selectors/articlePageSelectors";
-import {
-  ArticleSortField,
-  ArticleSortSelector,
-  ArticleType,
-  ArticleTypeTabs,
-  ArticleView,
-  ArticleViewSelector,
-} from "@/entities/Article";
+import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
 import { articlePageAction } from "../../model/slices/articlePageSlice";
 import { useTranslation } from "react-i18next";
 import { Card } from "@/shared/ui/Card/Card";
@@ -25,6 +18,9 @@ import { Input } from "@/shared/ui/Input/Input";
 import { SortOrder } from "@/shared/types";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
+import { ArticleSortSelector } from "@/features/ArticleSortSelector";
+import { ArticleViewSelector } from "@/features/ArticleViewSelector";
+import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 
 interface ArticlesPageFiltersProps {
   className?: string;
