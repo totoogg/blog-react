@@ -1,5 +1,4 @@
-import { lstat, readdir, rm } from "fs";
-import { readdir as readdirP } from "fs/promises";
+import { rm } from "fs";
 import { join } from "path";
 
 const cachePath = join("node_modules", ".cache");
