@@ -724,13 +724,22 @@
         "MANAGER"
       ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "asd",
-      "lastname": "asaa",
+      "first": "timur",
+      "lastname": "daf2",
       "age": 465,
       "currency": "RUB",
       "country": "Belarus",
@@ -740,13 +749,13 @@
     },
     {
       "id": "2",
-      "first": "asdasd",
+      "first": "asd",
       "lastname": "asf",
       "age": 465,
       "currency": "EUR",
       "country": "Ukraine",
       "city": "Moscow",
-      "username": "asdas",
+      "username": "asdaaaa",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
