@@ -9,8 +9,9 @@ import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitial
 import { useSelector } from "react-redux";
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
+import { TestProps } from "@/shared/types/tests";
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string;
   children: React.ReactNode;
   onScrollEnd?: () => void;
@@ -18,49 +19,49 @@ interface PageProps {
 
 export const PAGE_ID = "PAGE_ID";
 
-export const Page: FC<PageProps> = memo(
-  ({ className, children, onScrollEnd }) => {
-    const wrapperRef = useRef(null) as React.RefObject<HTMLDivElement | null>;
-    const triggerRef = useRef(null) as React.RefObject<HTMLDivElement | null>;
-    const dispatch = useAppDispatch();
-    const { pathname } = useLocation();
-    const scrollPosition = useSelector((state: StateSchema) =>
-      getUIScrollByPath(state, pathname)
+export const Page: FC<PageProps> = memo((props) => {
+  const { className, children, onScrollEnd } = props;
+  const wrapperRef = useRef(null) as React.RefObject<HTMLDivElement | null>;
+  const triggerRef = useRef(null) as React.RefObject<HTMLDivElement | null>;
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getUIScrollByPath(state, pathname)
+  );
+
+  useInfiniteScroll({
+    triggerRef: triggerRef as React.RefObject<HTMLDivElement>,
+    wrapperRef: wrapperRef as React.RefObject<HTMLDivElement>,
+    callback: onScrollEnd,
+  });
+
+  useInitialEffect(() => {
+    if (wrapperRef.current) {
+      wrapperRef.current.scrollTop = scrollPosition;
+    }
+  });
+
+  const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+    dispatch(
+      uiActions.setScrollPosition({
+        path: pathname,
+        position: e.currentTarget.scrollTop,
+      })
     );
+  }, 500);
 
-    useInfiniteScroll({
-      triggerRef: triggerRef as React.RefObject<HTMLDivElement>,
-      wrapperRef: wrapperRef as React.RefObject<HTMLDivElement>,
-      callback: onScrollEnd,
-    });
-
-    useInitialEffect(() => {
-      if (wrapperRef.current) {
-        wrapperRef.current.scrollTop = scrollPosition;
-      }
-    });
-
-    const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-      dispatch(
-        uiActions.setScrollPosition({
-          path: pathname,
-          position: e.currentTarget.scrollTop,
-        })
-      );
-    }, 500);
-
-    return (
-      <main
-        ref={wrapperRef}
-        className={classNames(cls.page, {}, [className])}
-        onScroll={onScroll}
-        id={PAGE_ID}
-      >
-        {children}
-        {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-      </main>
-    );
-  }
-);
+  return (
+    <main
+      ref={wrapperRef}
+      className={classNames(cls.page, {}, [className])}
+      onScroll={onScroll}
+      id={PAGE_ID}
+      data-testid={props["data-testid"] ?? "Page"}
+    >
+      {children}
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+    </main>
+  );
+});
 
 Page.displayName = "Page";

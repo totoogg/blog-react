@@ -1,4 +1,11 @@
-import { FC, ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState } from "react";
+import {
+  FC,
+  ImgHTMLAttributes,
+  memo,
+  ReactElement,
+  useLayoutEffect,
+  useState,
+} from "react";
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
@@ -15,9 +22,8 @@ export const AppImage: FC<AppImageProps> = memo(
       const image = new Image();
 
       image.src = src ?? "";
-      image.onload = image.onerror = () => {
+      image.onload = () => {
         setIsLoading(false);
-        setHasError(false);
       };
       image.onerror = () => {
         setIsLoading(false);

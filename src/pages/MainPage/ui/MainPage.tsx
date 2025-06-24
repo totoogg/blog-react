@@ -4,5 +4,5 @@ import { Page } from "@/widgets/Page";
 export default function MainPage() {
   const { t } = useTranslation("main");
 
-  return <Page>{t("main")}</Page>;
+  return <Page data-testid="MainPage">{t("main")}</Page>;
 }

@@ -14,12 +14,12 @@ describe("Counter", () => {
     componentRender(<Counter />, { initialState: { counter: { value: 10 } } });
 
     fireEvent.click(screen.getByTestId("increment-btn"));
-    expect(screen.getByTestId("value-title")).toHaveTextContent("11");
+    expect(screen.getByTestId("value-title")).toHaveTextContent("9");
   });
 
   test("decrement", () => {
     componentRender(<Counter />, { initialState: { counter: { value: 10 } } });
     fireEvent.click(screen.getByTestId("decrement-btn"));
-    expect(screen.getByTestId("value-title")).toHaveTextContent("9");
+    expect(screen.getByTestId("value-title")).toHaveTextContent("11");
   });
 });

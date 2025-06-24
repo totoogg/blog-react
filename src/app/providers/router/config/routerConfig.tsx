@@ -26,36 +26,36 @@ export const routerConfig: Record<AppRouter, AppRouterProps> = {
   [AppRouter.MAIN]: { path: getRouteMain(), element: <MainPage /> },
   [AppRouter.ABOUT]: { path: getRouteAbout(), element: <AboutPage /> },
   [AppRouter.FORBIDDEN]: {
-    path: getRouteProfile(":id"),
+    path: getRouteForbidden(),
     element: <ForbiddenPage />,
   },
   [AppRouter.PROFILE]: {
-    path: getRouteArticles(),
+    path: getRouteProfile(":id"),
     element: <ProfilePage />,
     authOnly: true,
   },
   [AppRouter.ARTICLES]: {
-    path: getRouteArticleDetails(":id"),
+    path: getRouteArticles(),
     element: <ArticlesPage />,
     authOnly: true,
   },
   [AppRouter.ARTICLE_DETAILS]: {
-    path: getRouteArticleCreate(),
+    path: getRouteArticleDetails(":id"),
     element: <ArticleDetailPage />,
     authOnly: true,
   },
   [AppRouter.ARTICLE_CREATE]: {
-    path: getRouteArticleEdit(":id"),
+    path: getRouteArticleCreate(),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRouter.ARTICLE_EDIT]: {
-    path: getRouteAdmin(),
+    path: getRouteArticleEdit(":id"),
     element: <ArticleEditPage />,
     authOnly: true,
   },
   [AppRouter.ADMIN_PANEL]: {
-    path: getRouteForbidden(),
+    path: getRouteAdmin(),
     element: <AdminPanelPage />,
     authOnly: true,
     roles: [UserRole.ADMIN, UserRole.MANAGER],
