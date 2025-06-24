@@ -59,5 +59,5 @@ export const Dark: Story = {
 };
 
 Object.entries(templates).forEach(([fileName, content]) => {
-  writeFileSync(`generator/component/${fileName}`, content);
+  writeFileSync(`scripts/generator/component/${fileName}`, content);
 });
