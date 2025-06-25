@@ -42,6 +42,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
 
       return (
         <div
+          data-testId="ArticleListItem"
           className={classNames(cls.articleListItem, {}, [
             className,
             cls[view],
@@ -80,6 +81,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo(
 
     return (
       <AppLink
+        data-testId="ArticleListItem"
         to={getRouteArticleDetails(article.id)}
         target={target}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
