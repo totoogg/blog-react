@@ -1,6 +1,6 @@
-import { useMemo } from "react";
-import cls from "./Select.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { useMemo } from 'react';
+import cls from './Select.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 export interface SelectOption<T extends string> {
   value: T;
@@ -27,7 +27,7 @@ export const Select = <T extends string>({
   const optionList = useMemo(() => {
     return options?.map((opt) => (
       <option className={cls.option} value={opt.value} key={opt.value}>
-        {" "}
+        {' '}
         {opt.content}
       </option>
     ));
@@ -39,7 +39,7 @@ export const Select = <T extends string>({
 
   return (
     <div className={classNames(cls.wrapper, {}, [className])}>
-      {label && <span className={cls.label}>{label + ">"}</span>}
+      {label && <span className={cls.label}>{label + '>'}</span>}
       <select
         className={cls.select}
         value={value}
@@ -52,4 +52,4 @@ export const Select = <T extends string>({
   );
 };
 
-Select.displayName = "Select";
+Select.displayName = 'Select';

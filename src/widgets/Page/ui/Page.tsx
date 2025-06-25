@@ -1,15 +1,15 @@
-import React, { FC, memo, useRef, UIEvent } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Page.module.scss";
-import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { getUIScrollByPath, uiActions } from "@/features/UI";
-import { useLocation } from "react-router-dom";
-import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useSelector } from "react-redux";
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
-import { TestProps } from "@/shared/types/tests";
+import React, { FC, memo, useRef, UIEvent } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Page.module.scss';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUIScrollByPath, uiActions } from '@/features/UI';
+import { useLocation } from 'react-router-dom';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useSelector } from 'react-redux';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -17,7 +17,7 @@ interface PageProps extends TestProps {
   onScrollEnd?: () => void;
 }
 
-export const PAGE_ID = "PAGE_ID";
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page: FC<PageProps> = memo((props) => {
   const { className, children, onScrollEnd } = props;
@@ -26,7 +26,7 @@ export const Page: FC<PageProps> = memo((props) => {
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
   const scrollPosition = useSelector((state: StateSchema) =>
-    getUIScrollByPath(state, pathname)
+    getUIScrollByPath(state, pathname),
   );
 
   useInfiniteScroll({
@@ -46,7 +46,7 @@ export const Page: FC<PageProps> = memo((props) => {
       uiActions.setScrollPosition({
         path: pathname,
         position: e.currentTarget.scrollTop,
-      })
+      }),
     );
   }, 500);
 
@@ -56,7 +56,7 @@ export const Page: FC<PageProps> = memo((props) => {
       className={classNames(cls.page, {}, [className])}
       onScroll={onScroll}
       id={PAGE_ID}
-      data-testid={props["data-testid"] ?? "Page"}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
@@ -64,4 +64,4 @@ export const Page: FC<PageProps> = memo((props) => {
   );
 });
 
-Page.displayName = "Page";
+Page.displayName = 'Page';

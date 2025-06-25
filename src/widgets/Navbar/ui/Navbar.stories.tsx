@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Navbar } from "./Navbar";
-import { StoreProvider } from "@/app/providers/StoreProvider";
-import { useEffect } from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Navbar } from './Navbar';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { useEffect } from 'react';
 
 const meta = {
-  title: "widgets/NavBar",
+  title: 'widgets/NavBar',
   component: Navbar,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
@@ -19,9 +19,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

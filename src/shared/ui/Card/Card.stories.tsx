@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "./Card";
-import React from "react";
-import { Text } from "../Text/Text";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Card } from './Card';
+import React from 'react';
+import { Text } from '../Text/Text';
 
 const meta = {
-  title: "shared/Card",
+  title: 'shared/Card',
   component: Card,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof Card>;
 
 export default meta;
@@ -26,9 +26,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

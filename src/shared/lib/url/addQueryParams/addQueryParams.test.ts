@@ -1,29 +1,29 @@
-import { getQueryParams } from "./addQueryParams";
+import { getQueryParams } from './addQueryParams';
 
-describe("addQueryParams", () => {
-  test("test with one parameter", () => {
+describe('addQueryParams', () => {
+  test('test with one parameter', () => {
     const params = getQueryParams({
-      test: "value",
+      test: 'value',
     });
 
-    expect(params).toBe("?test=value");
+    expect(params).toBe('?test=value');
   });
 
-  test("test with multi parameters", () => {
+  test('test with multi parameters', () => {
     const params = getQueryParams({
-      test: "value",
-      second: "2",
+      test: 'value',
+      second: '2',
     });
 
-    expect(params).toBe("?test=value&second=2");
+    expect(params).toBe('?test=value&second=2');
   });
 
-  test("test with undefined", () => {
+  test('test with undefined', () => {
     const params = getQueryParams({
-      test: "value",
+      test: 'value',
       second: undefined,
     });
 
-    expect(params).toBe("?test=value");
+    expect(params).toBe('?test=value');
   });
 });

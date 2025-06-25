@@ -1,7 +1,7 @@
-import { FC, memo, ReactNode, useCallback } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Tabs.module.scss";
-import { Card, CardTheme } from "../Card/Card";
+import { FC, memo, ReactNode, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Tabs.module.scss';
+import { Card, CardTheme } from '../Card/Card';
 
 export interface TabItem {
   value: string;
@@ -23,7 +23,7 @@ export const Tabs: FC<TabsProps> = memo(
           onTabClick(tab);
         };
       },
-      [onTabClick]
+      [onTabClick],
     );
 
     return (
@@ -40,7 +40,7 @@ export const Tabs: FC<TabsProps> = memo(
         ))}
       </div>
     );
-  }
+  },
 );
 
-Tabs.displayName = "Tabs";
+Tabs.displayName = 'Tabs';

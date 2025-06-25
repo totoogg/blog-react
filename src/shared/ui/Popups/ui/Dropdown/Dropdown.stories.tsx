@@ -1,14 +1,14 @@
 /* eslint-disable i18next/no-literal-string */
-import type { Meta, StoryObj } from "@storybook/react";
-import { Dropdown } from "./Dropdown";
-import React from "react";
-import { Button } from "../../../Button/Button";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Dropdown } from './Dropdown';
+import React from 'react';
+import { Button } from '../../../Button/Button';
 
 const meta = {
-  title: "shared/Popups/Dropdown",
+  title: 'shared/Popups/Dropdown',
   component: Dropdown,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof Dropdown>;
 
 export default meta;
@@ -19,13 +19,13 @@ export const Normal: Story = {
     trigger: <Button>Open</Button>,
     items: [
       {
-        content: "first",
+        content: 'first',
       },
       {
-        content: "second",
+        content: 'second',
       },
       {
-        content: "third",
+        content: 'third',
       },
     ],
   },
@@ -36,22 +36,22 @@ export const Dark: Story = {
     trigger: <Button>Open</Button>,
     items: [
       {
-        content: "first",
+        content: 'first',
       },
       {
-        content: "second",
+        content: 'second',
       },
       {
-        content: "third",
+        content: 'third',
       },
     ],
   },
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

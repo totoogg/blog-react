@@ -2,29 +2,29 @@ import {
   createEntityAdapter,
   createSlice,
   PayloadAction,
-} from "@reduxjs/toolkit";
-import { StateSchema } from "@/app/providers/StoreProvider";
+} from '@reduxjs/toolkit';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import {
   Article,
   ArticleView,
   ArticleSortField,
   ArticleType,
-} from "@/entities/Article";
-import { ArticlePageSchema } from "../types/articlePageSchema";
-import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
-import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localStorage";
-import { SortOrder } from "@/shared/types/sort";
+} from '@/entities/Article';
+import { ArticlePageSchema } from '../types/articlePageSchema';
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { SortOrder } from '@/shared/types/sort';
 
 const articleAdapter = createEntityAdapter({
   selectId: (article: Article) => article.id,
 });
 
 export const getArticles = articleAdapter.getSelectors<StateSchema>(
-  (state) => state.articlePage || articleAdapter.getInitialState()
+  (state) => state.articlePage || articleAdapter.getInitialState(),
 );
 
 const articlePageSlice = createSlice({
-  name: "articlePageSlice",
+  name: 'articlePageSlice',
   initialState: articleAdapter.getInitialState<ArticlePageSchema>({
     isLoading: false,
     error: undefined,
@@ -36,8 +36,8 @@ const articlePageSlice = createSlice({
     _inited: false,
     limit: 9,
     sort: ArticleSortField.CREATED,
-    order: "asc",
-    search: "",
+    order: 'asc',
+    search: '',
     type: ArticleType.ALL,
   }),
   reducers: {
@@ -62,7 +62,7 @@ const articlePageSlice = createSlice({
     },
     initState: (state) => {
       const view = localStorage.getItem(
-        ARTICLE_VIEW_LOCALSTORAGE_KEY
+        ARTICLE_VIEW_LOCALSTORAGE_KEY,
       ) as ArticleView;
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 9;

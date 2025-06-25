@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Flex } from "./Flex";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Flex } from './Flex';
+import React from 'react';
 
 const meta = {
-  title: "shared/Flex",
+  title: 'shared/Flex',
   component: Flex,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof Flex>;
 
 export default meta;
@@ -37,7 +37,7 @@ export const Column: Story = {
         <div>5</div>
       </>
     ),
-    direction: "column",
+    direction: 'column',
   },
 };
 
@@ -52,8 +52,8 @@ export const ColumnGap4: Story = {
         <div>5</div>
       </>
     ),
-    gap: "4",
-    direction: "column",
+    gap: '4',
+    direction: 'column',
   },
 };
 
@@ -68,8 +68,8 @@ export const ColumnGap8: Story = {
         <div>5</div>
       </>
     ),
-    gap: "8",
-    direction: "column",
+    gap: '8',
+    direction: 'column',
   },
 };
 
@@ -84,8 +84,8 @@ export const ColumnGap16: Story = {
         <div>5</div>
       </>
     ),
-    gap: "16",
-    direction: "column",
+    gap: '16',
+    direction: 'column',
   },
 };
 
@@ -100,8 +100,8 @@ export const ColumnGap32: Story = {
         <div>5</div>
       </>
     ),
-    gap: "32",
-    direction: "column",
+    gap: '32',
+    direction: 'column',
   },
 };
 
@@ -116,7 +116,7 @@ export const RowGap4: Story = {
         <div>5</div>
       </>
     ),
-    gap: "4",
+    gap: '4',
   },
 };
 
@@ -131,7 +131,7 @@ export const RowGap8: Story = {
         <div>5</div>
       </>
     ),
-    gap: "8",
+    gap: '8',
   },
 };
 
@@ -146,7 +146,7 @@ export const RowGap16: Story = {
         <div>5</div>
       </>
     ),
-    gap: "16",
+    gap: '16',
   },
 };
 
@@ -161,7 +161,7 @@ export const RowGap32: Story = {
         <div>5</div>
       </>
     ),
-    gap: "32",
+    gap: '32',
   },
 };
 
@@ -176,8 +176,8 @@ export const ColumnAlignEnd: Story = {
         <div>5</div>
       </>
     ),
-    align: "end",
-    direction: "column",
+    align: 'end',
+    direction: 'column',
   },
 };
 
@@ -196,9 +196,9 @@ export const DarkRow: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

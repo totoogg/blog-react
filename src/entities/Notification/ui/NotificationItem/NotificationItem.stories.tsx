@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { NotificationItem } from "./NotificationItem";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { NotificationItem } from './NotificationItem';
+import React from 'react';
 
 const meta = {
-  title: "entities/Notification/NotificationItem",
+  title: 'entities/Notification/NotificationItem',
   component: NotificationItem,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof NotificationItem>;
 
 export default meta;
@@ -16,9 +16,9 @@ export const Normal: Story = {
   args: {
     item: {
       id: 1,
-      title: "Title",
-      description: "Description",
-      href: "XXXXXXXXXXXXXXXXXXXXX",
+      title: 'Title',
+      description: 'Description',
+      href: 'XXXXXXXXXXXXXXXXXXXXX',
     },
   },
 };
@@ -27,17 +27,17 @@ export const Dark: Story = {
   args: {
     item: {
       id: 1,
-      title: "Title",
-      description: "Description",
-      href: "XXXXXXXXXXXXXXXXXXXXX",
+      title: 'Title',
+      description: 'Description',
+      href: 'XXXXXXXXXXXXXXXXXXXXX',
     },
   },
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

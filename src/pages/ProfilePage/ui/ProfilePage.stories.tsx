@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import ProfilePage from "./ProfilePage";
-import React from "react";
-import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
-import { Country } from "@/entities/Country";
-import { profileReducer } from "@/features/editableProfileCard";
+import type { Meta, StoryObj } from '@storybook/react';
+import ProfilePage from './ProfilePage';
+import React from 'react';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { ReducersMapObject } from '@reduxjs/toolkit';
+import { DeepPartial } from '@/shared/lib/deepPartial/deepPartial';
+import { Country } from '@/entities/Country';
+import { profileReducer } from '@/features/editableProfileCard';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   profile: profileReducer,
 };
 
 const meta = {
-  title: "pages/ProfilePage",
+  title: 'pages/ProfilePage',
   component: ProfilePage,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;
@@ -29,12 +29,12 @@ export const Normal: Story = {
         initialState={{
           profile: {
             form: {
-              username: "DmitrySmit",
+              username: 'DmitrySmit',
               age: 35,
               country: Country.Russia,
-              lastname: "Smit",
-              first: "Dmitry",
-              city: "Tver",
+              lastname: 'Smit',
+              first: 'Dmitry',
+              city: 'Tver',
             },
           },
         }}
@@ -51,9 +51,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 
@@ -63,12 +63,12 @@ export const Dark: Story = {
           initialState={{
             profile: {
               form: {
-                username: "DmitrySmit",
+                username: 'DmitrySmit',
                 age: 35,
                 country: Country.Russia,
-                lastname: "Smit",
-                first: "Dmitry",
-                city: "Tver",
+                lastname: 'Smit',
+                first: 'Dmitry',
+                city: 'Tver',
               },
             },
           }}

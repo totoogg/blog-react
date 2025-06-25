@@ -1,9 +1,9 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
-import { getProfileIsLoading } from "./getProfileIsLoading";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { DeepPartial } from '@/shared/lib/deepPartial/deepPartial';
+import { getProfileIsLoading } from './getProfileIsLoading';
 
-describe("getProfileIsLoading", () => {
-  test("should return isLoading", () => {
+describe('getProfileIsLoading', () => {
+  test('should return isLoading', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         isLoading: true,
@@ -12,7 +12,7 @@ describe("getProfileIsLoading", () => {
 
     expect(getProfileIsLoading(state as StateSchema)).toEqual(true);
   });
-  test("should work with empty state", () => {
+  test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
     expect(getProfileIsLoading(state as StateSchema)).toEqual(undefined);

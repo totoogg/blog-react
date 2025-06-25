@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ErrorPage } from "./ErrorPage";
-import { useEffect } from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { ErrorPage } from './ErrorPage';
+import { useEffect } from 'react';
 
 const meta = {
-  title: "widgets/ErrorPage",
+  title: 'widgets/ErrorPage',
   component: ErrorPage,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ErrorPage>;
 
 export default meta;
@@ -18,9 +18,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

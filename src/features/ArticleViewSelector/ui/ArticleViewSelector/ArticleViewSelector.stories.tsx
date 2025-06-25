@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ArticleViewSelector } from "./ArticleViewSelector";
-import React from "react";
-import { ArticleView } from "@/entities/Article";
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleViewSelector } from './ArticleViewSelector';
+import React from 'react';
+import { ArticleView } from '@/entities/Article';
 
 const meta = {
-  title: "entities/Article/ArticleViewSelector",
+  title: 'entities/Article/ArticleViewSelector',
   component: ArticleViewSelector,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ArticleViewSelector>;
 
 export default meta;
@@ -26,9 +26,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

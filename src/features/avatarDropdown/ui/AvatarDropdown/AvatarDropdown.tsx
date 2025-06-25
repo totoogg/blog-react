@@ -1,17 +1,17 @@
-import { FC, memo, useCallback } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Dropdown } from "@/shared/ui/Popups";
-import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
-import { useTranslation } from "react-i18next";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { FC, memo, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Dropdown } from '@/shared/ui/Popups';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { useTranslation } from 'react-i18next';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   getUserAuthData,
   isUserAdmin,
   isUserManager,
   userActions,
-} from "@/entities/User";
-import { useSelector } from "react-redux";
+} from '@/entities/User';
+import { useSelector } from 'react-redux';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -36,23 +36,23 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo(({ className }) => {
 
   return (
     <Dropdown
-      className={classNames("", {}, [className])}
+      className={classNames('', {}, [className])}
       direction="bottom left"
       items={[
         ...(isAdminPanelAvailable
           ? [
               {
-                content: t("admin"),
+                content: t('admin'),
                 href: getRouteAdmin(),
               },
             ]
           : []),
         {
-          content: t("logOut"),
+          content: t('logOut'),
           onClick: onLogOut,
         },
         {
-          content: t("profile"),
+          content: t('profile'),
           href: getRouteProfile(authData.id),
         },
       ]}
@@ -61,4 +61,4 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo(({ className }) => {
   );
 });
 
-AvatarDropdown.displayName = "AvatarDropdown";
+AvatarDropdown.displayName = 'AvatarDropdown';

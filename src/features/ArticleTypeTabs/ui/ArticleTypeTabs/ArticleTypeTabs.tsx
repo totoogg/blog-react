@@ -1,8 +1,8 @@
-import { FC, memo, useCallback, useMemo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { TabItem, Tabs } from "@/shared/ui/Tabs/Tabs";
-import { useTranslation } from "react-i18next";
-import { ArticleType } from "@/entities/Article";
+import { FC, memo, useCallback, useMemo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { useTranslation } from 'react-i18next';
+import { ArticleType } from '@/entities/Article';
 
 interface ArticleTypeTabsProps {
   className?: string;
@@ -17,29 +17,29 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo(
       () => [
         {
           value: ArticleType.ALL,
-          content: t("ALL"),
+          content: t('ALL'),
         },
         {
           value: ArticleType.IT,
-          content: t("IT"),
+          content: t('IT'),
         },
         {
           value: ArticleType.ECONOMICS,
-          content: t("ECONOMICS"),
+          content: t('ECONOMICS'),
         },
         {
           value: ArticleType.SCIENCE,
-          content: t("SCIENCE"),
+          content: t('SCIENCE'),
         },
       ],
-      [t]
+      [t],
     );
 
     const onTableType = useCallback(
       (tab: TabItem) => {
         onChangeType(tab.value as ArticleType);
       },
-      [onChangeType]
+      [onChangeType],
     );
 
     return (
@@ -47,10 +47,10 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo(
         value={value}
         tabs={typeTabs}
         onTabClick={onTableType}
-        className={classNames("", {}, [className])}
+        className={classNames('', {}, [className])}
       ></Tabs>
     );
-  }
+  },
 );
 
-ArticleTypeTabs.displayName = "ArticleTypeTabs";
+ArticleTypeTabs.displayName = 'ArticleTypeTabs';

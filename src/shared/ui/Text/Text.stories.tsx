@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Text, TextSize, TextTheme } from "./Text";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Text, TextSize, TextTheme } from './Text';
+import React from 'react';
 
 const meta = {
-  title: "shared/Text",
+  title: 'shared/Text',
   component: Text,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof Text>;
 
 export default meta;
@@ -14,42 +14,42 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    title: "Title",
-    text: "Text",
+    title: 'Title',
+    text: 'Text',
   },
 };
 
 export const Error: Story = {
   args: {
-    title: "Title",
-    text: "Text",
+    title: 'Title',
+    text: 'Text',
     theme: TextTheme.ERROR,
   },
 };
 
 export const OnlyText: Story = {
   args: {
-    text: "Text",
+    text: 'Text',
   },
 };
 
 export const OnlyTitle: Story = {
   args: {
-    title: "Title",
+    title: 'Title',
   },
 };
 
 export const PrimaryDark: Story = {
   args: {
-    title: "Title",
-    text: "Text",
+    title: 'Title',
+    text: 'Text',
   },
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 
@@ -64,14 +64,14 @@ export const PrimaryDark: Story = {
 
 export const OnlyTextDark: Story = {
   args: {
-    text: "Text",
+    text: 'Text',
   },
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 
@@ -86,14 +86,14 @@ export const OnlyTextDark: Story = {
 
 export const OnlyTitleDark: Story = {
   args: {
-    title: "Title",
+    title: 'Title',
   },
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 
@@ -108,24 +108,24 @@ export const OnlyTitleDark: Story = {
 
 export const SizeL: Story = {
   args: {
-    title: "Title",
-    text: "Text",
+    title: 'Title',
+    text: 'Text',
     size: TextSize.L,
   },
 };
 
 export const SizeM: Story = {
   args: {
-    title: "Title",
-    text: "Text",
+    title: 'Title',
+    text: 'Text',
     size: TextSize.M,
   },
 };
 
 export const SizeS: Story = {
   args: {
-    title: "Title",
-    text: "Text",
+    title: 'Title',
+    text: 'Text',
     size: TextSize.S,
   },
 };

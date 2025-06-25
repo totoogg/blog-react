@@ -1,14 +1,14 @@
-import { fetchArticlesList } from "../fetchArticlesList/fetchArticlesList";
-import { fetchNextArticlePage } from "./fetchNextArticlePage";
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlePage } from './fetchNextArticlePage';
 import {
   ActionCreateType,
   TestAsyncThunk,
-} from "@/shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk";
+} from '@/shared/lib/tests/TestsAsyncThunk/TestsAsyncThunk';
 
-jest.mock("../fetchArticlesList/fetchArticlesList");
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
-describe("fetchNextArticlePage", () => {
-  test("successes", async () => {
+describe('fetchNextArticlePage', () => {
+  test('successes', async () => {
     const thunk = new TestAsyncThunk(
       fetchNextArticlePage as ActionCreateType<void, void, string>,
       {
@@ -20,7 +20,7 @@ describe("fetchNextArticlePage", () => {
           isLoading: false,
           hasMore: true,
         },
-      }
+      },
     );
 
     await thunk.callThunk();
@@ -29,7 +29,7 @@ describe("fetchNextArticlePage", () => {
     expect(fetchArticlesList).toHaveBeenCalled();
   });
 
-  test("fetchArticleList not called", async () => {
+  test('fetchArticleList not called', async () => {
     const thunk = new TestAsyncThunk(
       fetchNextArticlePage as ActionCreateType<void, void, string>,
       {
@@ -41,7 +41,7 @@ describe("fetchNextArticlePage", () => {
           isLoading: false,
           hasMore: false,
         },
-      }
+      },
     );
 
     await thunk.callThunk();

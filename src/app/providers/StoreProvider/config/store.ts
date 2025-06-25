@@ -6,18 +6,18 @@ import {
   ThunkDispatch,
   Tuple,
   UnknownAction,
-} from "@reduxjs/toolkit";
-import { StateSchema, ThunkExtraArg } from "./StateSchema";
-import { userReducer } from "@/entities/User";
-import { counterReducer } from "@/entities/Counter";
-import { createReducerManager } from "./reducerManager";
-import { $api } from "@/shared/api/api";
-import { uiReducer } from "@/features/UI";
-import { rtkApi } from "@/shared/api/rtkApi";
+} from '@reduxjs/toolkit';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { userReducer } from '@/entities/User';
+import { counterReducer } from '@/entities/Counter';
+import { createReducerManager } from './reducerManager';
+import { $api } from '@/shared/api/api';
+import { uiReducer } from '@/features/UI';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export const createReduxStore = (
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>
+  asyncReducers?: ReducersMapObject<StateSchema>,
 ) => {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -46,7 +46,7 @@ export const createReduxStore = (
 
       return new Tuple(
         ...defaultMiddleware,
-        rtkApi.middleware as Middleware<object, StateSchema>
+        rtkApi.middleware as Middleware<object, StateSchema>,
       ) as Tuple<[Middleware]>;
     },
   });

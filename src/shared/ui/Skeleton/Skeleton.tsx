@@ -1,6 +1,6 @@
-import { FC, memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Skeleton.module.scss";
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Skeleton.module.scss';
 
 interface SkeletonProps {
   className?: string;
@@ -23,7 +23,7 @@ export const Skeleton: FC<SkeletonProps> = memo(
         style={styles}
       />
     );
-  }
+  },
 );
 
-Skeleton.displayName = "Skeleton";
+Skeleton.displayName = 'Skeleton';

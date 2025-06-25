@@ -1,15 +1,15 @@
 /* eslint-disable blog2Plugin/layer-imports */
-import { render, RenderResult } from "@testing-library/react";
-import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { ReactNode } from "react";
-import { I18nextProvider } from "react-i18next";
-import { MemoryRouter } from "react-router-dom";
-import i18ForTests from "@/shared/config/i18n/i18ForTests";
-import { DeepPartial } from "../../../lib/deepPartial/deepPartial";
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { ThemeProvider } from "@/app/providers/ThemeProvider";
-import { Theme } from "@/shared/const/theme";
-import "@/app/styles/index.scss";
+import { render, RenderResult } from '@testing-library/react';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { ReactNode } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import { MemoryRouter } from 'react-router-dom';
+import i18ForTests from '@/shared/config/i18n/i18ForTests';
+import { DeepPartial } from '../../../lib/deepPartial/deepPartial';
+import { ReducersMapObject } from '@reduxjs/toolkit';
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
+import '@/app/styles/index.scss';
 
 export interface ComponentRenderOptions {
   route?: string;
@@ -26,7 +26,7 @@ interface TestProviderProps {
 export function TestProvider(props: TestProviderProps) {
   const { children, options = {} } = props;
   const {
-    route = "/",
+    route = '/',
     initialState,
     asyncReducers,
     theme = Theme.LIGHT,
@@ -50,7 +50,7 @@ export function TestProvider(props: TestProviderProps) {
 
 export default function componentRender(
   component: ReactNode,
-  options: ComponentRenderOptions = {}
+  options: ComponentRenderOptions = {},
 ): RenderResult {
   return render(<TestProvider options={options}>{component}</TestProvider>);
 }

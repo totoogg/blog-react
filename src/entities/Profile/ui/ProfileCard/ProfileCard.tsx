@@ -1,15 +1,15 @@
-import { FC } from "react";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import cls from "./ProfileCard.module.scss";
-import { useTranslation } from "react-i18next";
-import { Text, TextAlign, TextTheme } from "@/shared/ui/Text/Text";
-import { Input } from "@/shared/ui/Input/Input";
-import { Profile } from "../../model/types/profile";
-import { Loader } from "@/shared/ui/Loader/Loader";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
-import { Currency, CurrencySelect } from "@/entities/Currency";
-import { Country, CountrySelect } from "@/entities/Country";
-import { HStack, VStack } from "@/shared/ui/Stack";
+import { FC } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './ProfileCard.module.scss';
+import { useTranslation } from 'react-i18next';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { Input } from '@/shared/ui/Input/Input';
+import { Profile } from '../../model/types/profile';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Currency, CurrencySelect } from '@/entities/Currency';
+import { Country, CountrySelect } from '@/entities/Country';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ProfileCardProps {
   className?: string;
@@ -42,14 +42,14 @@ export const ProfileCard: FC<ProfileCardProps> = ({
   onChangeCurrency,
   readonly,
 }) => {
-  const { t } = useTranslation("profile");
+  const { t } = useTranslation('profile');
 
   if (isLoading) {
     return (
       <HStack
         justify="center"
         max
-        className={classNames(cls["profileCard"], {}, [className, cls.loading])}
+        className={classNames(cls['profileCard'], {}, [className, cls.loading])}
       >
         <Loader />
       </HStack>
@@ -61,12 +61,12 @@ export const ProfileCard: FC<ProfileCardProps> = ({
       <HStack
         justify="center"
         max
-        className={classNames(cls["profileCard"], {}, [className, cls.error])}
+        className={classNames(cls['profileCard'], {}, [className, cls.error])}
       >
         <Text
           theme={TextTheme.ERROR}
-          title={t("errorTitleProfile")}
-          text={t("errorTextProfile")}
+          title={t('errorTitleProfile')}
+          text={t('errorTextProfile')}
           align={TextAlign.CENTER}
         />
       </HStack>
@@ -81,7 +81,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
     <VStack
       gap="8"
       max
-      className={classNames(cls["profileCard"], mods, [className])}
+      className={classNames(cls['profileCard'], mods, [className])}
     >
       {data?.avatar && (
         <HStack justify="center" max className={cls.avatarWrapper}>
@@ -90,7 +90,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
       )}
       <Input
         value={data?.first}
-        placeholder={t("name")}
+        placeholder={t('name')}
         className={cls.input}
         onChange={onChangeFirstname}
         readonly={readonly}
@@ -98,7 +98,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
       />
       <Input
         value={data?.lastname}
-        placeholder={t("lastname")}
+        placeholder={t('lastname')}
         className={cls.input}
         onChange={onChangeLastname}
         readonly={readonly}
@@ -106,7 +106,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({
       />
       <Input
         value={data?.age}
-        placeholder={t("age")}
+        placeholder={t('age')}
         className={cls.input}
         onChange={onChangeAge}
         readonly={readonly}
@@ -114,21 +114,21 @@ export const ProfileCard: FC<ProfileCardProps> = ({
       />
       <Input
         value={data?.city}
-        placeholder={t("city")}
+        placeholder={t('city')}
         className={cls.input}
         onChange={onChangeCity}
         readonly={readonly}
       />
       <Input
         value={data?.username}
-        placeholder={t("username")}
+        placeholder={t('username')}
         className={cls.input}
         onChange={onChangeUsername}
         readonly={readonly}
       />
       <Input
         value={data?.avatar}
-        placeholder={t("avatar")}
+        placeholder={t('avatar')}
         className={cls.input}
         onChange={onChangeAvatar}
         readonly={readonly}

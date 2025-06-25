@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface UseModalProps {
   isOpen?: boolean;
@@ -38,16 +38,16 @@ export function useModal(props: UseModalProps) {
 
   const onKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         close();
       }
     },
-    [close]
+    [close],
   );
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener("keydown", onKeyDown);
+      window.addEventListener('keydown', onKeyDown);
     }
 
     return () => {
@@ -55,7 +55,7 @@ export function useModal(props: UseModalProps) {
         clearTimeout(timerRef.current);
       }
 
-      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
 

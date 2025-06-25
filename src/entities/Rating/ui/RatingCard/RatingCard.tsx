@@ -1,14 +1,14 @@
-import { FC, memo, useCallback, useState } from "react";
-import { Card } from "@/shared/ui/Card/Card";
-import { HStack, VStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text/Text";
-import { StarRating } from "@/shared/ui/StarRating/StarRating";
-import { Modal } from "@/shared/ui/Modal/Modal";
-import { Input } from "@/shared/ui/Input/Input";
-import { useTranslation } from "react-i18next";
-import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
-import { BrowserView, MobileView } from "react-device-detect";
-import { Drawer } from "@/shared/ui/Drawer/Drawer";
+import { FC, memo, useCallback, useState } from 'react';
+import { Card } from '@/shared/ui/Card/Card';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text/Text';
+import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { Modal } from '@/shared/ui/Modal/Modal';
+import { Input } from '@/shared/ui/Input/Input';
+import { useTranslation } from 'react-i18next';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
 
 interface RatingCardProps {
   className?: string;
@@ -33,7 +33,7 @@ export const RatingCard: FC<RatingCardProps> = memo(
     const { t } = useTranslation();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [startCount, setStartCount] = useState(rate);
-    const [feedback, setFeedback] = useState("");
+    const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback(
       (selectedStartCount: number) => {
@@ -44,7 +44,7 @@ export const RatingCard: FC<RatingCardProps> = memo(
           onAccept?.(selectedStartCount);
         }
       },
-      [hasFeedback, onAccept]
+      [hasFeedback, onAccept],
     );
 
     const acceptHandler = useCallback(() => {
@@ -64,7 +64,7 @@ export const RatingCard: FC<RatingCardProps> = memo(
           data-testid="RatingCard.Input"
           value={feedback}
           onChange={setFeedback}
-          placeholder={t("review")}
+          placeholder={t('review')}
         />
       </>
     );
@@ -72,7 +72,7 @@ export const RatingCard: FC<RatingCardProps> = memo(
     return (
       <Card className={className} max data-testid="RatingCard">
         <VStack align="center" gap="8" max>
-          <Text title={startCount ? t("thanksForRate") : title} />
+          <Text title={startCount ? t('thanksForRate') : title} />
           <StarRating
             selectedStar={startCount}
             size={40}
@@ -89,10 +89,10 @@ export const RatingCard: FC<RatingCardProps> = memo(
                   onClick={cancelHandler}
                   theme={ButtonTheme.OUTLINE_RED}
                 >
-                  {t("closeBtn")}
+                  {t('closeBtn')}
                 </Button>
                 <Button data-testid="RatingCard.Send" onClick={acceptHandler}>
-                  {t("sendBtn")}
+                  {t('sendBtn')}
                 </Button>
               </HStack>
             </VStack>
@@ -103,14 +103,14 @@ export const RatingCard: FC<RatingCardProps> = memo(
             <VStack gap="32" max>
               {modalContent}
               <Button fullWidth size={ButtonSize.L} onClick={acceptHandler}>
-                {t("sendBtn")}
+                {t('sendBtn')}
               </Button>
             </VStack>
           </Drawer>
         </MobileView>
       </Card>
     );
-  }
+  },
 );
 
-RatingCard.displayName = "RatingCard";
+RatingCard.displayName = 'RatingCard';

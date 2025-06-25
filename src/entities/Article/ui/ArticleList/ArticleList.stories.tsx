@@ -1,29 +1,29 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ArticleList } from "./ArticleList";
-import React from "react";
-import { ArticleType, ArticleView } from "../../model/consts/consts";
+import type { Meta, StoryObj } from '@storybook/react';
+import { ArticleList } from './ArticleList';
+import React from 'react';
+import { ArticleType, ArticleView } from '../../model/consts/consts';
 
 const article = {
-  id: "1",
-  title: "Title 1",
-  subtitle: "Subtitle 1",
-  img: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  id: '1',
+  title: 'Title 1',
+  subtitle: 'Subtitle 1',
+  img: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
   views: 123,
-  createdAt: "01.01.2021",
+  createdAt: '01.01.2021',
   type: [ArticleType.IT],
   blocks: [],
   user: {
-    id: "1",
-    username: "XXXXX",
-    avatar: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    id: '1',
+    username: 'XXXXX',
+    avatar: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
   },
 };
 
 const meta = {
-  title: "entities/Article/ArticleList",
+  title: 'entities/Article/ArticleList',
   component: ArticleList,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ArticleList>;
 
 export default meta;
@@ -54,9 +54,9 @@ export const IsLoadingDarkBig: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 
@@ -78,9 +78,9 @@ export const IsLoadingDarkSmall: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import AddCommentForm from "./AddCommentForm";
-import React from "react";
-import { action } from "@storybook/addon-actions";
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { addCommentFormReducer } from "../../model/slice/addCommentFormSlice";
-import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
+import type { Meta, StoryObj } from '@storybook/react';
+import AddCommentForm from './AddCommentForm';
+import React from 'react';
+import { action } from '@storybook/addon-actions';
+import { ReducersMapObject } from '@reduxjs/toolkit';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
+import { DeepPartial } from '@/shared/lib/deepPartial/deepPartial';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   addCommentForm: addCommentFormReducer,
 };
 
 const meta = {
-  title: "features/AddCommentForm",
+  title: 'features/AddCommentForm',
   component: AddCommentForm,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof AddCommentForm>;
 
 export default meta;
@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
   args: {
-    onSendComment: action("onSendComment"),
+    onSendComment: action('onSendComment'),
   },
   decorators: [
     (Story) => (
@@ -40,9 +40,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

@@ -1,10 +1,10 @@
-import { FC, memo, useMemo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./ArticleSortSelector.module.scss";
-import { Select, SelectOption } from "@/shared/ui/Select/Select";
-import { useTranslation } from "react-i18next";
-import { SortOrder } from "@/shared/types/sort";
-import { ArticleSortField } from "@/entities/Article";
+import { FC, memo, useMemo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './ArticleSortSelector.module.scss';
+import { Select, SelectOption } from '@/shared/ui/Select/Select';
+import { useTranslation } from 'react-i18next';
+import { SortOrder } from '@/shared/types/sort';
+import { ArticleSortField } from '@/entities/Article';
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -20,39 +20,39 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
 
     const orderOptions = useMemo<SelectOption<SortOrder>[]>(
       () => [
-        { value: "asc", content: t("labelAsc") },
-        { value: "desc", content: t("labelDesc") },
+        { value: 'asc', content: t('labelAsc') },
+        { value: 'desc', content: t('labelDesc') },
       ],
-      [t]
+      [t],
     );
 
     const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
       () => [
-        { value: ArticleSortField.CREATED, content: t("sortDate") },
-        { value: ArticleSortField.TITLE, content: t("sortTitle") },
-        { value: ArticleSortField.VIEWS, content: t("sortView") },
+        { value: ArticleSortField.CREATED, content: t('sortDate') },
+        { value: ArticleSortField.TITLE, content: t('sortTitle') },
+        { value: ArticleSortField.VIEWS, content: t('sortView') },
       ],
-      [t]
+      [t],
     );
 
     return (
       <div className={classNames(cls.articleSortSelector, {}, [className])}>
         <Select<ArticleSortField>
           options={sortFieldOptions}
-          label={t("labelSort")}
+          label={t('labelSort')}
           value={sort}
           onChange={onChangeSort}
         />
         <Select<SortOrder>
           options={orderOptions}
-          label={t("OrderBy")}
+          label={t('OrderBy')}
           onChange={onChangeOrder}
           value={order}
           className={cls.order}
         />
       </div>
     );
-  }
+  },
 );
 
-ArticleSortSelector.displayName = "ArticleSortSelector";
+ArticleSortSelector.displayName = 'ArticleSortSelector';

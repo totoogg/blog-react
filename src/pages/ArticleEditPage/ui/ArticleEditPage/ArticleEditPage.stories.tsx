@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import ArticleEditPage from "./ArticleEditPage";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import ArticleEditPage from './ArticleEditPage';
+import React from 'react';
 
 const meta = {
-  title: "pages/ArticleEditPage/ArticleEditPage",
+  title: 'pages/ArticleEditPage/ArticleEditPage',
   component: ArticleEditPage,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ArticleEditPage>;
 
 export default meta;
@@ -18,9 +18,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

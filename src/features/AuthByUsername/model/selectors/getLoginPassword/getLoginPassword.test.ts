@@ -1,19 +1,19 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
-import { getLoginPassword } from "./getLoginPassword";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { DeepPartial } from '@/shared/lib/deepPartial/deepPartial';
+import { getLoginPassword } from './getLoginPassword';
 
-describe("getLoginPassword", () => {
-  test("should return value", () => {
+describe('getLoginPassword', () => {
+  test('should return value', () => {
     const state: DeepPartial<StateSchema> = {
-      loginForm: { password: "123" },
+      loginForm: { password: '123' },
     };
 
-    expect(getLoginPassword(state as StateSchema)).toEqual("123");
+    expect(getLoginPassword(state as StateSchema)).toEqual('123');
   });
 
-  test("should work with empty state", () => {
+  test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
 
-    expect(getLoginPassword(state as StateSchema)).toEqual("");
+    expect(getLoginPassword(state as StateSchema)).toEqual('');
   });
 });

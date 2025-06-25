@@ -1,9 +1,9 @@
-import { StateSchema } from "@/app/providers/StoreProvider";
-import { getCounter } from "./getCounter";
-import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getCounter } from './getCounter';
+import { DeepPartial } from '@/shared/lib/deepPartial/deepPartial';
 
-describe("getCounter", () => {
-  test("should return counter value", () => {
+describe('getCounter', () => {
+  test('should return counter value', () => {
     const state: DeepPartial<StateSchema> = {
       counter: { value: 10 },
     };

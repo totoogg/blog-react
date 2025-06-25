@@ -5,13 +5,13 @@ import {
   useEffect,
   useRef,
   useState,
-} from "react";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import cls from "./Input.module.scss";
+} from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  "value" | "onChange" | "readOnly"
+  'value' | 'onChange' | 'readOnly'
 >;
 
 interface InputProps extends HTMLInputProps {
@@ -27,7 +27,7 @@ export const Input: FC<InputProps> = memo((props) => {
     className,
     value,
     onChange,
-    type = "text",
+    type = 'text',
     placeholder,
     autofocus,
     readonly,
@@ -72,7 +72,7 @@ export const Input: FC<InputProps> = memo((props) => {
   return (
     <div className={classNames(cls.inputWrapper, mods, [className])}>
       {placeholder && (
-        <div className={cls.placeholder}>{placeholder + ">"}</div>
+        <div className={cls.placeholder}>{placeholder + '>'}</div>
       )}
       <div className={cls.caretWrapper}>
         <input
@@ -98,4 +98,4 @@ export const Input: FC<InputProps> = memo((props) => {
   );
 });
 
-Input.displayName = "Input";
+Input.displayName = 'Input';

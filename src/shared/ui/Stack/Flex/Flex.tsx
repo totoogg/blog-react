@@ -1,11 +1,11 @@
-import { FC } from "react";
-import { classNames, Mods } from "@/shared/lib/classNames/classNames";
-import cls from "./Flex.module.scss";
+import { FC } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import cls from './Flex.module.scss';
 
-export type FlexJustify = "start" | "center" | "end" | "between";
-export type FlexAlign = "start" | "center" | "end";
-export type FlexDirection = "row" | "column";
-export type FlexGap = "4" | "8" | "16" | "32";
+export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexDirection = 'row' | 'column';
+export type FlexGap = '4' | '8' | '16' | '32';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -50,9 +50,9 @@ export interface FlexProps extends DivProps {
 export const Flex: FC<FlexProps> = ({
   className,
   children,
-  align = "center",
-  direction = "row",
-  justify = "start",
+  align = 'center',
+  direction = 'row',
+  justify = 'start',
   gap,
   max,
   ...otherProps

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void;
@@ -19,7 +19,7 @@ export function useInfiniteScroll({
     if (callback) {
       const options = {
         root: wrapperElement,
-        rootMargin: "0px",
+        rootMargin: '0px',
         threshold: 1.0,
       };
 

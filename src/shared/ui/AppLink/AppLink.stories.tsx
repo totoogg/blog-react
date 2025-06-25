@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import { AppLink, AppLinkTheme } from "./AppLink";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import { AppLink, AppLinkTheme } from './AppLink';
+import React from 'react';
 
 const meta = {
-  title: "shared/AppLink",
+  title: 'shared/AppLink',
   component: AppLink,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 
-  args: { onClick: fn(), to: "/", children: "Text" },
+  args: { onClick: fn(), to: '/', children: 'Text' },
 } satisfies Meta<typeof AppLink>;
 
 export default meta;
@@ -34,9 +34,9 @@ export const SecondaryDark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

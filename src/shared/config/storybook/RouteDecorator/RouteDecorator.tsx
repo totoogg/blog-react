@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { FC } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { ReactNode } from 'react';
+import { FC } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 export interface RouterDecoratorProps {
   children: ReactNode;

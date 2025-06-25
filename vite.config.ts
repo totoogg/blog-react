@@ -1,23 +1,23 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     svgr({
-      include: "**/*.svg",
+      include: '**/*.svg',
     }),
     react(),
   ],
   resolve: {
     alias: {
-      "@": "/src",
+      '@': '/src',
     },
   },
   define: {
     __IS_DEV__: JSON.stringify(true),
-    __API__: JSON.stringify("http://localhost:8000"),
-    __PROJECT__: JSON.stringify("frontend"),
+    __API__: JSON.stringify('http://localhost:8000'),
+    __PROJECT__: JSON.stringify('frontend'),
   },
 });

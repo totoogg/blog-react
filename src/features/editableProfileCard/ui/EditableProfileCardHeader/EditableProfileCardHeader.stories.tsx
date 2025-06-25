@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { EditableProfileCardHeader } from "./EditableProfileCardHeader";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { EditableProfileCardHeader } from './EditableProfileCardHeader';
+import React from 'react';
 
 const meta = {
-  title: "features/editableProfileCard/EditableProfileCardHeader",
+  title: 'features/editableProfileCard/EditableProfileCardHeader',
   component: EditableProfileCardHeader,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof EditableProfileCardHeader>;
 
 export default meta;
@@ -18,9 +18,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

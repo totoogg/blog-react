@@ -1,9 +1,9 @@
-import { FC, memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./NotificationItem.module.scss";
-import { Notification } from "../../model/types/notification";
-import { Card, CardTheme } from "@/shared/ui/Card/Card";
-import { Text } from "@/shared/ui/Text/Text";
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './NotificationItem.module.scss';
+import { Notification } from '../../model/types/notification';
+import { Card, CardTheme } from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text/Text';
 
 interface NotificationItemProps {
   className?: string;
@@ -35,7 +35,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo(
     }
 
     return content;
-  }
+  },
 );
 
-NotificationItem.displayName = "NotificationItem";
+NotificationItem.displayName = 'NotificationItem';

@@ -1,8 +1,8 @@
-import { Currency } from "../../model/types/currency";
-import { FC, memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { ListBox } from "@/shared/ui/Popups";
+import { Currency } from '../../model/types/currency';
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface CurrencySelectProps {
   className?: string;
@@ -20,7 +20,7 @@ const options = [
 
 export const CurrencySelect: FC<CurrencySelectProps> = memo(
   ({ className, value, onChange, readonly }) => {
-    const { t } = useTranslation("profile");
+    const { t } = useTranslation('profile');
 
     const onChangeHandler = useCallback(() => {
       onChange?.(value as Currency);
@@ -28,17 +28,17 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo(
 
     return (
       <ListBox
-        className={classNames("", {}, [className])}
+        className={classNames('', {}, [className])}
         value={value}
-        defaultValue={t("currency")}
+        defaultValue={t('currency')}
         items={options}
         onChange={onChangeHandler}
         readonly={readonly}
         direction="top right"
-        label={t("currency")}
+        label={t('currency')}
       />
     );
-  }
+  },
 );
 
-CurrencySelect.displayName = "CurrencySelect";
+CurrencySelect.displayName = 'CurrencySelect';

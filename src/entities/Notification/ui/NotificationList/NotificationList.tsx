@@ -1,10 +1,10 @@
-import { FC, memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./NotificationList.module.scss";
-import { useNotifications } from "../../api/notificationApi";
-import { VStack } from "@/shared/ui/Stack";
-import { NotificationItem } from "../NotificationItem/NotificationItem";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './NotificationList.module.scss';
+import { useNotifications } from '../../api/notificationApi';
+import { VStack } from '@/shared/ui/Stack';
+import { NotificationItem } from '../NotificationItem/NotificationItem';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface NotificationListProps {
   className?: string;
@@ -41,7 +41,7 @@ export const NotificationList: FC<NotificationListProps> = memo(
         ))}
       </VStack>
     );
-  }
+  },
 );
 
-NotificationList.displayName = "NotificationList";
+NotificationList.displayName = 'NotificationList';

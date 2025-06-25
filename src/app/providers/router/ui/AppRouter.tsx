@@ -1,9 +1,9 @@
-import { memo, Suspense, useCallback } from "react";
-import { Routes, Route } from "react-router-dom";
-import { routerConfig } from "../config/routerConfig";
-import { RequireAuth } from "./RequireAuth";
-import { PageLoader } from "@/widgets/PageLoader";
-import { AppRouterProps } from "@/shared/types/router";
+import { memo, Suspense, useCallback } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { routerConfig } from '../config/routerConfig';
+import { RequireAuth } from './RequireAuth';
+import { PageLoader } from '@/widgets/PageLoader';
+import { AppRouterProps } from '@/shared/types/router';
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRouterProps) => {
@@ -29,4 +29,4 @@ export const AppRouter = memo(() => {
   return <Routes>{Object.values(routerConfig).map(renderWithWrapper)}</Routes>;
 });
 
-AppRouter.displayName = "AppRouter";
+AppRouter.displayName = 'AppRouter';

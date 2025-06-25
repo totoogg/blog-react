@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeSwitcher } from "./ThemeSwitcher";
-import { useEffect } from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeSwitcher } from './ThemeSwitcher';
+import { useEffect } from 'react';
 // eslint-disable-next-line blog2Plugin/layer-imports
-import { ThemeProvider } from "@/app/providers/ThemeProvider";
-import { Theme } from "@/shared/const/theme";
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 const meta = {
-  title: "shared/ThemeSwitcher",
+  title: 'shared/ThemeSwitcher',
   component: ThemeSwitcher,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ThemeSwitcher>;
 
 export default meta;
@@ -33,9 +33,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

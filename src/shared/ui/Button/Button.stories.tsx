@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import { Button, ButtonSize, ButtonTheme } from "./Button";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import { Button, ButtonSize, ButtonTheme } from './Button';
+import React from 'react';
 
 const meta = {
-  title: "shared/Button",
+  title: 'shared/Button',
   component: Button,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -17,55 +17,55 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
   },
 };
 
 export const Clear: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.CLEAR,
   },
 };
 
 export const ClearInverted: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.CLEAR_INVERTED,
   },
 };
 
 export const Background: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.BACKGROUND,
   },
 };
 
 export const BackgroundInverted: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.BACKGROUND_INVERTED,
   },
 };
 
 export const Outline: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.OUTLINE,
   },
 };
 
 export const Square: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     square: true,
   },
 };
 
 export const SquareM: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     square: true,
     size: ButtonSize.M,
   },
@@ -73,7 +73,7 @@ export const SquareM: Story = {
 
 export const SquareL: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     square: true,
     size: ButtonSize.L,
   },
@@ -81,7 +81,7 @@ export const SquareL: Story = {
 
 export const SquareXL: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     square: true,
     size: ButtonSize.XL,
   },
@@ -89,22 +89,22 @@ export const SquareXL: Story = {
 
 export const Disabled: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     disabled: true,
   },
 };
 
 export const OutlineDark: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.OUTLINE,
   },
   decorators: [
     (Story) => {
       React.useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

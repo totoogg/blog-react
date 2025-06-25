@@ -1,11 +1,11 @@
-import { FC, memo } from "react";
-import cls from "./SidebarItem.module.scss";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
-import { SidebarItemType } from "../../model/types/sidebar";
-import { useTranslation } from "react-i18next";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useSelector } from "react-redux";
-import { getUserAuthData } from "@/entities/User";
+import { FC, memo } from 'react';
+import cls from './SidebarItem.module.scss';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { SidebarItemType } from '../../model/types/sidebar';
+import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from '@/entities/User';
 
 interface SidebarItemProps {
   item: SidebarItemType;
@@ -32,4 +32,4 @@ export const SidebarItem: FC<SidebarItemProps> = memo(({ collapsed, item }) => {
   );
 });
 
-SidebarItem.displayName = "SidebarItem";
+SidebarItem.displayName = 'SidebarItem';

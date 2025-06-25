@@ -1,7 +1,7 @@
-import { counterReducer, counterActions } from "./counterSlice";
+import { counterReducer, counterActions } from './counterSlice';
 
-describe("counterSlice", () => {
-  test("decrement", () => {
+describe('counterSlice', () => {
+  test('decrement', () => {
     const state = {
       value: 10,
     };
@@ -11,7 +11,7 @@ describe("counterSlice", () => {
     });
   });
 
-  test("increment", () => {
+  test('increment', () => {
     const state = {
       value: 10,
     };
@@ -21,7 +21,7 @@ describe("counterSlice", () => {
     });
   });
 
-  test("should work with empty state", () => {
+  test('should work with empty state', () => {
     expect(counterReducer(undefined, counterActions.increment())).toEqual({
       value: 1,
     });

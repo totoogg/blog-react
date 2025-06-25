@@ -1,8 +1,8 @@
-import { FC, memo, useCallback } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./Code.module.scss";
-import { Button, ButtonTheme } from "../Button/Button";
-import CopyIcon from "../../assets/icons/copy-20-20.svg";
+import { FC, memo, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Code.module.scss';
+import { Button, ButtonTheme } from '../Button/Button';
+import CopyIcon from '../../assets/icons/copy-20-20.svg';
 
 interface CodeProps {
   className?: string;
@@ -28,4 +28,4 @@ export const Code: FC<CodeProps> = memo(({ className, text }) => {
   );
 });
 
-Code.displayName = "Code";
+Code.displayName = 'Code';

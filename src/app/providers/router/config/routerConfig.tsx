@@ -1,13 +1,13 @@
-import { UserRole } from "@/entities/User";
-import { AboutPage } from "@/pages/AboutPage";
-import { AdminPanelPage } from "@/pages/AdminPanelPage";
-import { ArticleDetailPage } from "@/pages/ArticleDetailPage";
-import { ArticleEditPage } from "@/pages/ArticleEditPage";
-import { ArticlesPage } from "@/pages/ArticlesPage";
-import { ForbiddenPage } from "@/pages/ForbiddenPage";
-import { MainPage } from "@/pages/MainPage";
-import { NotFoundPage } from "@/pages/NotFoundPage";
-import { ProfilePage } from "@/pages/ProfilePage";
+import { UserRole } from '@/entities/User';
+import { AboutPage } from '@/pages/AboutPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
+import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticlesPage } from '@/pages/ArticlesPage';
+import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
 import {
   getRouteAbout,
   getRouteAdmin,
@@ -18,9 +18,9 @@ import {
   getRouteForbidden,
   getRouteMain,
   getRouteProfile,
-} from "@/shared/const/router";
-import { AppRouter } from "@/shared/const/router";
-import { AppRouterProps } from "@/shared/types/router";
+} from '@/shared/const/router';
+import { AppRouter } from '@/shared/const/router';
+import { AppRouterProps } from '@/shared/types/router';
 
 export const routerConfig: Record<AppRouter, AppRouterProps> = {
   [AppRouter.MAIN]: { path: getRouteMain(), element: <MainPage /> },
@@ -30,7 +30,7 @@ export const routerConfig: Record<AppRouter, AppRouterProps> = {
     element: <ForbiddenPage />,
   },
   [AppRouter.PROFILE]: {
-    path: getRouteProfile(":id"),
+    path: getRouteProfile(':id'),
     element: <ProfilePage />,
     authOnly: true,
   },
@@ -40,7 +40,7 @@ export const routerConfig: Record<AppRouter, AppRouterProps> = {
     authOnly: true,
   },
   [AppRouter.ARTICLE_DETAILS]: {
-    path: getRouteArticleDetails(":id"),
+    path: getRouteArticleDetails(':id'),
     element: <ArticleDetailPage />,
     authOnly: true,
   },
@@ -50,7 +50,7 @@ export const routerConfig: Record<AppRouter, AppRouterProps> = {
     authOnly: true,
   },
   [AppRouter.ARTICLE_EDIT]: {
-    path: getRouteArticleEdit(":id"),
+    path: getRouteArticleEdit(':id'),
     element: <ArticleEditPage />,
     authOnly: true,
   },
@@ -61,7 +61,7 @@ export const routerConfig: Record<AppRouter, AppRouterProps> = {
     roles: [UserRole.ADMIN, UserRole.MANAGER],
   },
   [AppRouter.NOT_FOUND]: {
-    path: "*",
+    path: '*',
     element: <NotFoundPage />,
   },
 };

@@ -1,12 +1,12 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { useEffect } from "react";
-import { CurrencySelect } from "./CurrencySelect";
+import type { Meta, StoryObj } from '@storybook/react';
+import { useEffect } from 'react';
+import { CurrencySelect } from './CurrencySelect';
 
 const meta = {
-  title: "entities/CurrencySelect",
+  title: 'entities/CurrencySelect',
   component: CurrencySelect,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof CurrencySelect>;
 
 export default meta;
@@ -21,9 +21,9 @@ export const Dark: Story = {
   decorators: [
     (Story) => {
       useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

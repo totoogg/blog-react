@@ -1,8 +1,8 @@
-import { FC, memo } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./ArticleTextBlockComponent.module.scss";
-import { ArticleTextBlock } from "../../model/types/article";
-import { Text } from "@/shared/ui/Text/Text";
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './ArticleTextBlockComponent.module.scss';
+import { ArticleTextBlock } from '../../model/types/article';
+import { Text } from '@/shared/ui/Text/Text';
 
 interface ArticleTextBlockComponentProps {
   className?: string;
@@ -23,4 +23,4 @@ export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> =
     );
   });
 
-ArticleTextBlockComponent.displayName = "ArticleTextBlockComponent";
+ArticleTextBlockComponent.displayName = 'ArticleTextBlockComponent';

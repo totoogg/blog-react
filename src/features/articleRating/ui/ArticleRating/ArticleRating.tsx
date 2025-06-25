@@ -1,10 +1,10 @@
-import { RatingCard } from "@/entities/Rating";
-import { FC, memo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
-import { useArticleRating, useRateArticle } from "../../api/articleRatingApi";
-import { useSelector } from "react-redux";
-import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { RatingCard } from '@/entities/Rating';
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useArticleRating, useRateArticle } from '../../api/articleRatingApi';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from '@/entities/User';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 export interface ArticleRatingProps {
   className?: string;
@@ -17,7 +17,7 @@ const ArticleRating: FC<ArticleRatingProps> = memo(
     const userId = useSelector(getUserAuthData);
     const { data, isLoading } = useArticleRating({
       articleId,
-      userId: userId?.id ?? "",
+      userId: userId?.id ?? '',
     });
     const [rateArticleMutation] = useRateArticle();
 
@@ -25,7 +25,7 @@ const ArticleRating: FC<ArticleRatingProps> = memo(
       (star: number, feedback?: string) => {
         try {
           rateArticleMutation({
-            userId: userId?.id ?? "",
+            userId: userId?.id ?? '',
             articleId,
             rate: star,
             feedback,
@@ -34,25 +34,25 @@ const ArticleRating: FC<ArticleRatingProps> = memo(
           console.log(error);
         }
       },
-      [articleId, rateArticleMutation, userId?.id]
+      [articleId, rateArticleMutation, userId?.id],
     );
 
     const onCancel = useCallback(
       (star: number) => {
         handleRateArticle(star);
       },
-      [handleRateArticle]
+      [handleRateArticle],
     );
 
     const onAccept = useCallback(
       (star: number, feedback?: string) => {
         handleRateArticle(star, feedback);
       },
-      [handleRateArticle]
+      [handleRateArticle],
     );
 
     if (isLoading) {
-      return <Skeleton width={"100%"} height={120} />;
+      return <Skeleton width={'100%'} height={120} />;
     }
 
     const rating = data?.[0];
@@ -62,15 +62,15 @@ const ArticleRating: FC<ArticleRatingProps> = memo(
         onCancel={onCancel}
         onAccept={onAccept}
         rate={rating?.rate}
-        title={t("rateArticle")}
+        title={t('rateArticle')}
         hasFeedback
-        feedbackTitle={t("commitArticle")}
+        feedbackTitle={t('commitArticle')}
         className={className}
       />
     );
-  }
+  },
 );
 
-ArticleRating.displayName = "ArticleRating";
+ArticleRating.displayName = 'ArticleRating';
 
 export default ArticleRating;

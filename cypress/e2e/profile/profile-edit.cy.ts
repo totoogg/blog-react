@@ -1,6 +1,6 @@
-let profileId = "";
+let profileId = '';
 
-describe("profile", () => {
+describe('profile', () => {
   beforeEach(() => {
     cy.login().then((data) => {
       profileId = data.id;
@@ -12,16 +12,16 @@ describe("profile", () => {
     cy.resetProfile(profileId);
   });
 
-  it("success loading", () => {
-    cy.getByTestId("ProfileCard.firstname").should("have.value", "test");
+  it('success loading', () => {
+    cy.getByTestId('ProfileCard.firstname').should('have.value', 'test');
   });
 
-  it("edit", () => {
-    const newName = "new";
-    const newLastname = "lastname";
+  it('edit', () => {
+    const newName = 'new';
+    const newLastname = 'lastname';
 
     cy.updateProfile(newName, newLastname);
-    cy.getByTestId("ProfileCard.firstname").should("have.value", newName);
-    cy.getByTestId("ProfileCard.lastname").should("have.value", newLastname);
+    cy.getByTestId('ProfileCard.firstname').should('have.value', newName);
+    cy.getByTestId('ProfileCard.lastname').should('have.value', newLastname);
   });
 });

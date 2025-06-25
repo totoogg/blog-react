@@ -1,8 +1,8 @@
-import { FC, memo, useState } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./StarRating.module.scss";
-import StarIcon from "@/shared/assets/icons/star.svg";
-import { Icon } from "../Icon/Icon";
+import { FC, memo, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './StarRating.module.scss';
+import StarIcon from '@/shared/assets/icons/star.svg';
+import { Icon } from '../Icon/Icon';
 
 interface StarRatingProps {
   className?: string;
@@ -46,7 +46,7 @@ export const StarRating: FC<StarRatingProps> = memo(
             className={classNames(
               cls.starIcon,
               { [cls.selected]: isSelected },
-              [currentStarCount >= star ? cls.hovered : cls.normal]
+              [currentStarCount >= star ? cls.hovered : cls.normal],
             )}
             key={star}
             width={size}
@@ -54,13 +54,13 @@ export const StarRating: FC<StarRatingProps> = memo(
             onMouseLeave={onLeave}
             onMouseEnter={onHover(star)}
             onClick={onClick(star)}
-            data-testid={"StarRating." + star}
+            data-testid={'StarRating.' + star}
             data-selected={currentStarCount >= star}
           />
         ))}
       </div>
     );
-  }
+  },
 );
 
-StarRating.displayName = "StarRating";
+StarRating.displayName = 'StarRating';

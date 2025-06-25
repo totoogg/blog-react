@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Sidebar } from "./Sidebar";
-import { useEffect } from "react";
-import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { userReducer } from "@/entities/User";
-import { ReducersMapObject } from "@reduxjs/toolkit";
-import { DeepPartial } from "@/shared/lib/deepPartial/deepPartial";
+import type { Meta, StoryObj } from '@storybook/react';
+import { Sidebar } from './Sidebar';
+import { useEffect } from 'react';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import { userReducer } from '@/entities/User';
+import { ReducersMapObject } from '@reduxjs/toolkit';
+import { DeepPartial } from '@/shared/lib/deepPartial/deepPartial';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   user: userReducer,
 };
 
 const meta = {
-  title: "widgets/Sidebar",
+  title: 'widgets/Sidebar',
   component: Sidebar,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 } satisfies Meta<typeof Sidebar>;
 
 export default meta;
@@ -26,9 +26,9 @@ export const NoAuthDark: Story = {
   decorators: [
     (Story) => {
       useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 
@@ -45,9 +45,9 @@ export const AuthDark: Story = {
   decorators: [
     (Story) => {
       useEffect(() => {
-        document.body.classList.add("app_dark_theme");
+        document.body.classList.add('app_dark_theme');
         return () => {
-          document.body.classList.remove("app_dark_theme");
+          document.body.classList.remove('app_dark_theme');
         };
       }, []);
 

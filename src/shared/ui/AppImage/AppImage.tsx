@@ -5,7 +5,7 @@ import {
   ReactElement,
   useLayoutEffect,
   useState,
-} from "react";
+} from 'react';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
@@ -14,14 +14,14 @@ interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 }
 
 export const AppImage: FC<AppImageProps> = memo(
-  ({ className, src, alt = "image", fallback, errorFallback, ...props }) => {
+  ({ className, src, alt = 'image', fallback, errorFallback, ...props }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [hasError, setHasError] = useState(false);
 
     useLayoutEffect(() => {
       const image = new Image();
 
-      image.src = src ?? "";
+      image.src = src ?? '';
       image.onload = () => {
         setIsLoading(false);
       };
@@ -40,7 +40,7 @@ export const AppImage: FC<AppImageProps> = memo(
     }
 
     return <img className={className} src={src} alt={alt} {...props} />;
-  }
+  },
 );
 
-AppImage.displayName = "AppImage";
+AppImage.displayName = 'AppImage';

@@ -1,13 +1,13 @@
-import { FC, memo, useCallback, useState } from "react";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./NotificationButton.module.scss";
-import { Popover } from "@/shared/ui/Popups";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import { Icon } from "@/shared/ui/Icon/Icon";
-import { NotificationList } from "@/entities/Notification";
-import NotificationIcon from "@/shared/assets/icons/notification-20-20.svg";
-import { Drawer } from "@/shared/ui/Drawer/Drawer";
-import { BrowserView, MobileView } from "react-device-detect";
+import { FC, memo, useCallback, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './NotificationButton.module.scss';
+import { Popover } from '@/shared/ui/Popups';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { NotificationList } from '@/entities/Notification';
+import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 interface NotificationButtonProps {
   className?: string;
@@ -51,7 +51,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(
         </MobileView>
       </div>
     );
-  }
+  },
 );
 
-NotificationButton.displayName = "NotificationButton";
+NotificationButton.displayName = 'NotificationButton';

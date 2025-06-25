@@ -1,13 +1,13 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { memo, ReactNode, useCallback, useEffect } from "react";
-import { Overlay } from "../Overlay/Overlay";
-import cls from "./Drawer.module.scss";
-import { Portal } from "../Portal/Portal";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { memo, ReactNode, useCallback, useEffect } from 'react';
+import { Overlay } from '../Overlay/Overlay';
+import cls from './Drawer.module.scss';
+import { Portal } from '../Portal/Portal';
 import {
   AnimationProvider,
   useAnimationLibs,
-} from "@/shared/lib/components/AnimationProvider";
-import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+} from '@/shared/lib/components/AnimationProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
   className?: string;
@@ -69,14 +69,14 @@ export const DrawerContent = memo((props: DrawerProps) => {
       filterTaps: true,
       bounds: { top: 0 },
       rubberband: true,
-    }
+    },
   );
 
   if (!isOpen) {
     return null;
   }
 
-  const display = y.to((py) => (py < height ? "block" : "none"));
+  const display = y.to((py) => (py < height ? 'block' : 'none'));
 
   if (!Spring) {
     return null;
@@ -85,7 +85,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
   return (
     <Portal>
       <div
-        className={classNames(cls.Drawer, {}, [className, theme, "app_drawer"])}
+        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
       >
         <Overlay onClick={close} />
         <Spring.a.div
@@ -100,7 +100,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
   );
 });
 
-DrawerContent.displayName = "DrawerContent";
+DrawerContent.displayName = 'DrawerContent';
 
 const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
@@ -120,4 +120,4 @@ export const Drawer = (props: DrawerProps) => {
   );
 };
 
-Drawer.displayName = "Drawer";
+Drawer.displayName = 'Drawer';
