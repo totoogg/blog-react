@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import { USER_LOCALSTORAGE_KEY } from "../../../src/shared/const/localStorage";
 import { User } from "../../../src/entities/User";
-import { selectByTestId } from "cypress/helpers/selectByTestId";
+import { selectByTestId } from "../../helpers/selectByTestId";
 
 export const login = (
   username: string = "testuser",
