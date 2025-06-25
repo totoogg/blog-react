@@ -44,6 +44,8 @@ export function ListBox(props: ListBoxProps) {
 
   const optionsClasses = [mapDirectionClass[direction]];
 
+  console.log('cls', cls);
+
   return (
     <HStack gap="4">
       {label && <span>{label + '>'}</span>}
