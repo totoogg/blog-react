@@ -7,7 +7,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 import i18next from 'eslint-plugin-i18next';
 import reactHooks from 'eslint-plugin-react-hooks';
 import unusedImports from 'eslint-plugin-unused-imports';
-import eslintPluginPrettierRecommended from "'eslint-plugin-prettier/recommended'";
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default defineConfig([
   globalIgnores(['./node_modules/*', './build/*', './scripts/*']),
@@ -83,7 +83,7 @@ export default defineConfig([
         'error',
         { markupOnly: true, ignoreAttribute: ['data-testid'] },
       ],
-      'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
+      'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     },
   },
 ]);
