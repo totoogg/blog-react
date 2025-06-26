@@ -104,16 +104,16 @@ More about [Storybook](/docs/storybook.md)
 Example:
 
 ```typescript jsx
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import { Button, ButtonSize, ButtonTheme } from "./Button";
-import React from "react";
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import { Button, ButtonSize, ButtonTheme } from './Button';
+import React from 'react';
 
 const meta = {
-  title: "shared/Button",
+  title: 'shared/Button',
   component: Button,
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -123,13 +123,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
   },
 };
 
 export const Clear: Story = {
   args: {
-    children: "Text",
+    children: 'Text',
     theme: ButtonTheme.CLEAR,
   },
 };
@@ -175,6 +175,26 @@ Requests to the server are sent using [RTK query](/src/shared/api/rtkApi.ts)
 
 For asynchronous connection of reducers (so as not to pull them into a common bundle), use
 [DynamicModuleLoader](/src/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader.tsx)
+
+---
+
+### Working with feature-flags
+
+Feature flags are only allowed to be used with the toggleFeatures helper
+
+an object with options is passed to it
+
+{
+name: name of the feature flag,
+on: function that will run after the feature is enabled
+of: function that will run after the feature is disabled
+}
+
+To automatically remove a feature, use the remove-feature.ts script,
+which takes 2 arguments
+
+1. Name of the feature flag to be removed
+2. State (on\off)
 
 ---
 
