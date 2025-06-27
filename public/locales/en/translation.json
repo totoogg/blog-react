@@ -46,5 +46,7 @@
   "rateArticle": "Rate this article",
   "commitArticle": "Leave your feedback on the article, it will help improve the quality",
   "thanksForRate": "Thank you for your rating",
+  "greetTitle": "Welcome to the articles page",
+  "greetText": "Here you can search and view articles on various topics",
   "notFound": "Page not found"
 }

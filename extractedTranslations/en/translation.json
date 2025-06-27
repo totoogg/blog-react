@@ -42,6 +42,8 @@
   "errorTextProfile": "errorTextProfile",
   "errorTitleProfile": "errorTitleProfile",
   "forbiddenPage": "forbiddenPage",
+  "greetText": "",
+  "greetTitle": "",
   "inputPassword": "inputPassword",
   "inputUsername": "inputUsername",
   "labelAsc": "labelAsc",
