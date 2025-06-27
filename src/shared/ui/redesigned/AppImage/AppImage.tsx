@@ -13,9 +13,6 @@ interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFallback?: ReactElement;
 }
 
-/**
- * @deprecated
- */
 export const AppImage: FC<AppImageProps> = memo(
   ({ className, src, alt = 'image', fallback, errorFallback, ...props }) => {
     const [isLoading, setIsLoading] = useState(true);

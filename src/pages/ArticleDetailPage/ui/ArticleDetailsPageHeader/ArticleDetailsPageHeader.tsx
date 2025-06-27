@@ -9,7 +9,7 @@ import {
 } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { getArticleDetailsData } from '@/entities/Article';
 
 interface ArticleDetailsPageHeader {
