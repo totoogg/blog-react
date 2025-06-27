@@ -19,8 +19,6 @@ export const saveJsonSettings = createAsyncThunk<
       return rejectWithValue('');
     }
 
-    console.log('1');
-
     try {
       const response = await dispatch(
         setJsonSettingsMutation({
