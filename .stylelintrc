@@ -8,6 +8,7 @@
     "color-function-alias-notation": null,
     "alpha-value-notation": null,
     "number-max-precision": null,
+    "no-descending-specificity": null,
     "color-function-notation": null
   }
 }
