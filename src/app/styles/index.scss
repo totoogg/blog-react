@@ -1,8 +1,8 @@
-@use "reset";
-@use "variables/global";
-@use "themes/dark";
-@use "themes/normal";
-@use "themes/orange";
+@use 'reset';
+@use 'variables/global';
+@use 'themes/dark';
+@use 'themes/normal';
+@use 'themes/orange';
 
 body,
 .app_drawer {
@@ -13,6 +13,13 @@ body,
 .app {
   background: var(--bg-color);
   min-height: 100vh;
+}
+
+.app_redesigned {
+  background: var(--bg-redesigned);
+  min-height: 100vh;
+  font: var(--font-m-redesigned);
+  color: var(--text-redesigned);
 }
 
 .content-page {

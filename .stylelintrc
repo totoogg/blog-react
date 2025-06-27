@@ -5,6 +5,9 @@
     "selector-class-pattern": null,
     "declaration-block-no-redundant-longhand-properties": null,
     "shorthand-property-no-redundant-values": null,
-    "color-function-alias-notation": null
+    "color-function-alias-notation": null,
+    "alpha-value-notation": null,
+    "number-max-precision": null,
+    "color-function-notation": null
   }
 }
