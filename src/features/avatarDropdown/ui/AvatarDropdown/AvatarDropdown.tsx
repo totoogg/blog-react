@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { useTranslation } from 'react-i18next';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   getUserAuthData,

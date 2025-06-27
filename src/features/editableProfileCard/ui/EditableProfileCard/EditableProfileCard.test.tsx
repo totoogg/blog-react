@@ -9,7 +9,7 @@ import { profileReducer } from '../../model/slice/profileSlice';
 import { screen } from '@testing-library/react';
 import { $api } from '@/shared/api/api';
 
-jest.mock('@/shared/ui/Popups', () => ({
+jest.mock('@/shared/ui/deprecated/Popups', () => ({
   ListBox: jest.fn(() => <div data-testid="ListBox"></div>),
 }));
 

@@ -8,7 +8,7 @@ import {
 import { screen } from '@testing-library/dom';
 import { UserRole } from '@/entities/User';
 
-jest.mock('@/shared/ui/Popups', () => ({
+jest.mock('@/shared/ui/deprecated/Popups', () => ({
   ListBox: jest.fn(() => <div data-testid="ListBox"></div>),
 }));
 

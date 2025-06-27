@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -9,7 +9,7 @@ import {
 } from '@/shared/const/router';
 import { useSelector } from 'react-redux';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { HStack } from '@/shared/ui/Stack';
+import { HStack } from '@/shared/ui/deprecated/Stack';
 import { getArticleDetailsData } from '@/entities/Article';
 
 interface ArticleDetailsPageHeader {
