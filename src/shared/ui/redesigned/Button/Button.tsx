@@ -2,7 +2,7 @@ import { FC, memo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
-export type ButtonTheme = 'clear' | 'outline';
+export type ButtonTheme = 'clear' | 'outline' | 'filled';
 
 export type ButtonSize = 'sizeM' | 'sizeL' | 'sizeXl';
 

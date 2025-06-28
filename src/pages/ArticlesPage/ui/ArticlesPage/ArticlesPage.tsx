@@ -15,6 +15,10 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import { useSearchParams } from 'react-router-dom';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
+import { FilterContainer } from '../FilterContainer/FilterContainer';
 
 interface ArticlesPageProps {
   className?: string;
@@ -36,17 +40,44 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
     dispatch(initArticlePage(searchParams));
   });
 
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      off={
+        <Page
+          data-testid="ArticlesPage"
+          onScrollEnd={onLoadNextPart}
+          className={classNames(cls.articlesPage, {}, [className])}
+        >
+          <ArticlesPageFilters />
+          <ArticleInfiniteList className={cls.list} />
+          <ArticlePageGreeting />
+        </Page>
+      }
+      on={
+        <StickyContentLayout
+          content={
+            <Page
+              data-testid="ArticlesPage"
+              onScrollEnd={onLoadNextPart}
+              className={classNames(cls.articlesPageRedesigned, {}, [
+                className,
+              ])}
+            >
+              <ArticleInfiniteList className={cls.list} />
+              <ArticlePageGreeting />
+            </Page>
+          }
+          left={<ViewSelectorContainer />}
+          right={<FilterContainer />}
+        />
+      }
+    />
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        data-testid="ArticlesPage"
-        onScrollEnd={onLoadNextPart}
-        className={classNames(cls.articlesPage, {}, [className])}
-      >
-        <ArticlesPageFilters />
-        <ArticleInfiniteList className={cls.list} />
-        <ArticlePageGreeting />
-      </Page>
+      {content}
     </DynamicModuleLoader>
   );
 };

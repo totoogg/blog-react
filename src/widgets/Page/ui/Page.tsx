@@ -32,7 +32,11 @@ export const Page: FC<PageProps> = memo((props) => {
 
   useInfiniteScroll({
     triggerRef: triggerRef as React.RefObject<HTMLDivElement>,
-    wrapperRef: wrapperRef as React.RefObject<HTMLDivElement>,
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef as React.RefObject<HTMLDivElement>,
+    }),
     callback: onScrollEnd,
   });
 

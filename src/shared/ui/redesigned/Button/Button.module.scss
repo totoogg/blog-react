@@ -8,12 +8,19 @@
   }
 }
 
-.clear,
-.clearInverted {
+.clear {
   padding: 0;
   border: none;
   background: none;
   outline: none;
+}
+
+.filled {
+  background: var(--light-bg-redesigned);
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 34px;
 }
 
 .square {

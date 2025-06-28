@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text, TextSize, TextTheme } from './Text';
+import { Text } from './Text';
 import React from 'react';
 
 const meta = {
@@ -23,7 +23,7 @@ export const Error: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    theme: TextTheme.ERROR,
+    theme: 'error',
   },
 };
 
@@ -110,7 +110,7 @@ export const SizeL: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    size: TextSize.L,
+    size: 'sizeL',
   },
 };
 
@@ -118,7 +118,7 @@ export const SizeM: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    size: TextSize.M,
+    size: 'sizeM',
   },
 };
 
@@ -126,6 +126,6 @@ export const SizeS: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    size: TextSize.S,
+    size: 'sizeS',
   },
 };
