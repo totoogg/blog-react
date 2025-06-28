@@ -15,6 +15,7 @@ interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
+  bold?: boolean;
   'data-testid'?: string;
 }
 
@@ -34,13 +35,14 @@ export const Text: FC<TextProps> = memo(
     theme = 'primary',
     align = 'left',
     size = 'sizeM',
+    bold,
     'data-testid': dataTestId = 'Text',
   }) => {
     const HeaderTag = mapSizeToHeaderTag[size];
 
     return (
       <div
-        className={classNames(cls.textWrapper, {}, [
+        className={classNames(cls.textWrapper, { [cls.bold]: bold }, [
           className,
           cls[theme],
           cls[align],

@@ -38,10 +38,8 @@ export const ProfileCardRedesignedSkeleton = () => {
             <Skeleton width={'100%'} height={38} />
             <Skeleton width={'100%'} height={38} />
             <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
           </VStack>
           <VStack gap="16" max>
-            <Skeleton width={'100%'} height={38} />
             <Skeleton width={'100%'} height={38} />
             <Skeleton width={'100%'} height={38} />
             <Skeleton width={'100%'} height={38} />

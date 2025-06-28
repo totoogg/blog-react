@@ -2,8 +2,11 @@ import { FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleListItem.module.scss';
 import { ArticleView } from '../../model/consts/consts';
-import { Card } from '@/shared/ui/deprecated/Card/Card';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card/Card';
+import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card/Card';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton/Skeleton';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface ArticleListItemSkeletonProps {
   className?: string;
@@ -12,24 +15,37 @@ interface ArticleListItemSkeletonProps {
 
 export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
   ({ className, view }) => {
+    const mainClass = toggleFeatures({
+      name: 'isAppRedesigned',
+      off: () => cls.articleListItem,
+      on: () => cls.articleListItemRedesigned,
+    });
+
+    const Skeleton = toggleFeatures({
+      name: 'isAppRedesigned',
+      off: () => SkeletonDeprecated,
+      on: () => SkeletonRedesigned,
+    });
+
+    const Card = toggleFeatures({
+      name: 'isAppRedesigned',
+      off: () => CardDeprecated,
+      on: () => CardRedesigned,
+    });
+
     if (view === ArticleView.BIG) {
       return (
-        <div
-          className={classNames(cls.articleListItem, {}, [
-            className,
-            cls[view],
-          ])}
-        >
+        <div className={classNames(mainClass, {}, [className, cls[view]])}>
           <Card className={cls.card}>
             <div className={cls.header}>
-              <Skeleton border="50%" width={30} height={30} />
+              <Skeleton border="50%" height={30} width={30} />
               <Skeleton width={150} height={16} className={cls.username} />
               <Skeleton width={150} height={16} className={cls.date} />
             </div>
             <Skeleton width={250} height={24} className={cls.title} />
-            <Skeleton width={250} className={cls.img} />
+            <Skeleton height={200} className={cls.img} />
             <div className={cls.footer}>
-              <Skeleton width={200} height={36} className={cls.title} />
+              <Skeleton height={36} width={200} />
             </div>
           </Card>
         </div>
@@ -37,9 +53,7 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
     }
 
     return (
-      <div
-        className={classNames(cls.articleListItem, {}, [className, cls[view]])}
-      >
+      <div className={classNames(mainClass, {}, [className, cls[view]])}>
         <Card className={cls.card}>
           <div className={cls.imageWrapper}>
             <Skeleton width={200} height={200} className={cls.img} />

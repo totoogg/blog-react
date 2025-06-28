@@ -2,13 +2,13 @@ import { FC, HTMLAttributes, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Card.module.scss';
 
-export type CardTheme = 'normal' | 'outlined' | 'light';
+export type CardVariant = 'normal' | 'outlined' | 'light';
 export type CardPadding = '0' | '8' | '16' | '24';
 export type CardBorder = 'round' | 'normalBorder';
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children: React.ReactNode;
-  theme?: CardTheme;
+  variant?: CardVariant;
   max?: boolean;
   padding?: CardPadding;
   border?: CardBorder;
@@ -25,7 +25,7 @@ export const Card: FC<CardProps> = memo(
   ({
     className,
     children,
-    theme = 'normal',
+    variant = 'normal',
     max,
     padding = '8',
     border = 'normal',
@@ -37,7 +37,7 @@ export const Card: FC<CardProps> = memo(
       <div
         className={classNames(cls.card, { [cls.max]: max }, [
           className,
-          cls[theme],
+          cls[variant],
           cls[paddingClass],
           cls[border],
         ])}

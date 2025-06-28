@@ -40,7 +40,7 @@ export const Tabs: FC<TabsProps> = memo(
 
           return (
             <Card
-              theme={isSelected ? 'light' : 'normal'}
+              variant={isSelected ? 'light' : 'normal'}
               className={classNames(cls.tabs, { [cls.selected]: isSelected })}
               onClick={clickHandler(tab)}
               key={tab.value}
