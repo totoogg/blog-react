@@ -3,7 +3,7 @@ import { Card } from '@/shared/ui/deprecated/Card/Card';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text/Text';
 import { StarRating } from '@/shared/ui/deprecated/StarRating/StarRating';
-import { Modal } from '@/shared/ui/deprecated/Modal/Modal';
+import { Modal } from '@/shared/ui/redesigned/Modal/Modal';
 import { Input } from '@/shared/ui/deprecated/Input/Input';
 import { useTranslation } from 'react-i18next';
 import {
@@ -12,7 +12,7 @@ import {
   ButtonTheme,
 } from '@/shared/ui/deprecated/Button/Button';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/redesigned/Drawer/Drawer';
 
 interface RatingCardProps {
   className?: string;
