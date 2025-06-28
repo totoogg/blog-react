@@ -9,6 +9,8 @@ import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { SortOrder } from '@/shared/types/sort';
 import { Input } from '@/shared/ui/redesigned/Input';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import SearchIcon from '@/shared/assets/icons/search.svg';
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -46,6 +48,7 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = memo(
             value={search}
             onChange={onChangeSearch}
             placeholder={t('Search')}
+            addonLeft={<Icon Svg={SearchIcon} />}
           />
           <ArticleTypeTabs
             className={cls.tabs}
