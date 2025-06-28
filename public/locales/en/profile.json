@@ -1,7 +1,7 @@
 {
   "profile": "Profile",
-  "lastname": "Your last name",
-  "name": "Your name",
+  "lastname": "Last name",
+  "name": "Name",
   "errorTitleProfile": "There was an error loading your profile.",
   "errorTextProfile": "Try refreshing the page",
   "cancel": "Cancel",
