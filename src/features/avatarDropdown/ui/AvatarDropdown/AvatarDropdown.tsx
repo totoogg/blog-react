@@ -1,7 +1,11 @@
 import { FC, memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+  getRouteAdmin,
+  getRouteProfile,
+  getRouteSetting,
+} from '@/shared/const/router';
 import { useTranslation } from 'react-i18next';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar/Avatar';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -49,6 +53,10 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo(({ className }) => {
     {
       content: t('logOut'),
       onClick: onLogOut,
+    },
+    {
+      content: t('Setting'),
+      href: getRouteSetting(),
     },
     {
       content: t('profile'),

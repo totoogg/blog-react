@@ -48,5 +48,9 @@
   "thanksForRate": "Thank you for your rating",
   "greetTitle": "Welcome to the articles page",
   "greetText": "Here you can search and view articles on various topics",
+  "New": "New",
+  "Old": "Old",
+  "Settings": "Settings",
+  "Interface design": "Interface design",
   "notFound": "Page not found"
 }
