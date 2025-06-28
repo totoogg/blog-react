@@ -45,7 +45,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
         off={
           <div
             className={classNames(cls.articleList, {}, [className, cls[view]])}
-            data-testId="ArticleList"
+            data-testid="ArticleList"
           >
             {articles.map((el) => (
               <ArticleListItem
@@ -64,7 +64,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
             wrap="wrap"
             gap="16"
             className={classNames(cls.articleListRedesigned, {}, [])}
-            data-testId="ArticleList"
+            data-testid="ArticleList"
           >
             {articles.map((el) => (
               <ArticleListItem

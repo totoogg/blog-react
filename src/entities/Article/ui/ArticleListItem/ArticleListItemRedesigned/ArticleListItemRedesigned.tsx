@@ -23,7 +23,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
 
     const userInfo = (
       <>
-        <Avatar size={32} src={article.user.avatar} />
+        <Avatar size={32} src={article.user.avatar} className={cls.avatar} />
         <Text bold text={article.user.username} />
       </>
     );
@@ -43,7 +43,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
         <Card
           padding="24"
           max
-          data-testId="ArticleListItem"
+          data-testid="ArticleListItem"
           className={classNames(cls.articleListItem, {}, [
             className,
             cls[view],
@@ -81,14 +81,14 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
 
     return (
       <AppLink
-        data-testId="ArticleListItem"
+        data-testid="ArticleListItem"
         to={getRouteArticleDetails(article.id)}
         target={target}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       >
-        <Card className={cls.card} border="round">
+        <Card className={cls.card} border="round" padding="0">
           <AppImage
-            fallback={<Skeleton width={'200'} height={200} />}
+            fallback={<Skeleton width={'100%'} height={200} />}
             src={article.img}
             alt={article.title}
             className={cls.img}

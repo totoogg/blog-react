@@ -27,6 +27,12 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
   sizeL: 'h1',
 };
 
+const mapSizeClass: Record<TextSize, string> = {
+  sizeS: cls['sizeS'],
+  sizeM: cls['sizeM'],
+  sizeL: cls['sizeL'],
+};
+
 export const Text: FC<TextProps> = memo(
   ({
     className,
@@ -39,6 +45,7 @@ export const Text: FC<TextProps> = memo(
     'data-testid': dataTestId = 'Text',
   }) => {
     const HeaderTag = mapSizeToHeaderTag[size];
+    const sizeClass = mapSizeClass[size];
 
     return (
       <div
@@ -47,6 +54,7 @@ export const Text: FC<TextProps> = memo(
           cls[theme],
           cls[align],
           cls[size],
+          sizeClass,
         ])}
       >
         {title && (

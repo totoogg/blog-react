@@ -36,7 +36,7 @@ export const ArticleListItemDeprecated: FC<ArticleListItemProps> = memo(
 
       return (
         <div
-          data-testId="ArticleListItem"
+          data-testid="ArticleListItem"
           className={classNames(cls.articleListItem, {}, [
             className,
             cls[view],
@@ -75,7 +75,7 @@ export const ArticleListItemDeprecated: FC<ArticleListItemProps> = memo(
 
     return (
       <AppLink
-        data-testId="ArticleListItem"
+        data-testid="ArticleListItem"
         to={getRouteArticleDetails(article.id)}
         target={target}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
