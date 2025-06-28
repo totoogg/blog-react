@@ -52,5 +52,9 @@
   "Old": "Old",
   "Settings": "Settings",
   "Interface design": "Interface design",
+  "Edit": "Edit",
+  "{{count}} Views_zero": "{{count}} views",
+  "{{count}} Views_one": "{{count}} view",
+  "{{count}} Views_other": "{{count}} views",
   "notFound": "Page not found"
 }

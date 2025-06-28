@@ -1,0 +1,40 @@
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './ArticleAdditional.module.scss';
+import { User } from '@/entities/User';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { useTranslation } from 'react-i18next';
+
+interface ArticleAdditionalProps {
+  className?: string;
+  author: User;
+  createdAt: string;
+  views: number;
+  onEdit?: () => void;
+}
+
+export const ArticleAdditional: FC<ArticleAdditionalProps> = memo(
+  ({ className, author, createdAt, views, onEdit }) => {
+    const { t } = useTranslation();
+
+    return (
+      <VStack
+        gap="32"
+        className={classNames(cls.articleAdditional, {}, [className])}
+      >
+        <HStack gap="8">
+          <Avatar src={author.avatar} size={32} />
+          <Text text={author.username} bold />
+          <Text text={createdAt} />
+        </HStack>
+        <Button onClick={onEdit}>{t('Edit')}</Button>
+        <Text text={t('{{count}} Views', { count: views })} />
+      </VStack>
+    );
+  },
+);
+
+ArticleAdditional.displayName = 'ArticleAdditional';

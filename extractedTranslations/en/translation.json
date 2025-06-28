@@ -3,6 +3,7 @@
   "ArticleNotFound": "ArticleNotFound",
   "Big": "Big",
   "ECONOMICS": "ECONOMICS",
+  "Edit": "",
   "ErrorText": "ErrorText",
   "IT": "IT",
   "Interface design": "",
@@ -15,6 +16,7 @@
   "Settings": "",
   "Small": "Small",
   "UpdatePage": "UpdatePage",
+  "View": "",
   "about": "about",
   "admin": "admin",
   "age": "age",
@@ -73,5 +75,7 @@
   "sortTitle": "sortTitle",
   "sortView": "sortView",
   "thanksForRate": "thanksForRate",
-  "username": "username"
+  "username": "username",
+  "{{count}} Views_one": "",
+  "{{count}} Views_other": ""
 }

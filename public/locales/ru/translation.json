@@ -52,5 +52,11 @@
   "Old": "Старый",
   "Settings": "Настройки",
   "Interface design": "Дизайн интерфейса",
+  "Edit": "Редактировать",
+  "{{count}} Views_zero": "{{count}} просмотров",
+  "{{count}} Views_one": "{{count}} просмотр",
+  "{{count}} Views_few": "{{count}} просмотра",
+  "{{count}} Views_many": "{{count}} просмотров",
+
   "notFound": "Страница не найдена"
 }
