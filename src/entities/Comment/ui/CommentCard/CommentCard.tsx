@@ -76,7 +76,7 @@ export const CommentCard: FC<CommentCardProps> = memo(
           </VStack>
         }
         on={
-          <Card padding="24" border="round" max>
+          <Card padding="24" border="partial" max>
             <VStack
               data-testid="CommentCard.Content"
               gap="8"

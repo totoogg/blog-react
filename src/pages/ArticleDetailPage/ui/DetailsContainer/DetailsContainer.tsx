@@ -16,7 +16,7 @@ export const DetailsContainer: FC<DetailsContainerProps> = memo(
     }
 
     return (
-      <Card max className={className} padding="24" border="round">
+      <Card max className={className} padding="24" border="partial">
         <ArticleDetails id={id} />
       </Card>
     );

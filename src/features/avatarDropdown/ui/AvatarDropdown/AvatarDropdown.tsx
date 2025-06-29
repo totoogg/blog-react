@@ -51,16 +51,16 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo(({ className }) => {
         ]
       : []),
     {
-      content: t('logOut'),
-      onClick: onLogOut,
-    },
-    {
       content: t('Setting'),
       href: getRouteSetting(),
     },
     {
       content: t('profile'),
       href: getRouteProfile(authData.id),
+    },
+    {
+      content: t('logOut'),
+      onClick: onLogOut,
     },
   ];
 
