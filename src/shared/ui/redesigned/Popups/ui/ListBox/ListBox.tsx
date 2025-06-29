@@ -69,8 +69,8 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
           </Button>
         </ListboxButton>
         <ListboxOptions
+          portal={false}
           className={classNames(cls.options, {}, optionsClasses)}
-          anchor="bottom"
         >
           {items?.map((item) => (
             <ListboxOption
