@@ -5,7 +5,7 @@ import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { HStack } from '@/shared/ui/redesigned/Stack';
@@ -34,7 +34,7 @@ export const ArticleList: FC<ArticleListProps> = memo(
         <div
           className={classNames(cls.articleList, {}, [className, cls[view]])}
         >
-          <Text size={TextSize.L} title={t('ArticleNotFound')} />
+          <Text size="sizeL" title={t('ArticleNotFound')} />
         </div>
       );
     }
