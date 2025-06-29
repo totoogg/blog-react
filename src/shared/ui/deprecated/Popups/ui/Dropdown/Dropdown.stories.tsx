@@ -5,7 +5,7 @@ import React from 'react';
 import { Button } from '../../../Button/Button';
 
 const meta = {
-  title: 'shared/Popups/Dropdown',
+  title: 'shared/deprecated/Popups/Dropdown',
   component: Dropdown,
 
   tags: ['autodocs'],

@@ -3,7 +3,7 @@ import { Skeleton } from './Skeleton';
 import React from 'react';
 
 const meta = {
-  title: 'shared/Skeleton',
+  title: 'shared/deprecated/Skeleton',
   component: Skeleton,
 
   tags: ['autodocs'],

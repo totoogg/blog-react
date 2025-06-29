@@ -1,4 +1,4 @@
-import { FC, memo } from 'react';
+import { FC, ForwardedRef, forwardRef } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
@@ -17,9 +17,6 @@ export enum ButtonSize {
   XL = 'sizeXl',
 }
 
-/**
- * @deprecated
- */
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   /**
@@ -53,34 +50,40 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
 }
 
-export const Button: FC<ButtonProps> = memo((props) => {
-  const {
-    className,
-    children,
-    theme = ButtonTheme.OUTLINE,
-    square,
-    disabled,
-    fullWidth,
-    size = ButtonSize.M,
-    ...otherProps
-  } = props;
+/**
+ * @deprecated
+ */
+export const Button: FC<ButtonProps> = forwardRef(
+  (props, ref: ForwardedRef<HTMLButtonElement>) => {
+    const {
+      className,
+      children,
+      theme = ButtonTheme.OUTLINE,
+      square,
+      disabled,
+      fullWidth,
+      size = ButtonSize.M,
+      ...otherProps
+    } = props;
 
-  const mod: Mods = {
-    [cls.square]: square,
-    [cls[size]]: true,
-    [cls.disabled]: disabled,
-    [cls.fullWidth]: fullWidth,
-  };
+    const mod: Mods = {
+      [cls.square]: square,
+      [cls[size]]: true,
+      [cls.disabled]: disabled,
+      [cls.fullWidth]: fullWidth,
+    };
 
-  return (
-    <button
-      className={classNames(cls.button, mod, [className, cls[theme]])}
-      disabled={disabled}
-      {...otherProps}
-    >
-      {children}
-    </button>
-  );
-});
+    return (
+      <button
+        ref={ref}
+        className={classNames(cls.button, mod, [className, cls[theme]])}
+        disabled={disabled}
+        {...otherProps}
+      >
+        {children}
+      </button>
+    );
+  },
+);
 
 Button.displayName = 'Button';

@@ -4,7 +4,7 @@ import React from 'react';
 import { Text } from '../Text';
 
 const meta = {
-  title: 'shared/Card',
+  title: 'shared/deprecated/Card',
   component: Card,
 
   tags: ['autodocs'],

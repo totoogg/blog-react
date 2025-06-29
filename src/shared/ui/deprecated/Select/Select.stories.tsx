@@ -3,7 +3,7 @@ import { Select } from './Select';
 import { useEffect } from 'react';
 
 const meta = {
-  title: 'shared/Select',
+  title: 'shared/deprecated/Select',
   component: Select,
 
   tags: ['autodocs'],

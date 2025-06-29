@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { AppRouter } from './providers/router';
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
@@ -12,12 +12,13 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
 window.addEventListener('error', (e) => {
   if (e.message.includes('ResizeObserver')) e.preventDefault();
 });
 
-export const App = () => {
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
@@ -71,4 +72,8 @@ export const App = () => {
       }
     />
   );
-};
+});
+
+App.displayName = 'App';
+
+export default withTheme(App);

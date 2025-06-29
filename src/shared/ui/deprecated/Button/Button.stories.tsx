@@ -4,7 +4,7 @@ import { Button, ButtonSize, ButtonTheme } from './Button';
 import React from 'react';
 
 const meta = {
-  title: 'shared/Button',
+  title: 'shared/deprecated/Button',
   component: Button,
 
   tags: ['autodocs'],

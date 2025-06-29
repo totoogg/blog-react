@@ -3,7 +3,7 @@ import { Popover } from './Popover';
 import React from 'react';
 
 const meta = {
-  title: 'shared/Popups/Popover',
+  title: 'shared/deprecated/Popups/Popover',
   component: Popover,
 
   tags: ['autodocs'],

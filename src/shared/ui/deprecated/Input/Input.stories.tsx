@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import { Input } from './Input';
 
 const meta = {
-  title: 'shared/Input',
+  title: 'shared/deprecated/Input',
   component: Input,
 
   tags: ['autodocs'],

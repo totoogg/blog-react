@@ -59,14 +59,14 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         value={value}
         onChange={onChange}
       >
-        <ListboxButton as={'div'} disabled={readonly} className={cls.trigger}>
-          <Button
-            addonRight={<Icon Svg={ArrowIcon} />}
-            variant="filled"
-            disabled={readonly}
-          >
-            {selectedItem?.content ?? defaultValue}
-          </Button>
+        <ListboxButton
+          as={Button}
+          addonRight={<Icon Svg={ArrowIcon} />}
+          variant="filled"
+          disabled={readonly}
+          className={cls.trigger}
+        >
+          {selectedItem?.content ?? defaultValue}
         </ListboxButton>
         <ListboxOptions
           portal={false}

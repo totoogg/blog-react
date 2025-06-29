@@ -3,7 +3,7 @@ import { AppImage } from './AppImage';
 import React from 'react';
 
 const meta = {
-  title: 'AppImage/AppImage',
+  title: 'shared/AppImage',
   component: AppImage,
 
   tags: ['autodocs'],

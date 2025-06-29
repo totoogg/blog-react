@@ -3,7 +3,7 @@ import { Text, TextSize, TextTheme } from './Text';
 import React from 'react';
 
 const meta = {
-  title: 'shared/Text',
+  title: 'shared/deprecated/Text',
   component: Text,
 
   tags: ['autodocs'],

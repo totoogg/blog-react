@@ -3,7 +3,7 @@ import { Loader } from './Loader';
 import React from 'react';
 
 const meta = {
-  title: 'shared/Loader',
+  title: 'shared/deprecated/Loader',
   component: Loader,
 
   tags: ['autodocs'],

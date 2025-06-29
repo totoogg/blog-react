@@ -4,7 +4,7 @@ import { AppLink, AppLinkTheme } from './AppLink';
 import React from 'react';
 
 const meta = {
-  title: 'shared/AppLink',
+  title: 'shared/deprecated/AppLink',
   component: AppLink,
 
   tags: ['autodocs'],

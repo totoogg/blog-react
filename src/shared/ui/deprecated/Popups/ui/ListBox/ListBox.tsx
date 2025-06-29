@@ -56,8 +56,8 @@ export function ListBox(props: ListBoxProps) {
         value={value}
         onChange={onChange}
       >
-        <ListboxButton as={'div'} disabled={readonly} className={cls.trigger}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+        <ListboxButton disabled={readonly} as={Button} className={cls.trigger}>
+          {value ?? defaultValue}
         </ListboxButton>
         <ListboxOptions
           className={classNames(cls.options, {}, optionsClasses)}
