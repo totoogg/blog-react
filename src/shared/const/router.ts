@@ -23,3 +23,16 @@ export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
 export const getRouteSetting = () => '/setting';
+
+export const AppRoutesPaths: OptionalRecord<AppRouter, string> = {
+  [AppRouter.MAIN]: getRouteMain(),
+  [AppRouter.ABOUT]: getRouteAbout(),
+  [AppRouter.PROFILE]: getRouteProfile(':id'),
+  [AppRouter.ARTICLES]: getRouteArticles(),
+  [AppRouter.ARTICLE_DETAILS]: getRouteArticleDetails(':id'),
+  [AppRouter.ARTICLE_CREATE]: getRouteArticleCreate(),
+  [AppRouter.ARTICLE_EDIT]: getRouteArticleEdit(':id'),
+  [AppRouter.ADMIN_PANEL]: getRouteAdmin(),
+  [AppRouter.FORBIDDEN]: getRouteForbidden(),
+  [AppRouter.SETTINGS]: getRouteSetting(),
+};

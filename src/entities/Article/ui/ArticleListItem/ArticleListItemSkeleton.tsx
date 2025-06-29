@@ -38,7 +38,7 @@ export const ArticleListItemSkeleton = memo(
             <Skeleton width={150} height={16} className={cls.date} />
           </div>
           <Skeleton width={250} height={24} className={cls.title} />
-          <Skeleton height={200} className={cls.img} />
+          <Skeleton height={420} width={'100%'} className={cls.img} />
           <div className={cls.footer}>
             <Skeleton height={36} width={200} />
           </div>
@@ -49,7 +49,7 @@ export const ArticleListItemSkeleton = memo(
           <ToggleFeatures
             feature="isAppRedesigned"
             on={
-              <CardRedesigned border="round" className={cls.card}>
+              <CardRedesigned max border="round" className={cls.card}>
                 {cardContent}
               </CardRedesigned>
             }
