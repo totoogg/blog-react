@@ -4,9 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton/Skeleton';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton/Skeleton';
-import { toggleFeatures } from '@/shared/lib/features';
 export interface ArticleRatingProps {
   className?: string;
   articleId: string;
@@ -52,11 +50,7 @@ const ArticleRating: FC<ArticleRatingProps> = memo(
       [handleRateArticle],
     );
 
-    const Skeleton = toggleFeatures({
-      name: 'isAppRedesigned',
-      off: () => SkeletonDeprecated,
-      on: () => SkeletonRedesigned,
-    });
+    const Skeleton = SkeletonRedesigned;
 
     if (isLoading) {
       return <Skeleton width={'100%'} height={120} />;

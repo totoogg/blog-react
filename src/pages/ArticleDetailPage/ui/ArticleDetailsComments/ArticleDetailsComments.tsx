@@ -8,15 +8,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-  Text as TextDeprecated,
-  TextSize,
-} from '@/shared/ui/deprecated/Text/Text';
+
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/service/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface ArticleDetailsCommentsProps {
@@ -44,11 +40,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
 
     return (
       <VStack gap="16" max className={classNames('', {}, [className])}>
-        <ToggleFeatures
-          feature="isAppRedesigned"
-          off={<TextDeprecated size={TextSize.L} title={t('comment')} />}
-          on={<Text size="sizeL" title={t('comment')} />}
-        />
+        <Text size="sizeL" title={t('comment')} />
 
         <Suspense fallback={<Loader />}>
           <AddCommentForm onSendComment={onSendComment} />

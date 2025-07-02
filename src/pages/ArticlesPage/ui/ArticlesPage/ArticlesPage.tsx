@@ -9,13 +9,11 @@ import { articlePageReducer } from '../../model/slices/articlePageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
-import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import { useSearchParams } from 'react-router-dom';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FilterContainer } from '../FilterContainer/FilterContainer';
@@ -41,37 +39,19 @@ const ArticlesPage: FC<ArticlesPageProps> = ({ className }) => {
   });
 
   const content = (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      off={
+    <StickyContentLayout
+      content={
         <Page
           data-testid="ArticlesPage"
           onScrollEnd={onLoadNextPart}
-          className={classNames(cls.articlesPage, {}, [className])}
+          className={classNames(cls.articlesPageRedesigned, {}, [className])}
         >
-          <ArticlesPageFilters />
           <ArticleInfiniteList className={cls.list} />
           <ArticlePageGreeting />
         </Page>
       }
-      on={
-        <StickyContentLayout
-          content={
-            <Page
-              data-testid="ArticlesPage"
-              onScrollEnd={onLoadNextPart}
-              className={classNames(cls.articlesPageRedesigned, {}, [
-                className,
-              ])}
-            >
-              <ArticleInfiniteList className={cls.list} />
-              <ArticlePageGreeting />
-            </Page>
-          }
-          left={<ViewSelectorContainer />}
-          right={<FilterContainer />}
-        />
-      }
+      left={<ViewSelectorContainer />}
+      right={<FilterContainer />}
     />
   );
 

@@ -1,8 +1,6 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
 import { Article } from '../../model/types/article';
 import { ArticleView } from '../../model/consts/consts';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { ArticleListItemDeprecated } from './ArticleListItemDeprecated/ArticleListItemDeprecated';
 import { ArticleListItemRedesigned } from './ArticleListItemRedesigned/ArticleListItemRedesigned';
 
 export interface ArticleListItemProps {
@@ -13,13 +11,7 @@ export interface ArticleListItemProps {
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
-  return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      off={<ArticleListItemDeprecated {...props} />}
-      on={<ArticleListItemRedesigned {...props} />}
-    />
-  );
+  return <ArticleListItemRedesigned {...props} />;
 });
 
 ArticleListItem.displayName = 'ArticleListItem';

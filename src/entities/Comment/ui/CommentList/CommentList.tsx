@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface CommentListProps {
@@ -39,11 +37,7 @@ export const CommentList: FC<CommentListProps> = memo(
             />
           ))
         ) : (
-          <ToggleFeatures
-            feature="isAppRedesigned"
-            off={<TextDeprecated text={t('notComments')} />}
-            on={<Text text={t('notComments')} />}
-          />
+          <Text text={t('notComments')} />
         )}
       </VStack>
     );

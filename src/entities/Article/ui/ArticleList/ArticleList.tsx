@@ -7,7 +7,6 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { Text } from '@/shared/ui/redesigned/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
 interface ArticleListProps {
@@ -40,45 +39,23 @@ export const ArticleList: FC<ArticleListProps> = memo(
     }
 
     return (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        off={
-          <div
-            className={classNames(cls.articleList, {}, [className, cls[view]])}
-            data-testid="ArticleList"
-          >
-            {articles.map((el) => (
-              <ArticleListItem
-                article={el}
-                view={view}
-                className={cls.card}
-                target={target}
-                key={el.id}
-              />
-            ))}
-            {isLoading && getSkeletons(view)}
-          </div>
-        }
-        on={
-          <HStack
-            wrap="wrap"
-            gap="16"
-            className={classNames(cls.articleListRedesigned, {}, [])}
-            data-testid="ArticleList"
-          >
-            {articles.map((el) => (
-              <ArticleListItem
-                article={el}
-                view={view}
-                className={cls.card}
-                target={target}
-                key={el.id}
-              />
-            ))}
-            {isLoading && getSkeletons(view)}
-          </HStack>
-        }
-      />
+      <HStack
+        wrap="wrap"
+        gap="16"
+        className={classNames(cls.articleListRedesigned, {}, [])}
+        data-testid="ArticleList"
+      >
+        {articles.map((el) => (
+          <ArticleListItem
+            article={el}
+            view={view}
+            className={cls.card}
+            target={target}
+            key={el.id}
+          />
+        ))}
+        {isLoading && getSkeletons(view)}
+      </HStack>
     );
   },
 );

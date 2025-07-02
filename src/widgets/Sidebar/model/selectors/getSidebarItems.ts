@@ -6,15 +6,10 @@ import {
   getRouteProfile,
 } from '@/shared/const/router';
 import { SidebarItemType } from '../types/sidebar';
-import MainIconDeprecated from '@/shared/assets/icons/main-20-20.svg';
-import AboutIconDeprecated from '@/shared/assets/icons/about-20-20.svg';
-import ProfileIconDeprecated from '@/shared/assets/icons/profile-20-20.svg';
-import ArticleIconDeprecated from '@/shared/assets/icons/article-20-20.svg';
 import MainIcon from '@/shared/assets/icons/home.svg';
 import AboutIcon from '@/shared/assets/icons/Info.svg';
 import ProfileIcon from '@/shared/assets/icons/avatar.svg';
 import ArticleIcon from '@/shared/assets/icons/article.svg';
-import { toggleFeatures } from '@/shared/lib/features';
 import { useSelector } from 'react-redux';
 
 export const useSidebarItems = () => {
@@ -24,20 +19,12 @@ export const useSidebarItems = () => {
     {
       text: 'main',
       path: getRouteMain(),
-      Icon: toggleFeatures({
-        name: 'isAppRedesigned',
-        on: () => MainIcon,
-        off: () => MainIconDeprecated,
-      }),
+      Icon: MainIcon,
     },
     {
       text: 'about',
       path: getRouteAbout(),
-      Icon: toggleFeatures({
-        name: 'isAppRedesigned',
-        on: () => AboutIcon,
-        off: () => AboutIconDeprecated,
-      }),
+      Icon: AboutIcon,
     },
   ];
 
@@ -46,20 +33,12 @@ export const useSidebarItems = () => {
       {
         text: 'profile',
         path: getRouteProfile(userData?.id),
-        Icon: toggleFeatures({
-          name: 'isAppRedesigned',
-          on: () => ProfileIcon,
-          off: () => ProfileIconDeprecated,
-        }),
+        Icon: ProfileIcon,
       },
       {
         text: 'articles',
         path: getRouteArticles(),
-        Icon: toggleFeatures({
-          name: 'isAppRedesigned',
-          on: () => ArticleIcon,
-          off: () => ArticleIconDeprecated,
-        }),
+        Icon: ArticleIcon,
       },
     );
   }

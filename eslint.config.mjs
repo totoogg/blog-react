@@ -10,7 +10,12 @@ import unusedImports from 'eslint-plugin-unused-imports';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default defineConfig([
-  globalIgnores(['./node_modules/*', './build/*', './scripts/*']),
+  globalIgnores([
+    './node_modules/*',
+    './build/*',
+    './scripts/*',
+    './cypress/*',
+  ]),
   {
     files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     plugins: { js },

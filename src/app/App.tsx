@@ -7,8 +7,6 @@ import { getUserInited, initAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { PageLoader } from '@/widgets/PageLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { useAppToolbar } from './lib/useAppToolbar';
@@ -32,45 +30,23 @@ const App = memo(() => {
 
   if (!inited) {
     return (
-      <ToggleFeatures
-        feature="isAppRedesigned"
-        off={<PageLoader />}
-        on={
-          <div id="app" className={classNames('app_redesigned', {}, [theme])}>
-            <AppLoaderLayout />
-          </div>
-        }
-      />
+      <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+        <AppLoaderLayout />
+      </div>
     );
   }
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      off={
-        <div id="app" className={classNames('app', {}, [theme])}>
-          <Suspense fallback="">
-            <Navbar />
-            <div className="content-page">
-              <Sidebar />
-              <AppRouter />
-            </div>
-          </Suspense>
-        </div>
-      }
-      on={
-        <div id="app" className={classNames('app_redesigned', {}, [theme])}>
-          <Suspense fallback="">
-            <MainLayout
-              header={<Navbar />}
-              content={<AppRouter />}
-              sidebar={<Sidebar />}
-              toolbar={toolbar}
-            />
-          </Suspense>
-        </div>
-      }
-    />
+    <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+      <Suspense fallback="">
+        <MainLayout
+          header={<Navbar />}
+          content={<AppRouter />}
+          sidebar={<Sidebar />}
+          toolbar={toolbar}
+        />
+      </Suspense>
+    </div>
   );
 });
 

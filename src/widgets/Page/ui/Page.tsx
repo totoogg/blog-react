@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { TestProps } from '@/shared/types/tests';
-import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
   className?: string;
@@ -32,11 +31,7 @@ export const Page: FC<PageProps> = memo((props) => {
 
   useInfiniteScroll({
     triggerRef: triggerRef as React.RefObject<HTMLDivElement>,
-    wrapperRef: toggleFeatures({
-      name: 'isAppRedesigned',
-      on: () => undefined,
-      off: () => wrapperRef as React.RefObject<HTMLDivElement>,
-    }),
+    wrapperRef: undefined,
     callback: onScrollEnd,
   });
 
@@ -58,15 +53,7 @@ export const Page: FC<PageProps> = memo((props) => {
   return (
     <main
       ref={wrapperRef}
-      className={classNames(
-        toggleFeatures({
-          name: 'isAppRedesigned',
-          on: () => cls.pageRedesigned,
-          off: () => cls.page,
-        }),
-        {},
-        [className],
-      )}
+      className={classNames(cls.pageRedesigned, {}, [className])}
       onScroll={onScroll}
       id={PAGE_ID}
       data-testid={props['data-testid'] ?? 'Page'}
