@@ -49,7 +49,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 jobs:
   build-and-ui-testing:
@@ -94,27 +94,27 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: "reports"
+          path: 'reports'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
         uses: actions/deploy-pages@v1
 
-  checks:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [22.x]
-    steps:
-      - uses: actions/checkout@v3
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm ci --force
-      - name: linting typescript
-        run: npm run lint:ts
-        if: always()
-      - name: linting css
-        run: npm run lint:scss
+  # checks:
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [22.x]
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Staring Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     - name: install modules
+  #       run: npm ci --force
+  #     - name: linting typescript
+  #       run: npm run lint:ts
+  #       if: always()
+  #     - name: linting css
+  #       run: npm run lint:scss

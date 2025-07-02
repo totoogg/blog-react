@@ -1,6 +1,5 @@
 import { FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleAdditional.module.scss';
 import { User } from '@/entities/User';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -21,10 +20,7 @@ export const ArticleAdditional: FC<ArticleAdditionalProps> = memo(
     const { t } = useTranslation();
 
     return (
-      <VStack
-        gap="32"
-        className={classNames(cls.articleAdditional, {}, [className])}
-      >
+      <VStack gap="32" className={classNames('', {}, [className])}>
         <HStack gap="8">
           <Avatar src={author.avatar} size={32} />
           <Text text={author.username} bold />
