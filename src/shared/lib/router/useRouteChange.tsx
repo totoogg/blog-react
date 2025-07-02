@@ -9,7 +9,7 @@ export function useRouteChange() {
   useEffect(() => {
     Object.entries(AppRoutesPaths).forEach(([pattern, route]) => {
       if (matchPath(pattern, location.pathname)) {
-        setAppRoute(route as AppRouter);
+        setAppRoute(route.slice(1) as AppRouter);
       }
     });
   }, [location.pathname]);
