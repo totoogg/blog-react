@@ -63,12 +63,6 @@ jobs:
         node-version: [22.x]
     steps:
       - uses: actions/checkout@v4
-
-      - name: Force update upload-artifact
-        run: |
-          rm -rf "${{ github.action_path }}/_actions/actions/upload-artifact"
-          npm exec --yes -p @actions/tool-cache install-action actions/upload-artifact@v4
-
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -97,7 +91,7 @@ jobs:
         uses: actions/configure-pages@v4
         if: always()
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         if: always()
         with:
           path: 'reports'
@@ -113,10 +107,6 @@ jobs:
         node-version: [22.x]
     steps:
       - uses: actions/checkout@v4
-      - name: Force update upload-artifact
-        run: |
-          rm -rf "${{ github.action_path }}/_actions/actions/upload-artifact"
-          npm exec --yes -p @actions/tool-cache install-action actions/upload-artifact@v4
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
