@@ -4,6 +4,7 @@ import { http, HttpResponse } from 'msw';
 import { Article } from '@/entities/Article';
 import { ArticleType } from '@/entities/Article';
 import { StrictMode } from 'react';
+import Avatar from '@/shared/assets/tests/storybook.jpg';
 
 const meta = {
   title: 'features/ArticleRecommendationsList',
@@ -17,14 +18,14 @@ type Story = StoryObj<typeof meta>;
 
 const article: Article = {
   id: '1',
-  img: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  img: Avatar,
   title: 'Article 1',
   createdAt: '2021-01-01',
   views: 100,
   user: {
     id: '1',
     username: 'XXXXX',
-    avatar: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    avatar: Avatar,
   },
   type: [ArticleType.IT],
   blocks: [],

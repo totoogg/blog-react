@@ -2,12 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleListItem } from './ArticleListItem';
 import React from 'react';
 import { ArticleType, ArticleView } from '../../model/consts/consts';
+import Avatar from '@/shared/assets/tests/storybook.jpg';
 
 const article = {
   id: '1',
   title: 'Title 1',
   subtitle: 'Subtitle 1',
-  img: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  img: Avatar,
   views: 123,
   createdAt: '01.01.2021',
   type: [ArticleType.IT],
@@ -15,7 +16,7 @@ const article = {
   user: {
     id: '1',
     username: 'XXXXX',
-    avatar: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+    avatar: Avatar,
   },
 };
 
