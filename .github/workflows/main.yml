@@ -63,6 +63,12 @@ jobs:
         node-version: [22.x]
     steps:
       - uses: actions/checkout@v4
+
+      - name: Force update upload-artifact
+        run: |
+          rm -rf "${{ github.action_path }}/_actions/actions/upload-artifact"
+          npm exec --yes -p @actions/tool-cache install-action actions/upload-artifact@v4
+
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -107,6 +113,10 @@ jobs:
         node-version: [22.x]
     steps:
       - uses: actions/checkout@v4
+      - name: Force update upload-artifact
+        run: |
+          rm -rf "${{ github.action_path }}/_actions/actions/upload-artifact"
+          npm exec --yes -p @actions/tool-cache install-action actions/upload-artifact@v4
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
