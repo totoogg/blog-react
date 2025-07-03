@@ -1,0 +1,21 @@
+{
+  "age": "age",
+  "avatar": "avatar",
+  "cancel": "cancel",
+  "city": "city",
+  "country": "country",
+  "currency": "currency",
+  "edit": "edit",
+  "errorAge": "errorAge",
+  "errorCountry": "errorCountry",
+  "errorData": "errorData",
+  "errorFirstLastName": "errorFirstLastName",
+  "errorServer": "errorServer",
+  "errorTextProfile": "errorTextProfile",
+  "errorTitleProfile": "errorTitleProfile",
+  "lastname": "lastname",
+  "name": "name",
+  "profile": "profile",
+  "save": "save",
+  "username": "username"
+}

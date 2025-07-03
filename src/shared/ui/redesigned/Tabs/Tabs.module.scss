@@ -1,0 +1,9 @@
+.tabs {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+div.selected {
+  padding: 8px 16px;
+}

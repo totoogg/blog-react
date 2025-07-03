@@ -1,0 +1,22 @@
+{
+  "profile": "Profile",
+  "lastname": "Last name",
+  "name": "Name",
+  "errorTitleProfile": "There was an error loading your profile.",
+  "errorTextProfile": "Try refreshing the page",
+  "cancel": "Cancel",
+  "save": "Save",
+  "age": "Age",
+  "city": "City",
+  "username": "Username",
+  "avatar": "Avatar",
+  "currency": "Currency",
+  "country": "Country",
+  "errorFirstLastName": "First and last name are required",
+  "errorAge": "Incorrect age",
+  "errorCountry": "Incorrect country",
+  "errorData": "No data",
+  "errorProfile": "Profile not found",
+  "errorServer": "Server error",
+  "edit": "Edit"
+}

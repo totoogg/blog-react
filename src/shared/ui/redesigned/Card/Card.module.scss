@@ -1,0 +1,56 @@
+.card {
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.withoutPadding {
+  padding: 0;
+}
+
+.normal {
+  background: var(--dark-bg-redesigned);
+}
+
+.normalBorder {
+  border-radius: 12px;
+}
+
+.light {
+  background: var(--light-bg-redesigned);
+}
+
+.outline {
+  border: 1px solid var(--accent-redesigned);
+}
+
+.max {
+  width: 100%;
+}
+
+.gap0 {
+  padding: 0;
+}
+
+.gap8 {
+  padding: 8px;
+}
+
+.gap16 {
+  padding: 16px;
+}
+
+.gap24 {
+  padding: 24px;
+}
+
+.round {
+  border-radius: 40px;
+}
+
+.partial {
+  border-radius: 20px;
+}
+
+.fullHeight {
+  height: 100%;
+}
